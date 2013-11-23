@@ -9,6 +9,19 @@
 .scale_base_size
   background-color: $app-gray-light
 
+.overflow_gradient
+  position: relative
+  overflow: hidden
+  white-space: nowrap
+  &:after
+    content: ""
+    position: absolute
+    right: 0
+    top: 0
+    bottom: 0
+    width: 10%
+    @include background-image(linear-gradient(left, rgba(255,255,255,0), #ffffff))
+
 img
   max-width: 100%
   height: auto

@@ -192,4 +192,8 @@ $(document).ready(function() {
     });
   };
 
+  $('.param_url').hover(function() {
+    $(this).attr('href', $(this).text())
+  });
+
 });
