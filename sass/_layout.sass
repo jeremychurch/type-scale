@@ -4,6 +4,9 @@ html
   height: 100%
 
 body
+  position: relative //????????
+  overflow: hidden //?????????
+  background-color: $app-gray-light
   cursor: default
 
 .container
@@ -15,6 +18,7 @@ body
 .stage
   @include box-sizing(border-box)
   padding-bottom: 12em
+  background-color: #fff
 
 .stage_footer
   position: absolute
@@ -32,3 +36,45 @@ body
 
 .content_width
   max-width: 35em
+
+.article_preview
+  @include translate(90%, 0)
+  @include transition(transform 500ms ease 0s)
+  position: absolute
+  top: 0
+  bottom: 0
+  width: 100%
+  border-left: 0.5em solid $app-color-one
+  background-color: $app-gray-medium
+  color: #999
+  @media screen and (max-width: #{$app-media-xs})
+    @include translate(95%, 0)
+
+.article_preview_open
+  @include translate(34.5%, 0)
+  background-color: #fff
+  color: $app-font-color
+  @media screen and (max-width: #{$app-media-xs})
+    @include translate(0, 0)
+  .article_preview_button
+    @media screen and (max-width: #{$app-media-xs})
+      right: auto
+      left: 0
+      @include border-left-radius(0)
+      @include border-right-radius(50em)
+
+.article_preview_button
+  position: absolute
+  right: 100%
+  top: 5em
+  padding: 0.5em 0.3em 0.5em 0.3em
+  background-color: $app-color-one
+  @include border-left-radius(50em)
+  cursor: pointer
+  color: #fff
+
+.article_container
+  padding: 2rem 3rem
+  max-width: 38em
+  font-size: 1.5em
+  @include transition(font-size 0.3s ease 0.3s)

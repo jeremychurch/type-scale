@@ -1,8 +1,13 @@
 
 $(document).ready(function() {
 
-  viewportHeight = $(window).innerHeight();
-  $('.stage').css('min-height', viewportHeight);
+  //viewportHeight = $(window).innerHeight();
+  $('.stage').css('min-height', $(window).innerHeight());
+
+  $('.article_preview_button').click(function() {
+    $(this).toggleClass('fa-times').toggleClass('fa-chevron-left');
+    $('.article_preview').toggleClass('article_preview_open');
+  });
 
   function getQueryVariable(variable) {
     var query = unescape(window.location.search.substring(1));
@@ -22,6 +27,7 @@ $(document).ready(function() {
     else {
       baseSize = getQueryVariable('size') / 16;
       $('.base_size').val(getQueryVariable('size'));
+      $('.article_container').css('font-size', Math.round(baseSize*1000)/1000 + 'em');
       $('.param_size').text(getQueryVariable('size'));
     };
     $('.base_em').text(Math.round(baseSize*1000)/1000);
@@ -62,7 +68,7 @@ $(document).ready(function() {
   function setCss() {
     if (getQueryVariable('font-family') !== false) {
       $('.web_font_name').val(getQueryVariable('font-family'));
-      $('.scale_webfont').attr('style', "font-family:" + getQueryVariable('font-family'));
+      $('.scale_webfont, .article_content').attr('style', "font-family:" + getQueryVariable('font-family'));
       $('.param_css').text(getQueryVariable('font-family'));
     };
   };
@@ -81,6 +87,7 @@ $(document).ready(function() {
     };
     $('.base_em').text(Math.round(baseSize*1000)/1000);
     $('.param_size').text($(this).val());
+    $('.article_container').css('font-size', Math.round(baseSize*1000)/1000 + 'em');
     scaleSelect();
   });
 
@@ -102,7 +109,7 @@ $(document).ready(function() {
 
   $('.web_font_name').bind("change paste keyup", function() {
     webFontName = $(this).val();
-    $('.scale_webfont').attr('style', "font-family:" + webFontName);
+    $('.scale_webfont, .article_content').attr('style', "font-family:" + webFontName);
     $('.param_css').text($(this).val());
   });
 
@@ -137,6 +144,18 @@ $(document).ready(function() {
       });
     };
 
+    function articleHeader() {
+      a = 1;
+      b = scaleRatio;
+      result = 1;
+
+      $($('.article_header').get().reverse()).each(function(index) {
+        result = a*b;
+        a = result;
+        $(this).css('font-size', Math.round(result*1000)/1000 + 'em');
+      });
+    };
+
     function scaleLow() {
       a = baseSize;
       b = scaleRatio;
@@ -163,8 +182,14 @@ $(document).ready(function() {
 
     scaleHigh();
     scaleHighLabel();
+    articleHeader();
     scaleLow();
     scaleLowLabel();
+
+    $('body').delay(650).queue(function(next) {
+      $(this).css('min-height', $('.article_content').outerHeight());
+      next();
+    });
   };
 
 });

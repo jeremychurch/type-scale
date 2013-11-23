@@ -24,11 +24,22 @@ strong, b, .font_bold
 p, blockquote, ul, ol
   margin-bottom: $app-margin-small
 
-h1
-  display: inline
+.article_content
+  font-family: "Libre Baskerville", serif
 
-h2
-  font-size:  2.25em
+.article_header
+  margin:  1.414em 0 0.5em
+  line-height: 1.2
+  @include transition(font-size 0.3s ease 0.3s)
+
+h1
+  &.article_header
+    margin-top: 0
+  &:not(.article_header)
+    display: inline
+
+h2:not(.article_header)
+  font-size:   2.827em
   font-weight: $app-font-weight
   line-height: 1.3
   letter-spacing: -0.025em
@@ -36,8 +47,15 @@ h2
   @media screen and (max-width: #{$app-media-xs})
     font-size: 1.75em
 
-h3
-  font-size: 1.5em
+h3:not(.article_header)
+  font-size:  1.999em
+  font-weight: $app-font-weight
+  margin: 1.3em 0 0.5em 0
+  @media screen and (max-width: #{$app-media-xs})
+    font-size: 1.25em
+
+h4:not(.article_header)
+  font-size:  1.414em
   font-weight: $app-font-weight
   margin: 1.3em 0 0.5em 0
   @media screen and (max-width: #{$app-media-xs})
