@@ -21,8 +21,8 @@ $(document).ready(function() {
 
   function setBaseSize() {
     if (getQueryVariable('size') === false) {
-      baseSize = 1.5;
-      $('.base_size').val(24);
+      baseSize = 1.25;
+      $('.base_size').val(20);
     }
     else {
       baseSize = getQueryVariable('size') / 16;
@@ -36,7 +36,7 @@ $(document).ready(function() {
 
   function setScale() {
     if (getQueryVariable('scale') === false) {
-      scaleRatio = 1.5;
+      scaleRatio = 1.414;
     }
     else {
       scaleRatio = getQueryVariable('scale');
@@ -187,7 +187,7 @@ $(document).ready(function() {
     scaleLowLabel();
 
     $('body').delay(650).queue(function(next) {
-      $(this).css('min-height', $('.article_content').outerHeight());
+      $(this).css('min-height', $('.article_preview_inner').outerHeight());
       next();
     });
   };
