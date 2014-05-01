@@ -167,9 +167,10 @@
               %pre.codepen_able.font_small{data: {'type' => 'css'}, contenteditable: 'true', onClick: "document.execCommand('selectAll',false,null); ga('send', 'event', 'select', 'click', 'css-code');"}
                 %code
                   :preserve
+                    html {font-size: <span class="css_font_size"></span>em;}
+
                     body {
                       background-color: <span class="css_background_color">white</span>;
-                      font-size: <span class="css_font_size"></span>em;
                       font-family: <span class="css_font_family">'Libre Baskerville', serif</span>;
                       font-weight: <span class="css_weight">400</span>;
                       line-height: 1.45;
