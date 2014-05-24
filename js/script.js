@@ -81,6 +81,7 @@ $(document).ready(function() {
     else {
       scaleRatio = getQueryVariable('scale');
       $('.font_scale').val(getQueryVariable('scale'));
+      $('.font_scale_custom input').val(getQueryVariable('scale'));
       $('.param_scale').text(getQueryVariable('scale'));
     };
     scaleCalc();
@@ -88,7 +89,23 @@ $(document).ready(function() {
   setScale();
 
   $('.font_scale').bind("change paste keyup", function() {
-    scaleSelect();
+    if ($(this).val() === 'custom') {
+      $('.font_scale_custom').removeClass('hide');
+      $('.font_scale_custom input')
+        .val(scaleRatio)
+        .focus()
+        .select();
+    }
+    else {
+      scaleSelect();
+      $('.font_scale_custom').addClass('hide');
+      $('.param_scale').text($(this).val());
+    };
+  });
+
+  $('.font_scale_custom input').bind("change paste keyup", function() {
+    scaleRatio = $(this).val();
+    scaleCalc();
     $('.param_scale').text($(this).val());
   });
 
