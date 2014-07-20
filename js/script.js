@@ -43,9 +43,9 @@ $(document).ready(function() {
 
   function setBaseSize() {
     if (getQueryVariable('size') === false) {
-      baseSize = 1.25;
-      $('.base_size').val(20);
-      $('.css_font_size').text(1.25);
+      baseSize = 1;
+      $('.base_size').val(16);
+      $('.css_font_size').text(1);
     }
     else {
       baseSize = getQueryVariable('size') / 16;
