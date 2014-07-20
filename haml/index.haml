@@ -152,7 +152,7 @@
 
           %form{action: 'http://codepen.io/pen/define', method: 'POST', target: '_blank'}
 
-            %span.btn.font_small.expand_down{data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
+            %a.btn.font_small.expand_down{href: '#', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
               %span.fa.fa-fw.fa-chevron-down
               Grab the CSS
             &nbsp;
@@ -266,7 +266,7 @@
     .article_preview
       .article_preview_button.fa.fa-chevron-left.fa-lg.fa-fw{onClick: "ga('send', 'event', 'toggle', 'click', 'article-preview');"}
       .article_preview_inner
-        %span.btn.font_small.expand_down.more_options_button{data: {'toggle' => '.js_article_options'}, onClick: "ga('send', 'event', 'toggle', 'click', 'article-options');"}
+        %a.btn.font_small.expand_down.more_options_button{href: '#', data: {'toggle' => '.js_article_options'}, onClick: "ga('send', 'event', 'toggle', 'click', 'article-options');"}
           %span.fa.fa-fw.fa-chevron-down
           More Options
 
