@@ -4,8 +4,8 @@ html
   height: 100%
 
 body
-  position: relative //????????
-  overflow: hidden //?????????
+  position: relative
+  overflow: hidden
   background-color: $app-gray-light
   cursor: default
 
@@ -17,7 +17,7 @@ body
 
 .stage
   @include box-sizing(border-box)
-  padding-bottom: 8em //12em
+  padding-bottom: 8em
   background-color: #fff
 
 .stage_footer
@@ -66,17 +66,13 @@ body
     @media screen and (max-width: #{$app-media-small})
       right: auto
       left: 0
-      // @include border-left-radius(0)
-      // @include border-right-radius(50em)
 
 .article_preview_button
   position: absolute
   right: 100%
   top: 5em
-  //padding: 0.5em 0.3em 0.5em 0.3em
   padding: 1.7em 0.4em 1.7em 0.2em
   background-color: $app-color-one
-  //@include border-left-radius(50em)
   cursor: pointer
   color: #fff
 
