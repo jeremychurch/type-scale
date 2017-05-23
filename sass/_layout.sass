@@ -44,7 +44,7 @@ body
   top: 0
   bottom: 0
   width: 100%
-  border-left: 0.5em solid $app-color-one
+  border-left: 0.5em solid #8CC152
   background-color: $app-gray-medium
   color: #999
   @media screen and (max-width: #{$app-media-xs})
@@ -58,8 +58,8 @@ body
 
 .article_preview_open
   @include translate(34.5%, 0)
-  background-color: #fff
-  color: $app-font-color
+  background-color: black
+  color: #b10dc9
   @media screen and (max-width: #{$app-media-small})
     @include translate(0, 0)
   .article_preview_button
@@ -72,9 +72,9 @@ body
   right: 100%
   top: 5em
   padding: 1.7em 0.4em 1.7em 0.2em
-  background-color: $app-color-one
+  background-color: #8CC152
   cursor: pointer
-  color: #fff
+  color: $app-font-color
 
 .article_container
   // font-size: 1.25em // Only necessary if the base_size is different from the html font-size
@@ -82,4 +82,4 @@ body
 
 .article_content
   max-width: 38em
-  font-family: "Libre Baskerville", serif
+  font-family: "Jolly Lodger", cursive
