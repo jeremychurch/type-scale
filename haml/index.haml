@@ -75,7 +75,7 @@
                     %label Google Fonts
 
                   .table_cell.text_right
-                    %a.font_small{href: 'http://www.google.com/fonts/', target: '_blank', tabindex: '-1'} Find Font
+                    %a.font_small{href: 'http://www.google.com/fonts/', target: '_blank', tabindex: '-1'} Find a Font
                 %input.web_font{type: 'text', value: "Jolly+Lodger"}
 
               .cols.cols_fields
@@ -232,9 +232,24 @@
 
             %h2 How to Use
 
-            %p I like to enter the base font size of my body content. Then I select from the surrounding values for headers and small copy.
+            %p I like to enter the base font-size for paragraph text. Then I select from the surrounding values for headers and small text.
 
             %p There are no rules. Just experiment and have fun. Try using the values for line-height, margins or whatever, and see what works.
+
+            %h2 EM vs. REM Values
+
+            %p The rem value is the same as the em value displayed above. Both units are scalable; the only difference between the two is that em is proportionate to its nearest parent that has a font-size, whereas rem is always relative to the html font-size. You can read more about these units from an article I wrote on the subject, <a href='https://j.eremy.net/confused-about-rem-and-em/'>Confused About REM and EM?</a>
+
+            %p Also, <a href='https://github.com/jeremychurch/type-scale/issues/9#issuecomment-279762522'>here&rsquo;s a response</a> I wrote to a GitHub request. There are a few examples there as well.
+
+            %h2 Additional Resources
+
+            %ul
+              %li <a href='http://pxtoem.com/'>pxtoem.com - PX to EM conversion made simple</a>
+
+              %li <a href='https://www.fontsquirrel.com/'>fontsquirrel.com - Free fonts &amp; webfont generator</a>
+
+              %li <a href='https://j.eremy.net/confused-about-rem-and-em/'>Confused About REM and EM?</a>
 
             %h2 Background
 
@@ -242,9 +257,9 @@
 
             %p The <em>Modular Scale</em> site has been a great reference over the years, but sometimes it&rsquo;s difficult to choose the proper scale without a visual reference. I hope to bridge that gap with <em>Type Scale</em>.
 
-            %h2 Updates
+            %h2 Feedback
 
-            %p I&rsquo;d like to keep this project current and useful to the community. Please direct ideas and feedback to me on <a href="https://twitter.com/jeremybchurch">Twitter</a> or the <a href="http://j.eremy.net/contact">contact page</a> on my site.
+            %p Please use the <a href="http://j.eremy.net/contact">contact page</a> on my site to send your ideas and feedback.
 
           .break_small
             %ul.inline_list
@@ -261,7 +276,7 @@
           %p.font_small
             Created by <a href="http://j.eremy.net/">Jeremy Church</a>
             %br
-            Project available on <a href="https://github.com/jeremychurch/type-scale">Github</a>. Code licensed under <a href="http://opensource.org/licenses/mit-license.html">MIT License</a>.
+            Project available on <a href="https://github.com/jeremychurch/type-scale">GitHub</a>. Code licensed under <a href="http://opensource.org/licenses/mit-license.html">MIT License</a>.
 
     .article_preview
       .article_preview_button.fa.fa-chevron-left.fa-lg.fa-fw{onClick: "ga('send', 'event', 'toggle', 'click', 'article-preview');"}
