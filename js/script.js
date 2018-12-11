@@ -136,14 +136,14 @@ $(document).ready(function() {
   function setTag() {
     if (getQueryVariable('webfont') !== false) {
       $('.web_font').val(getQueryVariable('webfont'));
-      $('.webfont_url').attr('href', 'http://fonts.googleapis.com/css?family=' + getQueryVariable('webfont'));
+      $('.webfont_url').attr('href', 'https://fonts.googleapis.com/css?family=' + getQueryVariable('webfont'));
       $('.param_font').text(getQueryVariable('webfont'));
     };
   };
   setTag();
 
   $('.web_font').bind("change paste keyup", function() {
-    $('.webfont_url').attr('href', 'http://fonts.googleapis.com/css?family=' + $(this).val());
+    $('.webfont_url').attr('href', 'https://fonts.googleapis.com/css?family=' + $(this).val());
     $('.param_font').text(encodeURIComponent($(this).val()));
   });
 
