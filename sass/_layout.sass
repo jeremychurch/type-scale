@@ -10,13 +10,13 @@ body
   cursor: default
 
 .container
-  @include box-sizing(border-box)
+  box-sizing: border-box
   padding: 2em
   @media screen and (max-width: #{$app-media-xs})
     padding: 1.2em
 
 .stage
-  @include box-sizing(border-box)
+  box-sizing: border-box
   padding-bottom: 8em
   background-color: #fff
 
@@ -38,8 +38,8 @@ body
   max-width: 35em
 
 .article_preview
-  @include translate(90%, 0)
-  @include transition(transform 500ms ease 0s)
+  transform: translate(90%, 0)
+  transition: transform 500ms ease 0s
   position: absolute
   top: 0
   bottom: 0
@@ -48,7 +48,7 @@ body
   background-color: $app-gray-medium
   color: #999
   @media screen and (max-width: #{$app-media-xs})
-    @include translate(95%, 0)
+    transform: translate(95%, 0)
 
 .article_preview_inner
   overflow: hidden
@@ -57,11 +57,11 @@ body
     padding: 1.2em
 
 .article_preview_open
-  @include translate(34.5%, 0)
+  transform: translate(34.5%, 0)
   background-color: #fff
   color: $app-font-color
   @media screen and (max-width: #{$app-media-small})
-    @include translate(0, 0)
+    transform: translate(0, 0)
   .article_preview_button
     @media screen and (max-width: #{$app-media-small})
       right: auto
@@ -78,7 +78,7 @@ body
 
 .article_container
   // font-size: 1.25em // Only necessary if the base_size is different from the html font-size
-  @include transition(font-size 0.3s ease 0.3s)
+  transition: font-size 0.3s ease 0.3s
 
 .article_content
   max-width: 38em

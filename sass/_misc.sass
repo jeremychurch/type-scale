@@ -4,15 +4,14 @@
   white-space: nowrap
 
 .scale_preview_text
-  @include transition(font-size 0.3s ease 0.3s)
+  transition: font-size 0.3s ease 0.3s
 
 .scale_base_size
   background-color: $app-gray-light
 
 .overflow_gradient
   position: relative
-  overflow: hidden
-  white-space: nowrap
+  word-break: break-all
   &:after
     content: ""
     position: absolute
@@ -20,7 +19,6 @@
     top: 0
     bottom: 0
     width: 10%
-    @include background-image(linear-gradient(left, rgba(255,255,255,0), #ffffff))
 
 img
   max-width: 100%
@@ -96,7 +94,7 @@ pre
     color: #eee
 
 .box
-  @include box-sizing(border-box)
+  box-sizing: border-box
   position: relative
   margin-bottom: $app-margin-medium
   padding: $app-padding-small
@@ -107,7 +105,7 @@ pre
     margin-bottom: 0
 
 .box_gray
-  @include box-sizing(border-box)
+  box-sizing: border-box
   position: relative
   margin-bottom: $app-margin-medium
   padding: $app-padding-small
@@ -130,11 +128,11 @@ hr
   border: 1px solid lighten($app-brown,25%)
   padding: 0.6em $app-padding-small
   background-color: transparent
-  @include border-radius(5px)
+  border-radius: 5px
   cursor: pointer
   color: $app-brown
   line-height: 1.5
-  @include transition(all 0.3s ease 0s)
+  transition: all 0.3s ease 0s
   &:hover
     border-color: $app-font-color
     color: $app-font-color

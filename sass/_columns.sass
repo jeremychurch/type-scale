@@ -15,7 +15,7 @@
     clear: both
     height: 0
   > div
-    @include box-sizing(border-box)
+    box-sizing: border-box
     @media screen and (min-width: #{$app-media-xs})
       > *:first-child
         margin-top: 0
@@ -87,21 +87,21 @@
 
 @media screen and (max-width: #{$app-media-xs})
   .media_xs_cols
-    @include column-count(2)
-    @include column-gap($app-margin-medium)
+    column-count: 2
+    column-gap: $app-margin-medium
 
 @media screen and (min-width: #{$app-media-xs})
   .cols_two_flow
-    @include column-count(2)
-    @include column-gap($app-margin-medium)
+    column-count: 2
+    column-gap: $app-margin-medium
 
   .cols_three_flow
-    @include column-count(3)
-    @include column-gap($app-margin-medium)
+    column-count: 3
+    column-gap: $app-margin-medium
 
   .cols_four_flow
-    @include column-count(4)
-    @include column-gap($app-margin-small)
+    column-count: 4
+    column-gap: $app-margin-small
 
 .col_side
   float: left
