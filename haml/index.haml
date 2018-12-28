@@ -155,16 +155,21 @@
 
             %form{action: 'https://codepen.io/pen/define', method: 'POST', target: '_blank'}
 
-              %a.btn.expand_down{href: '#', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
+              %a.btn.break_small.expand_down{href: '#', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
                 %span.fa.fa-fw.fa-chevron-down
                 Grab the CSS
+
               &nbsp;
 
               %input.codepen_json{type: 'hidden', name: 'data'}
 
-              %button.codepen_btn{type: 'submit', onClick: "ga('send', 'event', 'external-link', 'click', 'codepen-edit');"}
+              %button.codepen_btn.break_small{type: 'submit', onClick: "ga('send', 'event', 'external-link', 'click', 'codepen-edit');"}
                 %span.fa.fa-fw.fa-pencil
                 Edit on CodePen
+
+              &nbsp;
+
+              <script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CKYIV2JW&placement=typescalecom" id="_carbonads_js"></script>
 
             .js_generated_css.hide
               .break_small
@@ -205,8 +210,6 @@
 
                       small, .font_small {font-size: <span class="css_small_size"></span>em;}
 
-            <script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CKYIV2JW&placement=typescalecom" id="_carbonads_js"></script>
-
     .content.container
       .table_layout.stage_footer
         .table_row
@@ -234,13 +237,6 @@
 
           .main_content
             .content_width.font_medium.break_large
-              <div class="addthis_toolbox addthis_default_style">
-              <a class="remove_border_bottom addthis_button_tweet"></a>
-              <a class="remove_border_bottom addthis_button_facebook_like" fb:like:layout="button_count"></a>
-              <a class="remove_border_bottom addthis_button_google_plusone" g:plusone:size="medium"></a>
-              </div>
-              <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5285205508e46c17"></script>
-
               %h2 How to Use
 
               %p I like to enter the base font-size for paragraph text. Then I select from the surrounding values for headers and small text.
@@ -265,6 +261,13 @@
               %h2 Background
 
               %p Tim Brown&rsquo;s <a href="https://www.modularscale.com/">Modular Scale</a> site raised awareness about type scales, helped to improve typography on the web, and it was the inspiration for this project.
+
+              <div class="addthis_toolbox addthis_default_style">
+              <a class="remove_border_bottom addthis_button_tweet"></a>
+              <a class="remove_border_bottom addthis_button_facebook_like" fb:like:layout="button_count"></a>
+              <a class="remove_border_bottom addthis_button_google_plusone" g:plusone:size="medium"></a>
+              </div>
+              <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5285205508e46c17"></script>
 
             .break_small
               %ul.inline_list
