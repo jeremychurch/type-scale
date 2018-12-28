@@ -1,31 +1,31 @@
 
-.table_index, .table_padded, .table_layout
-  display: table
-  width: 100%
+@media screen and (min-width: #{$app-media-xs})
+  .table_index, .table_padded, .table_layout
+    display: table
+    width: 100%
 
-.table_row, .table_row_header
-  display: table-row
+  .table_row, .table_row_header
+    display: table-row
 
-.table_cell
-  display: table-cell
+  .table_cell
+    display: table-cell
 
-table, .table_index
-  margin-bottom: $app-margin-medium
-  width: 100%
-  border-bottom: 1px solid $app-gray-medium
+  table, .table_index
+    margin-bottom: $app-margin-medium
+    width: 100%
+    border-bottom: 1px solid $app-gray-medium
 
-th, .table_row_header .table_cell
-  padding: 0.4em 1.231em
-  font-weight: $app-font-bold
-  color: lighten($app-brown,10%)
-  white-space: nowrap
+  th, .table_row_header .table_cell
+    padding: 0.4em 1.231em
+    font-weight: $app-font-bold
+    color: lighten($app-brown,10%)
+    white-space: nowrap
 
-td, .table_index .table_row .table_cell
-  border-top: 1px solid $app-gray-medium
-  padding: 0.6em 1.231em
+  td, .table_index .table_row .table_cell
+    border-top: 1px solid $app-gray-medium
+    padding: 0.6em 1.231em
 
-.table_index .table_row
-  @media screen and (max-width: #{$app-media-xs})
+  .table_index .table_row
     .table_cell
       display: block
       padding-top: 0
@@ -39,19 +39,19 @@ td, .table_index .table_row .table_cell
     .text_right
       text-align: left
 
-.table_padded .table_cell
-  padding: 0.3em 1.231em 0.3em 0
-  &:last-child
-    padding-right: 0
+  .table_padded .table_cell
+    padding: 0.3em 1.231em 0.3em 0
+    &:last-child
+      padding-right: 0
 
-tbody tr
-  &:nth-of-type(odd)
-    background-color: rgba(0,0,0,0.08)
+  tbody tr
+    &:nth-of-type(odd)
+      background-color: rgba(0,0,0,0.08)
 
-.table_index .table_row
-  &:nth-of-type(even)
-    background-color: rgba(0,0,0,0.08)
+  .table_index .table_row
+    &:nth-of-type(even)
+      background-color: rgba(0,0,0,0.08)
 
-.cell_collapse
-  width: 1px
-  white-space: nowrap
+  .cell_collapse
+    width: 1px
+    white-space: nowrap

@@ -9,7 +9,7 @@
 
     %link{href: "style.css", rel: "stylesheet", media: "all"}
 
-    %link{href: 'https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Libre+Baskerville:400', rel: 'stylesheet', type:'text/css'}
+    %link{href: 'https://fonts.googleapis.com/css?family=Poppins:400,400italic,700,700italic', rel: 'stylesheet', type:'text/css'}
 
     %link.webfont_url{rel: 'stylesheet', type:'text/css'}
 
@@ -33,11 +33,10 @@
 
   %body
     .container.stage
-      .cols
-        .col_side
-
-          %form
-            .box
+      .table_layout
+        .table_row
+          .sidebar.border_right
+            %form
               .field
                 %label Base Size
                 %input.base_size{type: 'text', style: 'max-width:4em;'}
@@ -45,23 +44,23 @@
                   px = <span class="base_em"></span>em
 
               .cols.cols_fields
-                .col_two_thirds
+                .js_scale_div
                   .field
                     %label Scale
                     %select.font_scale
                       %option{value: '1.067'} 1.067 &mdash; Minor Second
                       %option{value: '1.125'} 1.125 &mdash; Major Second
                       %option{value: '1.200'} 1.200 &mdash; Minor Third
-                      %option{value: '1.250'} 1.250 &mdash; Major Third
+                      %option{value: '1.250', selected: 'true'} 1.250 &mdash; Major Third
                       %option{value: '1.333'} 1.333 &mdash; Perfect Fourth
-                      %option{value: '1.414', selected: 'true'} 1.414 &mdash; Augmented Fourth
+                      %option{value: '1.414'} 1.414 &mdash; Augmented Fourth
                       %option{value: '1.500'} 1.500 &mdash; Perfect Fifth
                       %option{value: '1.618'} 1.618 &mdash; Golden Ratio
                       %option{disabled: 'true'} &mdash;&mdash;
                       %option{value: 'custom'} Custom &nbsp; &nbsp; &gt;&gt;
 
-                .col_one_third
-                  .field.font_scale_custom.hide
+                .js_custom_scale_div.hide
+                  .field.font_scale_custom
                     %label Value
                     %input{type: 'text'}
 
@@ -70,19 +69,20 @@
                 %input.preview_text{type: 'text', value: 'A Visual Type Scale'}
 
               .field
-                .table_layout
-                  .table_cell
-                    %label Google Fonts
-
-                  .table_cell.text_right
-                    %a.font_small{href: 'https://www.google.com/fonts/', target: '_blank', tabindex: '-1'} Find a Font
-                %input.web_font{type: 'text', value: "Libre+Baskerville"}
+                .float_right
+                  %a.font_small{href: 'https://www.google.com/fonts/', target: '_blank', tabindex: '-1'} Find a Font
+                %label Google Font
+                %input.web_font{type: 'text', value: "Poppins"}
 
               .cols.cols_fields
                 .col_two_thirds
                   .field
-                    %label Font Family
-                    %input.web_font_name{type: 'text', value: "'Libre Baskerville', serif"}
+                    %label Fallback
+                    %select.js_web_font_fallback
+                      %option{value: 'cursive'} cursive
+                      %option{value: 'monospace'} monospace
+                      %option{value: 'sans-serif', selected: 'true'} sans-serif
+                      %option{value: 'serif'} serif
 
                 .col_one_third
                   .field
@@ -92,185 +92,196 @@
               .field
                 %label Permalink
                 .font_small.overflow_gradient
-                  %a.param_url
-                    https://type-scale.com/?size=<span class="param_size">16</span>&amp;scale=<span class="param_scale">1.414</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Libre+Baskerville</span>&amp;font-family=<span class="param_css">'Libre Baskerville', serif</span>&amp;font-weight=<span class="param_weight">400</span>&amp;font-family-headers=<span class="param_font_headers"></span>&amp;font-weight-headers=<span class="param_weight_headers">inherit</span>&amp;background-color=<span class="param_background_color">white</span>&amp;font-color=<span class="param_font_color">%23333</span>
+                  %a.param_url https://type-scale.com/?size=<span class="param_size">16</span>&amp;scale=<span class="param_scale">1.250</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Poppins</span>&amp;fallback=<span class="param_fallback">sans-serif</span>&amp;font-weight=<span class="param_weight">400</span>&amp;font-family-headers=<span class="param_font_headers"></span>&amp;font-weight-headers=<span class="param_weight_headers">inherit</span>&amp;background-color=<span class="param_background_color">white</span>&amp;font-color=<span class="param_font_color">%23333</span>
 
-          <script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CKYIV2JW&placement=typescalecom" id="_carbonads_js"></script>
+          .main_content
+            .table_padded
+              .table_row
+                .table_cell.text_right.media_xs_text_left.cell_collapse
+                  %span.scale_high_label.text_muted.font_small
+                .table_cell.scale_webfont
+                  %h1
+                    %span.scale_high.scale_preview_text A Visual Type Scale
 
-        .col_main{style: 'overflow:hidden;'}
-          .table_padded
-            .table_row
-              .table_cell.text_right.cell_collapse
-                %span.scale_high_label.text_muted.font_small
-              .table_cell.scale_webfont
-                %h1
+              .table_row
+                .table_cell.text_right.media_xs_text_left.cell_collapse
+                  %span.scale_high_label.text_muted.font_small
+                .table_cell.scale_webfont
                   %span.scale_high.scale_preview_text A Visual Type Scale
 
-            .table_row
-              .table_cell.text_right.cell_collapse
-                %span.scale_high_label.text_muted.font_small
-              .table_cell.scale_webfont
-                %span.scale_high.scale_preview_text A Visual Type Scale
+              .table_row
+                .table_cell.text_right.media_xs_text_left.cell_collapse
+                  %span.scale_high_label.text_muted.font_small
+                .table_cell.scale_webfont
+                  %span.scale_high.scale_preview_text A Visual Type Scale
 
-            .table_row
-              .table_cell.text_right.cell_collapse
-                %span.scale_high_label.text_muted.font_small
-              .table_cell.scale_webfont
-                %span.scale_high.scale_preview_text A Visual Type Scale
+              .table_row
+                .table_cell.text_right.media_xs_text_left.cell_collapse
+                  %span.scale_high_label.text_muted.font_small
+                .table_cell.scale_webfont
+                  %span.scale_high.scale_preview_text A Visual Type Scale
 
-            .table_row
-              .table_cell.text_right.cell_collapse
-                %span.scale_high_label.text_muted.font_small
-              .table_cell.scale_webfont
-                %span.scale_high.scale_preview_text A Visual Type Scale
+              .table_row
+                .table_cell.text_right.media_xs_text_left.cell_collapse
+                  %span.scale_high_label.text_muted.font_small
+                .table_cell.scale_webfont
+                  %span.scale_high.scale_preview_text A Visual Type Scale
 
-            .table_row.scale_base_size
-              .table_cell.text_right.cell_collapse
-                %span.scale_high_label.text_muted.font_small
-              .table_cell.scale_webfont
-                %span.scale_high.scale_preview_text A Visual Type Scale
+              .table_row.scale_base_size
+                .table_cell.text_right.media_xs_text_left.cell_collapse
+                  %span.scale_high_label.text_muted.font_small
+                .table_cell.scale_webfont
+                  %span.scale_high.scale_preview_text A Visual Type Scale
 
-            .table_row
-              .table_cell.text_right.cell_collapse
-                %span.scale_low_label.text_muted.font_small
-              .table_cell.scale_webfont
-                %span.scale_low.scale_preview_text A Visual Type Scale
+              .table_row
+                .table_cell.text_right.media_xs_text_left.cell_collapse
+                  %span.scale_low_label.text_muted.font_small
+                .table_cell.scale_webfont
+                  %span.scale_low.scale_preview_text A Visual Type Scale
 
-            .table_row
-              .table_cell.text_right.cell_collapse
-                %span.scale_low_label.text_muted.font_small
-              .table_cell.scale_webfont
-                %span.scale_low.scale_preview_text A Visual Type Scale
+              .table_row
+                .table_cell.text_right.media_xs_text_left.cell_collapse
+                  %span.scale_low_label.text_muted.font_small
+                .table_cell.scale_webfont
+                  %span.scale_low.scale_preview_text A Visual Type Scale
 
-            .table_row
-              .table_cell.text_right.cell_collapse
-                %span.scale_low_label.text_muted.font_small
-              .table_cell.scale_webfont
-                %span.scale_low.scale_preview_text A Visual Type Scale
+              .table_row
+                .table_cell.text_right.media_xs_text_left.cell_collapse
+                  %span.scale_low_label.text_muted.font_small
+                .table_cell.scale_webfont
+                  %span.scale_low.scale_preview_text A Visual Type Scale
 
-          %hr
+            %hr
 
-          %form{action: 'https://codepen.io/pen/define', method: 'POST', target: '_blank'}
+            %form{action: 'https://codepen.io/pen/define', method: 'POST', target: '_blank'}
 
-            %a.btn.font_small.expand_down{href: '#', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
-              %span.fa.fa-fw.fa-chevron-down
-              Grab the CSS
-            &nbsp;
+              %a.btn.expand_down{href: '#', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
+                %span.fa.fa-fw.fa-chevron-down
+                Grab the CSS
+              &nbsp;
 
-            %input.codepen_json{type: 'hidden', name: 'data'}
+              %input.codepen_json{type: 'hidden', name: 'data'}
 
-            %input.codepen_btn.font_small{type: 'submit', value: 'Edit on CodePen', onClick: "ga('send', 'event', 'external-link', 'click', 'codepen-edit');"}
+              %button.codepen_btn{type: 'submit', onClick: "ga('send', 'event', 'external-link', 'click', 'codepen-edit');"}
+                %span.fa.fa-fw.fa-pencil
+                Edit on CodePen
 
-          .js_generated_css.hide
-            .break_small
-            .box.content_width
-              %pre.codepen_able.font_small{data: {'type' => 'css'}, contenteditable: 'true', onClick: "document.execCommand('selectAll',false,null); ga('send', 'event', 'select', 'click', 'css-code');"}
-                %code
-                  :preserve
-                    html {font-size: <span class="css_font_size"></span>em;}
+            .js_generated_css.hide
+              .break_small
+              .box.content_width
+                %pre.codepen_able{data: {'type' => 'css'}, contenteditable: 'true', onClick: "document.execCommand('selectAll',false,null); ga('send', 'event', 'select', 'click', 'css-code');"}
+                  %code
+                    :preserve
+                      html {font-size: <span class="css_font_size"></span>em;}
 
-                    body {
-                      background-color: <span class="css_background_color">white</span>;
-                      font-family: <span class="css_font_family">'Libre Baskerville', serif</span>;
-                      font-weight: <span class="css_weight">400</span>;
-                      line-height: 1.45;
-                      color: <span class="css_color">#333</span>;
-                    }
+                      body {
+                        background-color: <span class="css_background_color">white</span>;
+                        font-family: <span class="css_font_family">'Poppins', sans-serif</span>;
+                        font-weight: <span class="css_weight">400</span>;
+                        line-height: 1.5;
+                        color: <span class="css_color">#333</span>;
+                      }
 
-                    p {margin-bottom: 1.3em;}
+                      p {margin-bottom: 1.250em;}
 
-                    h1, h2, h3, h4 {
-                      margin: 1.414em 0 0.5em;<span class="css_font_headers"></span>
-                      font-weight: <span class="css_weight_headers">inherit</span>;
-                      line-height: 1.2;
-                    }
+                      h1, h2, h3, h4, h5 {
+                        margin: 1.250em 0 0.64em;<span class="css_font_headers"></span>
+                        font-weight: <span class="css_weight_headers">inherit</span>;
+                        line-height: 1.2;
+                      }
 
-                    h1 {
-                      margin-top: 0;
-                      font-size: <span class="css_header_size"></span>em;
-                    }
+                      h1 {
+                        margin-top: 0;
+                        font-size: <span class="css_header_size"></span>em;
+                      }
 
-                    h2 {font-size: <span class="css_header_size"></span>em;}
+                      h2 {font-size: <span class="css_header_size"></span>em;}
 
-                    h3 {font-size: <span class="css_header_size"></span>em;}
+                      h3 {font-size: <span class="css_header_size"></span>em;}
 
-                    h4 {font-size: <span class="css_header_size"></span>em;}
+                      h4 {font-size: <span class="css_header_size"></span>em;}
 
-                    small, .font_small {font-size: <span class="css_small_size"></span>em;}
+                      h5 {font-size: <span class="css_header_size"></span>em;}
+
+                      small, .font_small {font-size: <span class="css_small_size"></span>em;}
+
+            <script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CKYIV2JW&placement=typescalecom" id="_carbonads_js"></script>
 
     .content.container
-      .cols.stage_footer
-        .col_side.text_right.media_xs_hide
-          %ul.inline_list
-            %li
-              %a.remove_border_bottom{href: 'https://twitter.com/jeremybchurch'}
-                %span.fa.fa-twitter.fa-lg
-            %li
-              %a.remove_border_bottom{href: 'https://j.eremy.net/'}
-                %span.fa.fa-globe.fa-lg
-            %li
-              %a.remove_border_bottom{href: 'https://github.com/jeremychurch/type-scale'}
-                %span.fa.fa-github-alt.fa-lg
-
-        .col_main
-          A type tool by
-          %ul.inline_list
-            %li
-              %a{href: 'https://twitter.com/jeremybchurch'} Jeremy Church
-
-      .cols
-        .col_side.media_xs_hide &nbsp;
-
-        .col_main
-          .content_width.font_medium.break_large
-            <div class="addthis_toolbox addthis_default_style">
-            <a class="remove_border_bottom addthis_button_tweet"></a>
-            <a class="remove_border_bottom addthis_button_facebook_like" fb:like:layout="button_count"></a>
-            <a class="remove_border_bottom addthis_button_google_plusone" g:plusone:size="medium"></a>
-            </div>
-            <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5285205508e46c17"></script>
-
-            %h2 How to Use
-
-            %p I like to enter the base font-size for paragraph text. Then I select from the surrounding values for headers and small text.
-
-            %p There are no rules. Just experiment and have fun. Try using the values for line-height, margins or whatever, and see what works.
-
-            %h2 EM vs. REM Values
-
-            %p The rem value is the same as the em value displayed above. Both units are scalable; the only difference between the two is that em is proportionate to its nearest parent that has a font-size, whereas rem is always relative to the html font-size. You can read more about these units from an article I wrote on the subject, <a href='https://j.eremy.net/confused-about-rem-and-em/'>Confused About REM and EM?</a>
-
-            %p Also, <a href='https://github.com/jeremychurch/type-scale/issues/9#issuecomment-279762522'>here&rsquo;s a response</a> I wrote to a GitHub request. There are a few examples there as well.
-
-            %h2 Additional Resources
-
-            %ul
-              %li <a href='http://pxtoem.com/'>pxtoem.com - PX to EM conversion made simple</a>
-
-              %li <a href='https://www.fontsquirrel.com/'>fontsquirrel.com - Free fonts &amp; webfont generator</a>
-
-              %li <a href='https://j.eremy.net/confused-about-rem-and-em/'>Confused About REM and EM?</a>
-
-            %h2 Background
-
-            %p Tim Brown&rsquo;s <a href="https://www.modularscale.com/">Modular Scale</a> site raised awareness about type scales, helped to improve typography on the web, and it was the inspiration for this project.
-
-          .break_small
+      .table_layout.stage_footer
+        .table_row
+          .sidebar.text_right.media_xs_hide
             %ul.inline_list
               %li
                 %a.remove_border_bottom{href: 'https://twitter.com/jeremybchurch'}
-                  %span.fa.fa-twitter.fa-2x
+                  %span.fa.fa-twitter.fa-lg
               %li
                 %a.remove_border_bottom{href: 'https://j.eremy.net/'}
-                  %span.fa.fa-globe.fa-2x
+                  %span.fa.fa-globe.fa-lg
               %li
                 %a.remove_border_bottom{href: 'https://github.com/jeremychurch/type-scale'}
-                  %span.fa.fa-github-alt.fa-2x
+                  %span.fa.fa-github-alt.fa-lg
 
-          %p.font_small
-            Created by <a href="https://j.eremy.net/">Jeremy Church</a>
-            %br
-            Project available on <a href="https://github.com/jeremychurch/type-scale">GitHub</a>. Code licensed under <a href="https://opensource.org/licenses/mit-license.html">MIT License</a>.
+          .main_content
+            A type tool by
+            %ul.inline_list
+              %li
+                %a{href: 'https://twitter.com/jeremybchurch'} Jeremy Church
+
+      .table_layout
+        .table_row
+          .sidebar.media_xs_hide &nbsp;
+
+          .main_content
+            .content_width.font_medium.break_large
+              <div class="addthis_toolbox addthis_default_style">
+              <a class="remove_border_bottom addthis_button_tweet"></a>
+              <a class="remove_border_bottom addthis_button_facebook_like" fb:like:layout="button_count"></a>
+              <a class="remove_border_bottom addthis_button_google_plusone" g:plusone:size="medium"></a>
+              </div>
+              <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5285205508e46c17"></script>
+
+              %h2 How to Use
+
+              %p I like to enter the base font-size for paragraph text. Then I select from the surrounding values for headers and small text.
+
+              %p There are no rules. Just experiment and have fun. Try using the values for line-height, margins or whatever, and see what works.
+
+              %h2 EM vs. REM Values
+
+              %p The rem value is the same as the em value displayed above. Both units are scalable; the only difference between the two is that em is proportionate to its nearest parent that has a font-size, whereas rem is always relative to the &lt;html&gt; font-size. You can read more about these units from an article I wrote on the subject, <a href='https://j.eremy.net/confused-about-rem-and-em/'>Confused About REM and EM?</a>
+
+              %p Also, <a href='https://github.com/jeremychurch/type-scale/issues/9#issuecomment-279762522'>here&rsquo;s a response</a> I wrote to a GitHub request. There are a few examples there as well.
+
+              %h2 Additional Resources
+
+              %ul
+                %li <a href='http://pxtoem.com/'>pxtoem.com - PX to EM conversion made simple</a>
+
+                %li <a href='https://www.fontsquirrel.com/'>fontsquirrel.com - Free fonts &amp; webfont generator</a>
+
+                %li <a href='https://j.eremy.net/confused-about-rem-and-em/'>Confused About REM and EM?</a>
+
+              %h2 Background
+
+              %p Tim Brown&rsquo;s <a href="https://www.modularscale.com/">Modular Scale</a> site raised awareness about type scales, helped to improve typography on the web, and it was the inspiration for this project.
+
+            .break_small
+              %ul.inline_list
+                %li
+                  %a.remove_border_bottom{href: 'https://twitter.com/jeremybchurch'}
+                    %span.fa.fa-twitter.fa-2x
+                %li
+                  %a.remove_border_bottom{href: 'https://j.eremy.net/'}
+                    %span.fa.fa-globe.fa-2x
+                %li
+                  %a.remove_border_bottom{href: 'https://github.com/jeremychurch/type-scale'}
+                    %span.fa.fa-github-alt.fa-2x
+
+            %p.font_small
+              Created by <a href="https://j.eremy.net/">Jeremy Church</a>
+              %br
+              Project available on <a href="https://github.com/jeremychurch/type-scale">GitHub</a>. Code licensed under <a href="https://opensource.org/licenses/mit-license.html">MIT License</a>.
 
     .article_preview
       .article_preview_button.fa.fa-chevron-left.fa-lg.fa-fw{onClick: "ga('send', 'event', 'toggle', 'click', 'article-preview');"}
@@ -327,6 +338,12 @@
             %p His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
 
             %h4.article_header One Morning, When Gregor Samsa Woke
+
+            %p From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
+
+            %p His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
+
+            %h5.article_header One Morning, When Gregor Samsa Woke
 
             %p From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
 
