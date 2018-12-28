@@ -76,13 +76,23 @@ $(document).ready(function() {
 
   function setScale() {
     if (getQueryVariable('scale') === false) {
-      scaleRatio = 1.414;
+      scaleRatio = 1.250;
     }
     else {
       scaleRatio = getQueryVariable('scale');
-      $('.font_scale').val(getQueryVariable('scale'));
-      $('.font_scale_custom input').val(getQueryVariable('scale'));
-      $('.param_scale').text(getQueryVariable('scale'));
+      $('.font_scale').val(scaleRatio);
+
+      if (!$('.font_scale').val()) {
+        $('.js_scale_div').addClass('col_two_thirds');
+        $('.js_custom_scale_div').removeClass('hide').addClass('col_one_third');
+        $('.font_scale').val('custom');
+        $('.font_scale_custom input').val(scaleRatio);
+      }
+      else {
+        $('.font_scale').val(scaleRatio);
+      };
+
+      $('.param_scale').text(scaleRatio);
     };
     scaleCalc();
   };
@@ -90,7 +100,8 @@ $(document).ready(function() {
 
   $('.font_scale').bind("change paste keyup", function() {
     if ($(this).val() === 'custom') {
-      $('.font_scale_custom').removeClass('hide');
+      $('.js_scale_div').addClass('col_two_thirds');
+      $('.js_custom_scale_div').removeClass('hide').addClass('col_one_third');
       $('.font_scale_custom input')
         .val(scaleRatio)
         .focus()
@@ -98,7 +109,8 @@ $(document).ready(function() {
     }
     else {
       scaleSelect();
-      $('.font_scale_custom').addClass('hide');
+      $('.js_scale_div').removeClass('col_two_thirds');
+      $('.js_custom_scale_div').addClass('hide');
       $('.param_scale').text($(this).val());
     };
   });
@@ -143,27 +155,33 @@ $(document).ready(function() {
   setTag();
 
   $('.web_font').bind("change paste keyup", function() {
-    $('.webfont_url').attr('href', 'https://fonts.googleapis.com/css?family=' + $(this).val());
+    webFont = $(this).val().replace(/\s/g, '+');
+    $(this).val(webFont);
+    $('.webfont_url').attr('href', 'https://fonts.googleapis.com/css?family=' + webFont + ':' + $('.i_weight').val());
     $('.param_font').text(encodeURIComponent($(this).val()));
+    webFontFamily = "'" + $(this).val().replace(/\+/g, ' ') + "', " + $('.js_web_font_fallback').val();
+    $('.scale_webfont, .article_content').attr('style', "font-family:" + webFontFamily);
+    $('.css_font_family').text(webFontFamily);
   });
 
 
 
-  function setCss() {
-    if (getQueryVariable('font-family') !== false) {
-      $('.web_font_name').val(getQueryVariable('font-family'));
-      $('.scale_webfont, .article_content').attr('style', "font-family:" + getQueryVariable('font-family'));
-      $('.param_css').text(getQueryVariable('font-family'));
-      $('.css_font_family').text(getQueryVariable('font-family'));
+  function setFallback() {
+    if (getQueryVariable('fallback') !== false) {
+      $('.js_web_font_fallback').val(getQueryVariable('fallback'));
+      webFontFamily = "'" + $('.web_font').val().replace(/\+/g, ' ') + "', " + getQueryVariable('fallback');
+      $('.scale_webfont, .article_content').attr('style', "font-family:" + webFontFamily);
+      $('.param_fallback').text(getQueryVariable('fallback'));
+      $('.css_font_family').text(webFontFamily);
     };
   };
-  setCss();
+  setFallback();
 
-  $('.web_font_name').bind("change paste keyup", function() {
-    webFontName = $(this).val();
-    $('.scale_webfont, .article_content').attr('style', "font-family:" + webFontName);
-    $('.param_css').text(encodeURIComponent($(this).val()));
-    $('.css_font_family').text($(this).val());
+  $('.js_web_font_fallback').bind("change paste keyup", function() {
+    webFontFamily = "'" + $('.web_font').val().replace(/\+/g, ' ') + "', " + $(this).val();
+    $('.scale_webfont, .article_content').attr('style', "font-family:" + webFontFamily);
+    $('.param_fallback').text(encodeURIComponent($(this).val()));
+    $('.css_font_family').text(webFontFamily);
   });
 
 
@@ -179,6 +197,7 @@ $(document).ready(function() {
   setFontWeight();
 
   $('.i_weight').bind("change paste keyup", function() {
+    $('.webfont_url').attr('href', 'https://fonts.googleapis.com/css?family=' + $('.web_font').val() + ':' + $(this).val());
     $('.style_weight').html('.scale_webfont, .article_container {font-weight:' + $(this).val() + ';}');
     $('.param_weight').text($(this).val());
     $('.css_weight').text($(this).val());
@@ -280,7 +299,7 @@ $(document).ready(function() {
       result = 1;
 
       $($('.scale_high_label').get().reverse()).each(function(index) {
-        $(this).text(Math.round(result*1000)/1000 + 'em');
+        $(this).text(Math.round(result*1000)/1000 + 'em (' + ((baseSize*16)*result).toFixed(2) + 'px)');
         result = a*b;
         a = result;
       });
@@ -330,7 +349,7 @@ $(document).ready(function() {
       $('.scale_low_label').each(function(index) {
         result = a/b;
         a = result;
-        $(this).text(Math.round(result*1000)/1000 + 'em');
+        $(this).text(Math.round(result*1000)/1000 + 'em (' + ((baseSize*16)*result).toFixed(2) + 'px)');
       });
     };
 

@@ -103,16 +103,20 @@
     column-count: 4
     column-gap: $app-margin-small
 
-.col_side
-  float: left
-  width: 25%
-  padding-right: 2.077em
-  @media screen and (max-width: #{$app-media-small})
-    width: 36%
+.sidebar
+  display: block
+  overflow: hidden
+  @media screen and (min-width: #{$app-media-xs})
+    display: table-cell
+    vertical-align: top
+    width: 18em
+    max-width: 18em
+    padding-right: 2em
 
-.col_main
-  float: left
-  width: 75%
-  padding-left: 1em
-  @media screen and (max-width: #{$app-media-small})
-    width: 64%
+.main_content
+  display: block
+  overflow: hidden
+  @media screen and (min-width: #{$app-media-xs})
+    display: table-cell
+    vertical-align: top
+    padding-left: 2em

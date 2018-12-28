@@ -7,7 +7,7 @@
 <meta content='Preview and choose the right type scale for your project. Experiment with font size, scale and different webfonts.' name='description'>
 <meta content='font, size, typography, typographic, typeface, em, ems, px, scale, calculate, calculator, webfont, edit, update, modular scale, preview' name='keywords'>
 <link href='style.css' media='all' rel='stylesheet'>
-<link href='https://fonts.googleapis.com/css?family=Poppins:400,400italic,700,700italic|Libre+Baskerville:400' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Poppins:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <link class='webfont_url' rel='stylesheet' type='text/css'>
 <link href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
 <script>
@@ -26,10 +26,10 @@ ga('send', 'pageview');
 </head>
 <body>
 <div class='container stage'>
-<div class='cols'>
-<div class='col_side'>
+<div class='table_layout'>
+<div class='table_row'>
+<div class='sidebar border_right'>
 <form>
-<div class='box'>
 <div class='field'>
 <label>Base Size</label>
 <input class='base_size' style='max-width:4em;' type='text'>
@@ -38,16 +38,16 @@ px = <span class="base_em"></span>em
 </span>
 </div>
 <div class='cols cols_fields'>
-<div class='col_two_thirds'>
+<div class='js_scale_div'>
 <div class='field'>
 <label>Scale</label>
 <select class='font_scale'>
 <option value='1.067'>1.067 &mdash; Minor Second</option>
 <option value='1.125'>1.125 &mdash; Major Second</option>
 <option value='1.200'>1.200 &mdash; Minor Third</option>
-<option value='1.250'>1.250 &mdash; Major Third</option>
+<option selected='true' value='1.250'>1.250 &mdash; Major Third</option>
 <option value='1.333'>1.333 &mdash; Perfect Fourth</option>
-<option selected='true' value='1.414'>1.414 &mdash; Augmented Fourth</option>
+<option value='1.414'>1.414 &mdash; Augmented Fourth</option>
 <option value='1.500'>1.500 &mdash; Perfect Fifth</option>
 <option value='1.618'>1.618 &mdash; Golden Ratio</option>
 <option disabled='true'>&mdash;&mdash;</option>
@@ -55,8 +55,8 @@ px = <span class="base_em"></span>em
 </select>
 </div>
 </div>
-<div class='col_one_third'>
-<div class='field font_scale_custom hide'>
+<div class='js_custom_scale_div hide'>
+<div class='field font_scale_custom'>
 <label>Value</label>
 <input type='text'>
 </div>
@@ -67,21 +67,22 @@ px = <span class="base_em"></span>em
 <input class='preview_text' type='text' value='A Visual Type Scale'>
 </div>
 <div class='field'>
-<div class='table_layout'>
-<div class='table_cell'>
-<label>Google Font</label>
-</div>
-<div class='table_cell text_right'>
+<div class='float_right'>
 <a class='font_small' href='https://www.google.com/fonts/' tabindex='-1' target='_blank'>Find a Font</a>
 </div>
-</div>
-<input class='web_font' type='text' value='Libre+Baskerville'>
+<label>Google Font</label>
+<input class='web_font' type='text' value='Poppins'>
 </div>
 <div class='cols cols_fields'>
 <div class='col_two_thirds'>
 <div class='field'>
-<label>Font Family</label>
-<input class='web_font_name' type='text' value='&#39;Libre Baskerville&#39;, serif'>
+<label>Fallback</label>
+<select class='js_web_font_fallback'>
+<option value='cursive'>cursive</option>
+<option value='monospace'>monospace</option>
+<option selected='true' value='sans-serif'>sans-serif</option>
+<option value='serif'>serif</option>
+</select>
 </div>
 </div>
 <div class='col_one_third'>
@@ -94,19 +95,15 @@ px = <span class="base_em"></span>em
 <div class='field'>
 <label>Permalink</label>
 <div class='font_small overflow_gradient'>
-<a class='param_url'>
-https://type-scale.com/?size=<span class="param_size">16</span>&amp;scale=<span class="param_scale">1.414</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Libre+Baskerville</span>&amp;font-family=<span class="param_css">'Libre Baskerville', serif</span>&amp;font-weight=<span class="param_weight">400</span>&amp;font-family-headers=<span class="param_font_headers"></span>&amp;font-weight-headers=<span class="param_weight_headers">inherit</span>&amp;background-color=<span class="param_background_color">white</span>&amp;font-color=<span class="param_font_color">%23333</span>
-</a>
-</div>
+<a class='param_url'>https://type-scale.com/?size=<span class="param_size">16</span>&amp;scale=<span class="param_scale">1.250</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Poppins</span>&amp;fallback=<span class="param_fallback">sans-serif</span>&amp;font-weight=<span class="param_weight">400</span>&amp;font-family-headers=<span class="param_font_headers"></span>&amp;font-weight-headers=<span class="param_weight_headers">inherit</span>&amp;background-color=<span class="param_background_color">white</span>&amp;font-color=<span class="param_font_color">%23333</span></a>
 </div>
 </div>
 </form>
-<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CKYIV2JW&placement=typescalecom" id="_carbonads_js"></script>
 </div>
-<div class='col_main' style='overflow:hidden;'>
+<div class='main_content'>
 <div class='table_padded'>
 <div class='table_row'>
-<div class='table_cell text_right cell_collapse'>
+<div class='table_cell text_right media_xs_text_left cell_collapse'>
 <span class='scale_high_label text_muted font_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
@@ -116,7 +113,7 @@ https://type-scale.com/?size=<span class="param_size">16</span>&amp;scale=<span 
 </div>
 </div>
 <div class='table_row'>
-<div class='table_cell text_right cell_collapse'>
+<div class='table_cell text_right media_xs_text_left cell_collapse'>
 <span class='scale_high_label text_muted font_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
@@ -124,7 +121,7 @@ https://type-scale.com/?size=<span class="param_size">16</span>&amp;scale=<span 
 </div>
 </div>
 <div class='table_row'>
-<div class='table_cell text_right cell_collapse'>
+<div class='table_cell text_right media_xs_text_left cell_collapse'>
 <span class='scale_high_label text_muted font_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
@@ -132,7 +129,15 @@ https://type-scale.com/?size=<span class="param_size">16</span>&amp;scale=<span 
 </div>
 </div>
 <div class='table_row'>
-<div class='table_cell text_right cell_collapse'>
+<div class='table_cell text_right media_xs_text_left cell_collapse'>
+<span class='scale_high_label text_muted font_small'></span>
+</div>
+<div class='table_cell scale_webfont'>
+<span class='scale_high scale_preview_text'>A Visual Type Scale</span>
+</div>
+</div>
+<div class='table_row'>
+<div class='table_cell text_right media_xs_text_left cell_collapse'>
 <span class='scale_high_label text_muted font_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
@@ -140,7 +145,7 @@ https://type-scale.com/?size=<span class="param_size">16</span>&amp;scale=<span 
 </div>
 </div>
 <div class='table_row scale_base_size'>
-<div class='table_cell text_right cell_collapse'>
+<div class='table_cell text_right media_xs_text_left cell_collapse'>
 <span class='scale_high_label text_muted font_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
@@ -148,7 +153,7 @@ https://type-scale.com/?size=<span class="param_size">16</span>&amp;scale=<span 
 </div>
 </div>
 <div class='table_row'>
-<div class='table_cell text_right cell_collapse'>
+<div class='table_cell text_right media_xs_text_left cell_collapse'>
 <span class='scale_low_label text_muted font_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
@@ -156,7 +161,7 @@ https://type-scale.com/?size=<span class="param_size">16</span>&amp;scale=<span 
 </div>
 </div>
 <div class='table_row'>
-<div class='table_cell text_right cell_collapse'>
+<div class='table_cell text_right media_xs_text_left cell_collapse'>
 <span class='scale_low_label text_muted font_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
@@ -164,7 +169,7 @@ https://type-scale.com/?size=<span class="param_size">16</span>&amp;scale=<span 
 </div>
 </div>
 <div class='table_row'>
-<div class='table_cell text_right cell_collapse'>
+<div class='table_cell text_right media_xs_text_left cell_collapse'>
 <span class='scale_low_label text_muted font_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
@@ -174,26 +179,32 @@ https://type-scale.com/?size=<span class="param_size">16</span>&amp;scale=<span 
 </div>
 <hr>
 <form action='https://codepen.io/pen/define' method='POST' target='_blank'>
-<a class='btn font_small expand_down' data-toggle='.js_generated_css' href='#' onClick='ga(&#39;send&#39;, &#39;event&#39;, &#39;toggle&#39;, &#39;click&#39;, &#39;css-button&#39;);'>
+<a class='btn expand_down' data-toggle='.js_generated_css' href='#' onClick='ga(&#39;send&#39;, &#39;event&#39;, &#39;toggle&#39;, &#39;click&#39;, &#39;css-button&#39;);'>
 <span class='fa fa-fw fa-chevron-down'></span>
 Grab the CSS
 </a>
 &nbsp;
 <input class='codepen_json' name='data' type='hidden'>
-<input class='codepen_btn font_small' onClick='ga(&#39;send&#39;, &#39;event&#39;, &#39;external-link&#39;, &#39;click&#39;, &#39;codepen-edit&#39;);' type='submit' value='Edit on CodePen'>
+<button class='codepen_btn' onClick='ga(&#39;send&#39;, &#39;event&#39;, &#39;external-link&#39;, &#39;click&#39;, &#39;codepen-edit&#39;);' type='submit'>
+<span class='fa fa-fw fa-pencil'></span>
+Edit on CodePen
+</button>
 </form>
 <div class='js_generated_css hide'>
 <div class='break_small'></div>
 <div class='box content_width'>
-<pre class='codepen_able font_small' contenteditable='true' data-type='css' onClick='document.execCommand(&#39;selectAll&#39;,false,null); ga(&#39;send&#39;, &#39;event&#39;, &#39;select&#39;, &#39;click&#39;, &#39;css-code&#39;);'><code>html {font-size: <span class="css_font_size"></span>em;}&#x000A;&#x000A;body {&#x000A;  background-color: <span class="css_background_color">white</span>;&#x000A;  font-family: <span class="css_font_family">'Libre Baskerville', serif</span>;&#x000A;  font-weight: <span class="css_weight">400</span>;&#x000A;  line-height: 1.45;&#x000A;  color: <span class="css_color">#333</span>;&#x000A;}&#x000A;&#x000A;p {margin-bottom: 1.3em;}&#x000A;&#x000A;h1, h2, h3, h4 {&#x000A;  margin: 1.414em 0 0.5em;<span class="css_font_headers"></span>&#x000A;  font-weight: <span class="css_weight_headers">inherit</span>;&#x000A;  line-height: 1.2;&#x000A;}&#x000A;&#x000A;h1 {&#x000A;  margin-top: 0;&#x000A;  font-size: <span class="css_header_size"></span>em;&#x000A;}&#x000A;&#x000A;h2 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h3 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h4 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;small, .font_small {font-size: <span class="css_small_size"></span>em;}&#x000A;</code></pre>
+<pre class='codepen_able' contenteditable='true' data-type='css' onClick='document.execCommand(&#39;selectAll&#39;,false,null); ga(&#39;send&#39;, &#39;event&#39;, &#39;select&#39;, &#39;click&#39;, &#39;css-code&#39;);'><code>html {font-size: <span class="css_font_size"></span>em;}&#x000A;&#x000A;body {&#x000A;  background-color: <span class="css_background_color">white</span>;&#x000A;  font-family: <span class="css_font_family">'Poppins', sans-serif</span>;&#x000A;  font-weight: <span class="css_weight">400</span>;&#x000A;  line-height: 1.5;&#x000A;  color: <span class="css_color">#333</span>;&#x000A;}&#x000A;&#x000A;p {margin-bottom: 1.250em;}&#x000A;&#x000A;h1, h2, h3, h4, h5 {&#x000A;  margin: 1.250em 0 0.64em;<span class="css_font_headers"></span>&#x000A;  font-weight: <span class="css_weight_headers">inherit</span>;&#x000A;  line-height: 1.2;&#x000A;}&#x000A;&#x000A;h1 {&#x000A;  margin-top: 0;&#x000A;  font-size: <span class="css_header_size"></span>em;&#x000A;}&#x000A;&#x000A;h2 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h3 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h4 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;h5 {font-size: <span class="css_header_size"></span>em;}&#x000A;&#x000A;small, .font_small {font-size: <span class="css_small_size"></span>em;}&#x000A;</code></pre>
 </div>
+</div>
+<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CKYIV2JW&placement=typescalecom" id="_carbonads_js"></script>
 </div>
 </div>
 </div>
 </div>
 <div class='content container'>
-<div class='cols stage_footer'>
-<div class='col_side text_right media_xs_hide'>
+<div class='table_layout stage_footer'>
+<div class='table_row'>
+<div class='sidebar text_right media_xs_hide'>
 <ul class='inline_list'>
 <li>
 <a class='remove_border_bottom' href='https://twitter.com/jeremybchurch'>
@@ -212,7 +223,7 @@ Grab the CSS
 </li>
 </ul>
 </div>
-<div class='col_main'>
+<div class='main_content'>
 A type tool by
 <ul class='inline_list'>
 <li>
@@ -221,9 +232,11 @@ A type tool by
 </ul>
 </div>
 </div>
-<div class='cols'>
-<div class='col_side media_xs_hide'>&nbsp;</div>
-<div class='col_main'>
+</div>
+<div class='table_layout'>
+<div class='table_row'>
+<div class='sidebar media_xs_hide'>&nbsp;</div>
+<div class='main_content'>
 <div class='content_width font_medium break_large'>
 <div class="addthis_toolbox addthis_default_style">
 <a class="remove_border_bottom addthis_button_tweet"></a>
@@ -235,7 +248,7 @@ A type tool by
 <p>I like to enter the base font-size for paragraph text. Then I select from the surrounding values for headers and small text.</p>
 <p>There are no rules. Just experiment and have fun. Try using the values for line-height, margins or whatever, and see what works.</p>
 <h2>EM vs. REM Values</h2>
-<p>The rem value is the same as the em value displayed above. Both units are scalable; the only difference between the two is that em is proportionate to its nearest parent that has a font-size, whereas rem is always relative to the html font-size. You can read more about these units from an article I wrote on the subject, <a href='https://j.eremy.net/confused-about-rem-and-em/'>Confused About REM and EM?</a></p>
+<p>The rem value is the same as the em value displayed above. Both units are scalable; the only difference between the two is that em is proportionate to its nearest parent that has a font-size, whereas rem is always relative to the &lt;html&gt; font-size. You can read more about these units from an article I wrote on the subject, <a href='https://j.eremy.net/confused-about-rem-and-em/'>Confused About REM and EM?</a></p>
 <p>Also, <a href='https://github.com/jeremychurch/type-scale/issues/9#issuecomment-279762522'>here&rsquo;s a response</a> I wrote to a GitHub request. There are a few examples there as well.</p>
 <h2>Additional Resources</h2>
 <ul>
@@ -270,6 +283,7 @@ Created by <a href="https://j.eremy.net/">Jeremy Church</a>
 <br>
 Project available on <a href="https://github.com/jeremychurch/type-scale">GitHub</a>. Code licensed under <a href="https://opensource.org/licenses/mit-license.html">MIT License</a>.
 </p>
+</div>
 </div>
 </div>
 </div>
@@ -326,6 +340,9 @@ More Options
 <p>From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
 <p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
 <h4 class='article_header'>One Morning, When Gregor Samsa Woke</h4>
+<p>From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
+<p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
+<h5 class='article_header'>One Morning, When Gregor Samsa Woke</h5>
 <p>From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
 <p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
 <p class='font_small text_muted'>
