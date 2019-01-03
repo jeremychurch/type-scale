@@ -25,11 +25,11 @@
     ga('send', 'pageview');
     </script>
 
-    %style.style_weight{type: "text/css"}
-    %style.style_font_headers{type: "text/css"}
-    %style.style_weight_headers{type: "text/css"}
-    %style.style_background_color{type: "text/css"}
-    %style.style_font_color{type: "text/css"}
+    %style.js_style_weight{type: "text/css"}
+    %style.js_style_body_font{type: "text/css"}
+    %style.js_style_body_weight{type: "text/css"}
+    %style.js_style_background_color{type: "text/css"}
+    %style.js_style_font_color{type: "text/css"}
 
   %body
     .container.stage
@@ -64,25 +64,14 @@
                     %label Value
                     %input{type: 'text'}
 
-              .field
-                %label Preview Text
-                %input.preview_text{type: 'text', value: 'A Visual Type Scale'}
-
-              .field
-                .float_right
-                  %a.font_small{href: 'https://www.google.com/fonts/', target: '_blank', tabindex: '-1'} Find a Font
-                %label Google Font
-                %input.web_font{type: 'text', value: "Poppins"}
-
               .cols.cols_fields
                 .col_two_thirds
                   .field
-                    %label Fallback
-                    %select.js_web_font_fallback
-                      %option{value: 'cursive'} cursive
-                      %option{value: 'monospace'} monospace
-                      %option{value: 'sans-serif', selected: 'true'} sans-serif
-                      %option{value: 'serif'} serif
+                    %label
+                      Google Font
+                      %a.remove_border_bottom{href: 'https://fonts.google.com/', target: '_blank'}
+                        %span.fa.fa-fw.fa-lg.fa-external-link
+                    %select.js_web_font
 
                 .col_one_third
                   .field
@@ -90,9 +79,13 @@
                     %input.i_weight{type: 'text', value: '400'}
 
               .field
+                %label Preview Text
+                %input.preview_text{type: 'text', value: 'A Visual Type Scale'}
+
+              .field
                 %label Permalink
                 .font_small.overflow_gradient
-                  %a.param_url https://type-scale.com/?size=<span class="param_size">16</span>&amp;scale=<span class="param_scale">1.250</span>&amp;text=<span class="param_text">A Visual Type Scale</span>&amp;webfont=<span class="param_font">Poppins</span>&amp;fallback=<span class="param_fallback">sans-serif</span>&amp;font-weight=<span class="param_weight">400</span>&amp;font-family-headers=<span class="param_font_headers"></span>&amp;font-weight-headers=<span class="param_weight_headers">inherit</span>&amp;background-color=<span class="param_background_color">white</span>&amp;font-color=<span class="param_font_color">%23333</span>
+                  %a.js_param_url https://type-scale.com/?size=<span class="js_param_size">16</span>&amp;scale=<span class="js_param_scale">1.250</span>&amp;text=<span class="js_param_text">A Visual Type Scale</span>&amp;font=<span class="js_param_font">Poppins</span>&amp;fontweight=<span class="js_param_weight">400</span>&amp;bodyfont=<span class="js_param_body_font">Poppins</span>&amp;bodyfontweight=<span class="js_param_weight_headers">400</span>&amp;backgroundcolor=<span class="js_param_background_color">white</span>&amp;fontcolor=<span class="js_param_font_color">%23333</span>
 
           .main_content
             .table_padded
@@ -153,6 +146,8 @@
 
             %hr
 
+            <script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CKYIV2JW&placement=typescalecom" id="_carbonads_js"></script>
+
             %form{action: 'https://codepen.io/pen/define', method: 'POST', target: '_blank'}
 
               %a.btn.break_small.expand_down{href: '#', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
@@ -169,46 +164,45 @@
 
               &nbsp;
 
-              <script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CKYIV2JW&placement=typescalecom" id="_carbonads_js"></script>
-
             .js_generated_css.hide
-              .break_small
-              .box.content_width
-                %pre.codepen_able{data: {'type' => 'css'}, contenteditable: 'true', onClick: "document.execCommand('selectAll',false,null); ga('send', 'event', 'select', 'click', 'css-code');"}
-                  %code
-                    :preserve
-                      html {font-size: <span class="css_font_size"></span>em;}
+              %pre.codepen_able{data: {'type' => 'css'}, contenteditable: 'true', onClick: "document.execCommand('selectAll',false,null); ga('send', 'event', 'select', 'click', 'css-code');"}
+                %code
+                  :preserve
+                    @import url('<span class="js_css_webfont_url">https://fonts.googleapis.com/css?family=Poppins:400</span>');
 
-                      body {
-                        background-color: <span class="css_background_color">white</span>;
-                        font-family: <span class="css_font_family">'Poppins', sans-serif</span>;
-                        font-weight: <span class="css_weight">400</span>;
-                        line-height: 1.5;
-                        color: <span class="css_color">#333</span>;
-                      }
+                    html {font-size: <span class="js_css_font_size"></span>px;}
 
-                      p {margin-bottom: 1.250em;}
+                    body {
+                      background-color: <span class="js_css_background_color">white</span>;
+                      font-family: <span class="js_css_body_font_family">'Poppins', sans-serif</span>;
+                      font-weight: <span class="js_css_body_weight">400</span>;
+                      line-height: 1.5;
+                      color: <span class="js_css_color">#333</span>;
+                    }
 
-                      h1, h2, h3, h4, h5 {
-                        margin: 1.250em 0 0.64em;<span class="css_font_headers"></span>
-                        font-weight: <span class="css_weight_headers">inherit</span>;
-                        line-height: 1.2;
-                      }
+                    p {margin-bottom: 1.250em;}
 
-                      h1 {
-                        margin-top: 0;
-                        font-size: <span class="css_header_size"></span>em;
-                      }
+                    h1, h2, h3, h4, h5 {
+                      margin: 1.250em 0 0.64em;<span class="js_css_font_headers"></span>
+                      font-family: <span class="js_css_font_family">'Poppins', sans-serif</span>;
+                      font-weight: <span class="js_css_weight">400</span>;
+                      line-height: 1.2;
+                    }
 
-                      h2 {font-size: <span class="css_header_size"></span>em;}
+                    h1 {
+                      margin-top: 0;
+                      font-size: <span class="js_css_header_size"></span>em;
+                    }
 
-                      h3 {font-size: <span class="css_header_size"></span>em;}
+                    h2 {font-size: <span class="js_css_header_size"></span>em;}
 
-                      h4 {font-size: <span class="css_header_size"></span>em;}
+                    h3 {font-size: <span class="js_css_header_size"></span>em;}
 
-                      h5 {font-size: <span class="css_header_size"></span>em;}
+                    h4 {font-size: <span class="js_css_header_size"></span>em;}
 
-                      small, .font_small {font-size: <span class="css_small_size"></span>em;}
+                    h5 {font-size: <span class="js_css_header_size"></span>em;}
+
+                    small, .font_small {font-size: <span class="js_css_small_size"></span>em;}
 
     .content.container
       .table_layout.stage_footer
@@ -262,13 +256,6 @@
 
               %p Tim Brown&rsquo;s <a href="https://www.modularscale.com/">Modular Scale</a> site raised awareness about type scales, helped to improve typography on the web, and it was the inspiration for this project.
 
-              <div class="addthis_toolbox addthis_default_style">
-              <a class="remove_border_bottom addthis_button_tweet"></a>
-              <a class="remove_border_bottom addthis_button_facebook_like" fb:like:layout="button_count"></a>
-              <a class="remove_border_bottom addthis_button_google_plusone" g:plusone:size="medium"></a>
-              </div>
-              <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=xa-5285205508e46c17"></script>
-
             .break_small
               %ul.inline_list
                 %li
@@ -289,34 +276,28 @@
     .article_preview
       .article_preview_button.fa.fa-chevron-left.fa-lg.fa-fw{onClick: "ga('send', 'event', 'toggle', 'click', 'article-preview');"}
       .article_preview_inner
-        %a.btn.font_small.expand_down.more_options_button{href: '#', data: {'toggle' => '.js_article_options'}, onClick: "ga('send', 'event', 'toggle', 'click', 'article-options');"}
-          %span.fa.fa-fw.fa-chevron-down
-          More Options
+        %form
+          .cols.cols_fields
+            .col_two_thirds
+              .field
+                %label Body Font
+                %select.js_body_font
 
-        .js_article_options.hide
-          .break_medium
-          %form
-            .cols.cols_fields
-              .col_two_thirds
-                .field
-                  %label Header Font Family
-                  %input.font_family_headers{type: 'text'}
+            .col_one_third
+              .field
+                %label Body Weight
+                %input.i_body_weight{type: 'text', value: '400'}
 
-              .col_one_third
-                .field
-                  %label Weight
-                  %input.i_weight_headers{type: 'text', value: 'inherit'}
+          .cols.cols_fields
+            .col_half
+              .field
+                %label Background Color
+                %input.background_color{type: 'text', value: 'white'}
 
-            .cols.cols_fields
-              .col_half
-                .field
-                  %label Background Color
-                  %input.background_color{type: 'text', value: 'white'}
-
-              .col_half
-                .field
-                  %label Font Color
-                  %input.font_color{type: 'text', value: '#333'}
+            .col_half
+              .field
+                %label Font Color
+                %input.font_color{type: 'text', value: '#333'}
 
         %hr
 
