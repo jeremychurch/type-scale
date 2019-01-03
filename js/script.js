@@ -168,7 +168,9 @@ $(document).ready(function() {
       });
       $('.js_web_font, .js_body_font').append(listElements).val('Poppins');
       paramFont();
+      paramFontWeight();
       paramBodyFont();
+      paramBodyFontWeight();
     });
   };
   createWebFontList();
@@ -204,7 +206,7 @@ $(document).ready(function() {
       setFontWeight();
     };
   };
-  paramFontWeight();
+  // These run within createWebFontList(), otherwise the vals are not ready in time
 
   $('.i_weight').bind("change paste keyup", function() {
     setFontWeight();
@@ -250,7 +252,7 @@ $(document).ready(function() {
       setBodyFontWeight();
     };
   };
-  paramBodyFontWeight();
+  // These run within createWebFontList(), otherwise the vals are not ready in time
 
   $('.i_body_weight').bind("change paste keyup", function() {
     setBodyFontWeight();
