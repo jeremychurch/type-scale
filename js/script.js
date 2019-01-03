@@ -17,7 +17,7 @@ $(document).ready(function() {
     };
   });
 
-  $('.param_url').hover(function() {
+  $('.js_param_url').hover(function() {
     $(this).attr('href', $(this).text())
   });
 
@@ -41,36 +41,37 @@ $(document).ready(function() {
 
 
 
-  function setBaseSize() {
+  function paramSize() {
     if (getQueryVariable('size') === false) {
       baseSize = 1;
       $('.base_size').val(16);
-      $('.css_font_size').text(1);
     }
     else {
       baseSize = getQueryVariable('size') / 16;
       $('.base_size').val(getQueryVariable('size'));
-      $('.article_container').css('font-size', Math.round(baseSize*1000)/1000 + 'em');
-      $('.param_size').text(getQueryVariable('size'));
-      $('.css_font_size').text(Math.round(baseSize*1000)/1000);
     };
-    $('.base_em').text(Math.round(baseSize*1000)/1000);
+    setBaseSize();
   };
-  setBaseSize();
+  paramSize();
 
   $('.base_size').bind("change paste keyup", function() {
-    if($.isNumeric($(this).val())){
-      baseSize = $(this).val() / 16;
+    setBaseSize();
+  });
+
+  function setBaseSize() {
+    fontSize = $('.base_size').val();
+    if($.isNumeric(fontSize)){
+      baseSize = fontSize / 16;
     }
     else {
       baseSize = 0;
     };
     $('.base_em').text(Math.round(baseSize*1000)/1000);
     scaleSelect();
-    $('.param_size').text($(this).val());
+    $('.js_param_size').text(fontSize);
     $('.article_container').css('font-size', Math.round(baseSize*1000)/1000 + 'em');
-    $('.css_font_size').text(Math.round(baseSize*1000)/1000);
-  });
+    $('.js_css_font_size').text(fontSize);
+  };
 
 
 
@@ -92,7 +93,7 @@ $(document).ready(function() {
         $('.font_scale').val(scaleRatio);
       };
 
-      $('.param_scale').text(scaleRatio);
+      $('.js_param_scale').text(scaleRatio);
     };
     scaleCalc();
   };
@@ -111,14 +112,14 @@ $(document).ready(function() {
       scaleSelect();
       $('.js_scale_div').removeClass('col_two_thirds');
       $('.js_custom_scale_div').addClass('hide');
-      $('.param_scale').text($(this).val());
+      $('.js_param_scale').text($(this).val());
     };
   });
 
   $('.font_scale_custom input').bind("change paste keyup", function() {
     scaleRatio = $(this).val();
     scaleCalc();
-    $('.param_scale').text($(this).val());
+    $('.js_param_scale').text($(this).val());
   });
 
   function scaleSelect() {
@@ -128,155 +129,192 @@ $(document).ready(function() {
 
 
 
-  function setPreviewText() {
+  function paramPreviewText() {
     if (getQueryVariable('text') !== false) {
       $('.preview_text').val(getQueryVariable('text'));
-      $('.scale_preview_text').text(getQueryVariable('text'));
-      $('.param_text').text(getQueryVariable('text'));
+      setPreviewText();
     };
+  };
+  paramPreviewText();
+
+  $('.preview_text').bind("change paste keyup", function() {
+    setPreviewText();
+  });
+
+  function setPreviewText() {
+    previewText = $('.preview_text').val();
+    $('.scale_preview_text').text(previewText);
+    $('.js_param_text').text(encodeURIComponent(previewText));
   };
   setPreviewText();
 
-  $('.preview_text').bind("change paste keyup", function() {
-    previewText = $(this).val();
-    $('.scale_preview_text').text(previewText);
-    $('.param_text').text(encodeURIComponent($(this).val()));
-  });
+
+
+  function createWebFontList() {
+    $.getJSON('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBExIvFSO_6mtbJ5upWmYq8kR967HqREYM', function(response) {
+      items = response.items;
+      listElements = '';
+      items.forEach(function(item){
+        if (item.category === 'handwriting') {
+          fallback = 'cursive';
+        } else if (item.category === 'display') {
+          // This isn't ideal, but since Google doesn't provide the fallback font in their JSON, this is probably the most sane fallback, and not too horrible even if the original is a serif or script.
+          fallback = 'sans-serif';
+        } else {
+          fallback = item.category;
+        };
+        setWebFontListFamily = "'" + item.family + "', " + fallback;
+        listElements+='<option value="' + item.family + '" data-font-family="' + setWebFontListFamily + '">' + item.family + '</option>';
+      });
+      $('.js_web_font, .js_body_font').append(listElements).val('Poppins');
+      paramFont();
+      paramBodyFont();
+    });
+  };
+  createWebFontList();
 
 
 
-  function setTag() {
-    if (getQueryVariable('webfont') !== false) {
-      $('.web_font').val(getQueryVariable('webfont'));
-      $('.webfont_url').attr('href', 'https://fonts.googleapis.com/css?family=' + getQueryVariable('webfont'));
-      $('.param_font').text(getQueryVariable('webfont'));
+  function paramFont() {
+    if (getQueryVariable('font') !== false) {
+      $('.js_web_font').val(getQueryVariable('font'));
+      setFont();
     };
   };
-  setTag();
+  // These run within createWebFontList(), otherwise the vals are not ready in time
 
-  $('.web_font').bind("change paste keyup", function() {
-    webFont = $(this).val().replace(/\s/g, '+');
-    $(this).val(webFont);
-    $('.webfont_url').attr('href', 'https://fonts.googleapis.com/css?family=' + webFont + ':' + $('.i_weight').val());
-    $('.param_font').text(encodeURIComponent($(this).val()));
-    webFontFamily = "'" + $(this).val().replace(/\+/g, ' ') + "', " + $('.js_web_font_fallback').val();
+  $('.js_web_font').bind("change paste keyup", function() {
+    setFont();
+  });
+
+  function setFont() {
+    webFont = $('.js_web_font').val();
+    setWebFontUrl();
+    webFontFamily = $('.js_web_font option:selected').data('font-family');
     $('.scale_webfont, .article_content').attr('style', "font-family:" + webFontFamily);
-    $('.css_font_family').text(webFontFamily);
-  });
+    $('.js_param_font').text(encodeURIComponent(webFont));
+    $('.js_css_font_family').text(webFontFamily);
+  };
 
 
 
-  function setFallback() {
-    if (getQueryVariable('fallback') !== false) {
-      $('.js_web_font_fallback').val(getQueryVariable('fallback'));
-      webFontFamily = "'" + $('.web_font').val().replace(/\+/g, ' ') + "', " + getQueryVariable('fallback');
-      $('.scale_webfont, .article_content').attr('style', "font-family:" + webFontFamily);
-      $('.param_fallback').text(getQueryVariable('fallback'));
-      $('.css_font_family').text(webFontFamily);
+  function paramFontWeight() {
+    if (getQueryVariable('fontweight') !== false) {
+      $('.i_weight').val(getQueryVariable('fontweight'));
+      setFontWeight();
     };
   };
-  setFallback();
-
-  $('.js_web_font_fallback').bind("change paste keyup", function() {
-    webFontFamily = "'" + $('.web_font').val().replace(/\+/g, ' ') + "', " + $(this).val();
-    $('.scale_webfont, .article_content').attr('style', "font-family:" + webFontFamily);
-    $('.param_fallback').text(encodeURIComponent($(this).val()));
-    $('.css_font_family').text(webFontFamily);
-  });
-
-
-
-  function setFontWeight() {
-    if (getQueryVariable('font-weight') !== false) {
-      $('.i_weight').val(getQueryVariable('font-weight'));
-      $('.style_weight').html('.scale_webfont, .article_container {font-weight:' + getQueryVariable('font-weight') + ';}');
-      $('.param_weight').text(getQueryVariable('font-weight'));
-      $('.css_weight').text(getQueryVariable('font-weight'));
-    };
-  };
-  setFontWeight();
+  paramFontWeight();
 
   $('.i_weight').bind("change paste keyup", function() {
-    $('.webfont_url').attr('href', 'https://fonts.googleapis.com/css?family=' + $('.web_font').val() + ':' + $(this).val());
-    $('.style_weight').html('.scale_webfont, .article_container {font-weight:' + $(this).val() + ';}');
-    $('.param_weight').text($(this).val());
-    $('.css_weight').text($(this).val());
+    setFontWeight();
   });
 
+  function setFontWeight() {
+    fontWeight = $('.i_weight').val();
+    setWebFontUrl();
+    $('.js_style_weight').html('.scale_webfont, .article_header {font-weight:' + fontWeight + ';}');
+    $('.js_param_weight').text(fontWeight);
+    $('.js_css_weight').text(fontWeight);
+  };
 
 
-  function setFontWeightHeaders() {
-    if (getQueryVariable('font-weight-headers') !== false) {
-      $('.i_weight_headers').val(getQueryVariable('font-weight-headers'));
-      $('.style_weight_headers').html('.article_header {font-weight:' + getQueryVariable('font-weight-headers') + ';}');
-      $('.param_weight_headers').text(getQueryVariable('font-weight-headers'));
-      $('.css_weight_headers').text(getQueryVariable('font-weight-headers'));
+
+  function paramBodyFont() {
+    if (getQueryVariable('bodyfont') !== false) {
+      $('.js_body_font').val(getQueryVariable('bodyfont'));
+      setBodyFont();
     };
   };
-  setFontWeightHeaders();
+  // These run within createWebFontList(), otherwise the vals are not ready in time
 
-  $('.i_weight_headers').bind("change paste keyup", function() {
-    $('.style_weight_headers').html('.article_header {font-weight:' + $(this).val() + ';}');
-    $('.param_weight_headers').text($(this).val());
-    $('.css_weight_headers').text($(this).val());
+  $('.js_body_font').bind("change paste keyup", function() {
+    setBodyFont();
   });
 
-
-
-  function setFontHeaders() {
-    if (getQueryVariable('font-family-headers') !== false) {
-      $('.font_family_headers').val(getQueryVariable('font-family-headers'));
-      $('.style_font_headers').html('.article_header {font-family:' + getQueryVariable('font-family-headers') + ';}');
-      $('.param_font_headers').text(getQueryVariable('font-family-headers'));
-      $('.css_font_headers').html('<br>  font-family: ' + getQueryVariable('font-family-headers') + ';');
-    };
-  };
-  setFontHeaders();
-
-  $('.font_family_headers').bind("change paste keyup", function() {
-    $('.style_font_headers').html('.article_header {font-family:' + $(this).val() + ';}');
-    $('.param_font_headers').text(encodeURIComponent($(this).val()));
-    if($(this).val() !== false) {
-      $('.css_font_headers').html('<br>  font-family: ' + $(this).val() + ';');
-    };
+  function setBodyFont() {
+    bodyFont = $('.js_body_font').val();
+    setWebFontUrl();
+    bodyWebFontFamily = $('.js_body_font option:selected').data('font-family');
+    $('.js_style_body_font').html('.article_content p {font-family:' + bodyWebFontFamily + ';}');
+    $('.js_param_body_font').text(encodeURIComponent(bodyFont));
+    $('.js_css_body_font_family').text(bodyWebFontFamily);
     setPreviewHeight();
-  });
+  };
 
 
 
-  function setBackgroundColor() {
-    if (getQueryVariable('background-color') !== false) {
-      $('.background_color').val(getQueryVariable('background-color'));
-      $('.style_background_color').html('.article_preview_open {background-color:' + getQueryVariable('background-color') + ';}');
-      $('.param_background_color').text(getQueryVariable('background-color'));
-      $('.css_background_color').text(getQueryVariable('background-color'));
+  function paramBodyFontWeight() {
+    if (getQueryVariable('bodyfontweight') !== false) {
+      $('.i_body_weight').val(getQueryVariable('bodyfontweight'));
+      setBodyFontWeight();
     };
   };
-  setBackgroundColor();
+  paramBodyFontWeight();
+
+  $('.i_body_weight').bind("change paste keyup", function() {
+    setBodyFontWeight();
+  });
+
+  function setBodyFontWeight() {
+    bodyFontWeight = $('.i_body_weight').val();
+    setWebFontUrl();
+    $('.js_style_body_weight').html('.article_content p {font-weight:' + bodyFontWeight + ';}');
+    $('.js_param_weight_headers').text(bodyFontWeight);
+    $('.js_css_body_weight').text(bodyFontWeight);
+  };
+
+
+
+  function setWebFontUrl() {
+    googleFont = $('.js_web_font').val().replace(/\s/g, '+') + ':' + $('.i_weight').val();
+    bodyGoogleFont = $('.js_body_font').val().replace(/\s/g, '+') + ':' + $('.i_body_weight').val();
+    webFontUrl = 'https://fonts.googleapis.com/css?family=' + googleFont + '|' + bodyGoogleFont;
+    $('.webfont_url').attr('href', webFontUrl);
+    $('.js_css_webfont_url').text(webFontUrl);
+  };
+
+
+
+  function paramBackgroundColor() {
+    if (getQueryVariable('backgroundcolor') !== false) {
+      $('.background_color').val(getQueryVariable('backgroundcolor'));
+      setBackgroundColor();
+    };
+  };
+  paramBackgroundColor();
 
   $('.background_color').bind("change paste keyup", function() {
-    $('.style_background_color').html('.article_preview_open {background-color:' + $(this).val() + ';}');
-    $('.param_background_color').text(encodeURIComponent($(this).val()));
-    $('.css_background_color').text($(this).val());
+    setBackgroundColor();
   });
 
-
-
-  function setFontColor() {
-    if (getQueryVariable('font-color') !== false) {
-      $('.font_color').val(getQueryVariable('font-color'));
-      $('.style_font_color').html('.article_preview_open {color:' + getQueryVariable('font-color') + ';}');
-      $('.param_font_color').text(getQueryVariable('font-color'));
-      $('.css_color').text(getQueryVariable('font-color'));
-    };
+  function setBackgroundColor() {
+    backgroundColor = $('.background_color').val();
+    $('.js_style_background_color').html('.article_preview_open {background-color:' + backgroundColor + ';}');
+    $('.js_param_background_color').text(encodeURIComponent(backgroundColor));
+    $('.js_css_background_color').text(backgroundColor);
   };
 
-  setFontColor();
+
+
+  function paramFontColor() {
+    if (getQueryVariable('fontcolor') !== false) {
+      $('.font_color').val(getQueryVariable('fontcolor'));
+      setFontColor();
+    };
+  };
+  paramFontColor();
+
   $('.font_color').bind("change paste keyup", function() {
-    $('.style_font_color').html('.article_preview_open {color:' + $(this).val() + ';}');
-    $('.param_font_color').text(encodeURIComponent($(this).val()));
-    $('.css_color').text($(this).val());
+    setFontColor();
   });
+
+  function setFontColor() {
+    fontColor = $('.font_color').val();
+    $('.js_style_font_color').html('.article_preview_open {color:' + fontColor + ';}');
+    $('.js_param_font_color').text(encodeURIComponent(fontColor));
+    $('.js_css_color').text(fontColor);
+  };
 
 
 
@@ -322,7 +360,7 @@ $(document).ready(function() {
       b = scaleRatio;
       result = 1;
 
-      $($('.css_header_size').get().reverse()).each(function(index) {
+      $($('.js_css_header_size').get().reverse()).each(function(index) {
         result = a*b;
         a = result;
         $(this).text(Math.round(result*1000)/1000);
@@ -358,7 +396,7 @@ $(document).ready(function() {
       b = scaleRatio;
       result = 1;
 
-      $('.css_small_size').each(function(index) {
+      $('.js_css_small_size').each(function(index) {
         result = a/b;
         a = result;
         $(this).text(Math.round(result*1000)/1000);
