@@ -1,30 +1,4 @@
 
-.scale_webfont
-  font-family: "Poppins", sans-serif
-  white-space: nowrap
-
-.scale_preview_text
-  transition: font-size 0.3s ease 0.3s
-  border-bottom: 1px solid $app-gray-medium
-  @media screen and (min-width: #{$app-media-xs})
-    border: none
-
-.scale_base_size
-  background-color: $app-gray-light
-
-.overflow_gradient
-  position: relative
-  overflow: hidden
-  white-space: nowrap
-  &:after
-    content: " . . ."
-    position: absolute
-    right: 0
-    top: 0
-    bottom: 0
-    padding-left: 0.3em
-    background: #fff
-
 img
   max-width: 100%
   height: auto
@@ -194,6 +168,9 @@ hr
 
 .remove_border_bottom
   border-bottom: none
+
+.add_border_bottom
+  border-bottom: 1px solid currentColor
 
 .media_xs_show
   display: none

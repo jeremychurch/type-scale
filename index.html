@@ -9,7 +9,7 @@
 <link href='style.css' media='all' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Poppins:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <link class='webfont_url' rel='stylesheet' type='text/css'>
-<link href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+<link href='https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css' rel='stylesheet'>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -34,7 +34,7 @@ ga('send', 'pageview');
 <label>Base Size</label>
 <input class='base_size' style='max-width:4em;' type='text'>
 <span class='text_muted'>
-px = <span class="base_em"></span>em
+px (<span class="base_em"></span>em)
 </span>
 </div>
 <div class='cols cols_fields'>
@@ -65,11 +65,13 @@ px = <span class="base_em"></span>em
 <div class='cols cols_fields'>
 <div class='col_two_thirds'>
 <div class='field'>
+<div class='text_light' style='float:right;'>
+<a class='remove_border_bottom' href='https://fonts.google.com/' tabindex='-1' target='_blank'>
+<span class='fa fa-fw fa-external-link'></span>
+</a>
+</div>
 <label>
 Google Font
-<a class='remove_border_bottom' href='https://fonts.google.com/' target='_blank'>
-<span class='fa fa-fw fa-lg fa-external-link'></span>
-</a>
 </label>
 <select class='js_web_font'></select>
 </div>
@@ -86,18 +88,38 @@ Google Font
 <input class='preview_text' type='text' value='A Visual Type Scale'>
 </div>
 <div class='field'>
-<label>Permalink</label>
-<div class='font_small overflow_gradient'>
-<a class='js_param_url'>https://type-scale.com/?size=<span class="js_param_size">16</span>&amp;scale=<span class="js_param_scale">1.250</span>&amp;text=<span class="js_param_text">A Visual Type Scale</span>&amp;font=<span class="js_param_font">Poppins</span>&amp;fontweight=<span class="js_param_weight">400</span>&amp;bodyfont=<span class="js_param_body_font">Poppins</span>&amp;bodyfontweight=<span class="js_param_weight_headers">400</span>&amp;backgroundcolor=<span class="js_param_background_color">white</span>&amp;fontcolor=<span class="js_param_font_color">%23333</span></a>
+<ul class='inline_list text_small text_light'>
+<li>
+<a class='js_link_reset' href=''>
+Reset All
+</a>
+</li>
+<li>
+<a class='js_permalink' href=''>
+Save for Later
+</a>
+</li>
+</ul>
 </div>
+<div class='field'>
+<input class='js_permalink_field hide text_small' type='text'>
 </div>
+<div class='js_param_url hide'>https://type-scale.com/?size=<span class="js_param_size">16</span>&amp;scale=<span class="js_param_scale">1.250</span>&amp;text=<span class="js_param_text">A Visual Type Scale</span>&amp;font=<span class="js_param_font">Poppins</span>&amp;fontweight=<span class="js_param_weight">400</span>&amp;bodyfont=<span class="js_param_body_font">Poppins</span>&amp;bodyfontweight=<span class="js_param_weight_headers">400</span>&amp;backgroundcolor=<span class="js_param_background_color">white</span>&amp;fontcolor=<span class="js_param_font_color">%23333</span>&amp;preview=false</div>
 </form>
 </div>
 <div class='main_content'>
-<div class='table_padded'>
-<div class='table_row'>
+<div class='scale table_padded'>
+<div class='js_scale_add_high_section table_row'>
+<div class='table_cell text_light text_right'>
+<a class='js_scale_add_high remove_border_bottom' href=''>
+<span class='fa fa-lg fa-plus-circle'></span>
+</a>
+</div>
+<div class='table_cell'></div>
+</div>
+<div class='js_scale_section_high table_row'>
 <div class='table_cell text_right media_xs_text_left cell_collapse'>
-<span class='scale_high_label text_muted font_small'></span>
+<span class='scale_high_label text_muted text_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
 <h1>
@@ -107,7 +129,7 @@ Google Font
 </div>
 <div class='table_row'>
 <div class='table_cell text_right media_xs_text_left cell_collapse'>
-<span class='scale_high_label text_muted font_small'></span>
+<span class='scale_high_label text_muted text_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
 <span class='scale_high scale_preview_text'>A Visual Type Scale</span>
@@ -115,7 +137,7 @@ Google Font
 </div>
 <div class='table_row'>
 <div class='table_cell text_right media_xs_text_left cell_collapse'>
-<span class='scale_high_label text_muted font_small'></span>
+<span class='scale_high_label text_muted text_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
 <span class='scale_high scale_preview_text'>A Visual Type Scale</span>
@@ -123,7 +145,7 @@ Google Font
 </div>
 <div class='table_row'>
 <div class='table_cell text_right media_xs_text_left cell_collapse'>
-<span class='scale_high_label text_muted font_small'></span>
+<span class='scale_high_label text_muted text_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
 <span class='scale_high scale_preview_text'>A Visual Type Scale</span>
@@ -131,15 +153,15 @@ Google Font
 </div>
 <div class='table_row'>
 <div class='table_cell text_right media_xs_text_left cell_collapse'>
-<span class='scale_high_label text_muted font_small'></span>
+<span class='scale_high_label text_muted text_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
 <span class='scale_high scale_preview_text'>A Visual Type Scale</span>
 </div>
 </div>
-<div class='table_row scale_base_size'>
+<div class='scale_base_size table_row'>
 <div class='table_cell text_right media_xs_text_left cell_collapse'>
-<span class='scale_high_label text_muted font_small'></span>
+<span class='scale_high_label text_muted text_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
 <span class='scale_high scale_preview_text'>A Visual Type Scale</span>
@@ -147,7 +169,7 @@ Google Font
 </div>
 <div class='table_row'>
 <div class='table_cell text_right media_xs_text_left cell_collapse'>
-<span class='scale_low_label text_muted font_small'></span>
+<span class='scale_low_label text_muted text_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
 <span class='scale_low scale_preview_text'>A Visual Type Scale</span>
@@ -155,38 +177,46 @@ Google Font
 </div>
 <div class='table_row'>
 <div class='table_cell text_right media_xs_text_left cell_collapse'>
-<span class='scale_low_label text_muted font_small'></span>
+<span class='scale_low_label text_muted text_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
 <span class='scale_low scale_preview_text'>A Visual Type Scale</span>
 </div>
 </div>
-<div class='table_row'>
+<div class='js_scale_section_low table_row'>
 <div class='table_cell text_right media_xs_text_left cell_collapse'>
-<span class='scale_low_label text_muted font_small'></span>
+<span class='scale_low_label text_muted text_small'></span>
 </div>
 <div class='table_cell scale_webfont'>
 <span class='scale_low scale_preview_text'>A Visual Type Scale</span>
 </div>
+</div>
+<div class='js_scale_add_low_section table_row'>
+<div class='table_cell text_light text_right'>
+<a class='js_scale_add_low remove_border_bottom' href=''>
+<span class='fa fa-lg fa-plus-circle'></span>
+</a>
+</div>
+<div class='table_cell'></div>
 </div>
 </div>
 <hr>
 <script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CKYIV2JW&placement=typescalecom" id="_carbonads_js"></script>
 <form action='https://codepen.io/pen/define' method='POST' target='_blank'>
-<a class='btn break_small expand_down' data-toggle='.js_generated_css' href='#' onClick='ga(&#39;send&#39;, &#39;event&#39;, &#39;toggle&#39;, &#39;click&#39;, &#39;css-button&#39;);'>
+<a class='btn break_small expand_down' data-toggle='.js_generated_css' href='' onClick='ga(&#39;send&#39;, &#39;event&#39;, &#39;toggle&#39;, &#39;click&#39;, &#39;css-button&#39;);'>
 <span class='fa fa-fw fa-chevron-down'></span>
 Grab the CSS
 </a>
 &nbsp;
 <input class='codepen_json' name='data' type='hidden'>
 <button class='codepen_btn break_small' onClick='ga(&#39;send&#39;, &#39;event&#39;, &#39;external-link&#39;, &#39;click&#39;, &#39;codepen-edit&#39;);' type='submit'>
-<span class='fa fa-fw fa-pencil'></span>
+<span class='fa fa-fw fa-codepen'></span>
 Edit on CodePen
 </button>
 &nbsp;
 </form>
 <div class='js_generated_css hide'>
-<pre class='codepen_able' contenteditable='true' data-type='css' onClick='document.execCommand(&#39;selectAll&#39;,false,null); ga(&#39;send&#39;, &#39;event&#39;, &#39;select&#39;, &#39;click&#39;, &#39;css-code&#39;);'><code>@import url('<span class="js_css_webfont_url">https://fonts.googleapis.com/css?family=Poppins:400</span>');&#x000A;&#x000A;html {font-size: <span class="js_css_font_size"></span>px;}&#x000A;&#x000A;body {&#x000A;  background-color: <span class="js_css_background_color">white</span>;&#x000A;  font-family: <span class="js_css_body_font_family">'Poppins', sans-serif</span>;&#x000A;  font-weight: <span class="js_css_body_weight">400</span>;&#x000A;  line-height: 1.5;&#x000A;  color: <span class="js_css_color">#333</span>;&#x000A;}&#x000A;&#x000A;p {margin-bottom: 1.250em;}&#x000A;&#x000A;h1, h2, h3, h4, h5 {&#x000A;  margin: 1.250em 0 0.64em;<span class="js_css_font_headers"></span>&#x000A;  font-family: <span class="js_css_font_family">'Poppins', sans-serif</span>;&#x000A;  font-weight: <span class="js_css_weight">400</span>;&#x000A;  line-height: 1.2;&#x000A;}&#x000A;&#x000A;h1 {&#x000A;  margin-top: 0;&#x000A;  font-size: <span class="js_css_header_size"></span>em;&#x000A;}&#x000A;&#x000A;h2 {font-size: <span class="js_css_header_size"></span>em;}&#x000A;&#x000A;h3 {font-size: <span class="js_css_header_size"></span>em;}&#x000A;&#x000A;h4 {font-size: <span class="js_css_header_size"></span>em;}&#x000A;&#x000A;h5 {font-size: <span class="js_css_header_size"></span>em;}&#x000A;&#x000A;small, .font_small {font-size: <span class="js_css_small_size"></span>em;}&#x000A;</code></pre>
+<pre class='codepen_able' contenteditable='true' data-type='css' onClick='document.execCommand(&#39;selectAll&#39;,false,null); ga(&#39;send&#39;, &#39;event&#39;, &#39;select&#39;, &#39;click&#39;, &#39;css-code&#39;);'><code>@import url('<span class="js_css_webfont_url">https://fonts.googleapis.com/css?family=Poppins:400</span>');&#x000A;&#x000A;html {font-size: <span class="js_css_font_size"></span>px;}&#x000A;&#x000A;body {&#x000A;  background-color: <span class="js_css_background_color">white</span>;&#x000A;  font-family: <span class="js_css_body_font_family">'Poppins', sans-serif;</span>&#x000A;  font-weight: <span class="js_css_body_weight">400</span>;&#x000A;  line-height: 1.5;&#x000A;  color: <span class="js_css_color">#333</span>;&#x000A;}&#x000A;&#x000A;p {margin-bottom: 1.250em;}&#x000A;&#x000A;h1, h2, h3, h4, h5 {&#x000A;  margin: 1.250em 0 0.64em;<span class="js_css_font_headers"></span>&#x000A;  font-family: <span class="js_css_font_family">'Poppins', sans-serif;</span>&#x000A;  font-weight: <span class="js_css_weight">400</span>;&#x000A;  line-height: 1.2;&#x000A;}&#x000A;&#x000A;h1 {&#x000A;  margin-top: 0;&#x000A;  font-size: <span class="js_css_header_size"></span>em;&#x000A;}&#x000A;&#x000A;h2 {font-size: <span class="js_css_header_size"></span>em;}&#x000A;&#x000A;h3 {font-size: <span class="js_css_header_size"></span>em;}&#x000A;&#x000A;h4 {font-size: <span class="js_css_header_size"></span>em;}&#x000A;&#x000A;h5 {font-size: <span class="js_css_header_size"></span>em;}&#x000A;&#x000A;small, .text_small {font-size: <span class="js_css_small_size"></span>em;}&#x000A;</code></pre>
 </div>
 </div>
 </div>
@@ -198,13 +228,13 @@ Edit on CodePen
 <div class='sidebar text_right media_xs_hide'>
 <ul class='inline_list'>
 <li>
-<a class='remove_border_bottom' href='https://twitter.com/jeremybchurch'>
-<span class='fa fa-twitter fa-lg'></span>
+<a class='remove_border_bottom' href='https://j.eremy.net/'>
+<span class='fa fa-laptop fa-lg'></span>
 </a>
 </li>
 <li>
-<a class='remove_border_bottom' href='https://j.eremy.net/'>
-<span class='fa fa-globe fa-lg'></span>
+<a class='remove_border_bottom' href='https://twitter.com/jeremybchurch'>
+<span class='fa fa-twitter fa-lg'></span>
 </a>
 </li>
 <li>
@@ -247,13 +277,13 @@ A type tool by
 <div class='break_small'>
 <ul class='inline_list'>
 <li>
-<a class='remove_border_bottom' href='https://twitter.com/jeremybchurch'>
-<span class='fa fa-twitter fa-2x'></span>
+<a class='remove_border_bottom' href='https://j.eremy.net/'>
+<span class='fa fa-laptop fa-2x'></span>
 </a>
 </li>
 <li>
-<a class='remove_border_bottom' href='https://j.eremy.net/'>
-<span class='fa fa-globe fa-2x'></span>
+<a class='remove_border_bottom' href='https://twitter.com/jeremybchurch'>
+<span class='fa fa-twitter fa-2x'></span>
 </a>
 </li>
 <li>
@@ -263,7 +293,7 @@ A type tool by
 </li>
 </ul>
 </div>
-<p class='font_small'>
+<p class='text_small'>
 Created by <a href="https://j.eremy.net/">Jeremy Church</a>
 <br>
 Project available on <a href="https://github.com/jeremychurch/type-scale">GitHub</a>. Code licensed under <a href="https://opensource.org/licenses/mit-license.html">MIT License</a>.
@@ -275,6 +305,7 @@ Project available on <a href="https://github.com/jeremychurch/type-scale">GitHub
 <div class='article_preview'>
 <div class='article_preview_button fa fa-chevron-left fa-lg fa-fw' onClick='ga(&#39;send&#39;, &#39;event&#39;, &#39;toggle&#39;, &#39;click&#39;, &#39;article-preview&#39;);'></div>
 <div class='article_preview_inner'>
+<div class='break_small'>
 <form>
 <div class='cols cols_fields'>
 <div class='col_two_thirds'>
@@ -305,27 +336,20 @@ Project available on <a href="https://github.com/jeremychurch/type-scale">GitHub
 </div>
 </div>
 </form>
-<hr>
+</div>
 <div class='article_container'>
 <div class='article_content'>
 <h1 class='article_header'>One Morning, When Gregor Samsa Woke</h1>
 <p>From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
-<p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
 <h2 class='article_header'>One Morning, When Gregor Samsa Woke</h2>
 <p>From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
-<p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
 <h3 class='article_header'>One Morning, When Gregor Samsa Woke</h3>
 <p>From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
-<p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
 <h4 class='article_header'>One Morning, When Gregor Samsa Woke</h4>
 <p>From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
-<p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
 <h5 class='article_header'>One Morning, When Gregor Samsa Woke</h5>
 <p>From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
-<p>His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.</p>
-<p class='font_small text_muted'>
-<em>&mdash; Excerpt from The Metamorphosis, by Franz Kafka.</em>
-</p>
+<p class='text_small'>&mdash; Excerpt from The Metamorphosis, by Franz Kafka.</p>
 </div>
 </div>
 </div>

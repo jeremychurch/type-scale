@@ -13,7 +13,7 @@
 
     %link.webfont_url{rel: 'stylesheet', type:'text/css'}
 
-    %link{href: "https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", rel: "stylesheet"}
+    %link{href: "https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css", rel: "stylesheet"}
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -41,7 +41,7 @@
                 %label Base Size
                 %input.base_size{type: 'text', style: 'max-width:4em;'}
                 %span.text_muted
-                  px = <span class="base_em"></span>em
+                  px (<span class="base_em"></span>em)
 
               .cols.cols_fields
                 .js_scale_div
@@ -67,10 +67,12 @@
               .cols.cols_fields
                 .col_two_thirds
                   .field
+                    .text_light{style: 'float:right;'}
+                      %a.remove_border_bottom{href: 'https://fonts.google.com/', target: '_blank', tabindex: '-1'}
+                        %span.fa.fa-fw.fa-external-link
+
                     %label
                       Google Font
-                      %a.remove_border_bottom{href: 'https://fonts.google.com/', target: '_blank'}
-                        %span.fa.fa-fw.fa-lg.fa-external-link
                     %select.js_web_font
 
                 .col_one_third
@@ -83,66 +85,87 @@
                 %input.preview_text{type: 'text', value: 'A Visual Type Scale'}
 
               .field
-                %label Permalink
-                .font_small.overflow_gradient
-                  %a.js_param_url https://type-scale.com/?size=<span class="js_param_size">16</span>&amp;scale=<span class="js_param_scale">1.250</span>&amp;text=<span class="js_param_text">A Visual Type Scale</span>&amp;font=<span class="js_param_font">Poppins</span>&amp;fontweight=<span class="js_param_weight">400</span>&amp;bodyfont=<span class="js_param_body_font">Poppins</span>&amp;bodyfontweight=<span class="js_param_weight_headers">400</span>&amp;backgroundcolor=<span class="js_param_background_color">white</span>&amp;fontcolor=<span class="js_param_font_color">%23333</span>
+                %ul.inline_list.text_small.text_light
+                  %li
+                    %a.js_link_reset{href: ''}
+                      Reset All
+                  %li
+                    %a.js_permalink{href: ''}
+                      Save for Later
+
+              .field
+                %input.js_permalink_field.hide.text_small{type: 'text'}
+
+              .js_param_url.hide https://type-scale.com/?size=<span class="js_param_size">16</span>&amp;scale=<span class="js_param_scale">1.250</span>&amp;text=<span class="js_param_text">A Visual Type Scale</span>&amp;font=<span class="js_param_font">Poppins</span>&amp;fontweight=<span class="js_param_weight">400</span>&amp;bodyfont=<span class="js_param_body_font">Poppins</span>&amp;bodyfontweight=<span class="js_param_weight_headers">400</span>&amp;backgroundcolor=<span class="js_param_background_color">white</span>&amp;fontcolor=<span class="js_param_font_color">%23333</span>&amp;preview=false
 
           .main_content
-            .table_padded
-              .table_row
+            .scale.table_padded
+              .js_scale_add_high_section.table_row
+                .table_cell.text_light.text_right
+                  %a.js_scale_add_high.remove_border_bottom{href: ''}
+                    %span.fa.fa-lg.fa-plus-circle
+                .table_cell
+
+              .js_scale_section_high.table_row
                 .table_cell.text_right.media_xs_text_left.cell_collapse
-                  %span.scale_high_label.text_muted.font_small
+                  %span.scale_high_label.text_muted.text_small
                 .table_cell.scale_webfont
                   %h1
                     %span.scale_high.scale_preview_text A Visual Type Scale
 
               .table_row
                 .table_cell.text_right.media_xs_text_left.cell_collapse
-                  %span.scale_high_label.text_muted.font_small
+                  %span.scale_high_label.text_muted.text_small
                 .table_cell.scale_webfont
                   %span.scale_high.scale_preview_text A Visual Type Scale
 
               .table_row
                 .table_cell.text_right.media_xs_text_left.cell_collapse
-                  %span.scale_high_label.text_muted.font_small
+                  %span.scale_high_label.text_muted.text_small
                 .table_cell.scale_webfont
                   %span.scale_high.scale_preview_text A Visual Type Scale
 
               .table_row
                 .table_cell.text_right.media_xs_text_left.cell_collapse
-                  %span.scale_high_label.text_muted.font_small
+                  %span.scale_high_label.text_muted.text_small
                 .table_cell.scale_webfont
                   %span.scale_high.scale_preview_text A Visual Type Scale
 
               .table_row
                 .table_cell.text_right.media_xs_text_left.cell_collapse
-                  %span.scale_high_label.text_muted.font_small
+                  %span.scale_high_label.text_muted.text_small
                 .table_cell.scale_webfont
                   %span.scale_high.scale_preview_text A Visual Type Scale
 
-              .table_row.scale_base_size
+              .scale_base_size.table_row
                 .table_cell.text_right.media_xs_text_left.cell_collapse
-                  %span.scale_high_label.text_muted.font_small
+                  %span.scale_high_label.text_muted.text_small
                 .table_cell.scale_webfont
                   %span.scale_high.scale_preview_text A Visual Type Scale
 
               .table_row
                 .table_cell.text_right.media_xs_text_left.cell_collapse
-                  %span.scale_low_label.text_muted.font_small
+                  %span.scale_low_label.text_muted.text_small
                 .table_cell.scale_webfont
                   %span.scale_low.scale_preview_text A Visual Type Scale
 
               .table_row
                 .table_cell.text_right.media_xs_text_left.cell_collapse
-                  %span.scale_low_label.text_muted.font_small
+                  %span.scale_low_label.text_muted.text_small
                 .table_cell.scale_webfont
                   %span.scale_low.scale_preview_text A Visual Type Scale
 
-              .table_row
+              .js_scale_section_low.table_row
                 .table_cell.text_right.media_xs_text_left.cell_collapse
-                  %span.scale_low_label.text_muted.font_small
+                  %span.scale_low_label.text_muted.text_small
                 .table_cell.scale_webfont
                   %span.scale_low.scale_preview_text A Visual Type Scale
+
+              .js_scale_add_low_section.table_row
+                .table_cell.text_light.text_right
+                  %a.js_scale_add_low.remove_border_bottom{href: ''}
+                    %span.fa.fa-lg.fa-plus-circle
+                .table_cell
 
             %hr
 
@@ -150,7 +173,7 @@
 
             %form{action: 'https://codepen.io/pen/define', method: 'POST', target: '_blank'}
 
-              %a.btn.break_small.expand_down{href: '#', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
+              %a.btn.break_small.expand_down{href: '', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
                 %span.fa.fa-fw.fa-chevron-down
                 Grab the CSS
 
@@ -159,7 +182,7 @@
               %input.codepen_json{type: 'hidden', name: 'data'}
 
               %button.codepen_btn.break_small{type: 'submit', onClick: "ga('send', 'event', 'external-link', 'click', 'codepen-edit');"}
-                %span.fa.fa-fw.fa-pencil
+                %span.fa.fa-fw.fa-codepen
                 Edit on CodePen
 
               &nbsp;
@@ -174,7 +197,7 @@
 
                     body {
                       background-color: <span class="js_css_background_color">white</span>;
-                      font-family: <span class="js_css_body_font_family">'Poppins', sans-serif</span>;
+                      font-family: <span class="js_css_body_font_family">'Poppins', sans-serif;</span>
                       font-weight: <span class="js_css_body_weight">400</span>;
                       line-height: 1.5;
                       color: <span class="js_css_color">#333</span>;
@@ -184,7 +207,7 @@
 
                     h1, h2, h3, h4, h5 {
                       margin: 1.250em 0 0.64em;<span class="js_css_font_headers"></span>
-                      font-family: <span class="js_css_font_family">'Poppins', sans-serif</span>;
+                      font-family: <span class="js_css_font_family">'Poppins', sans-serif;</span>
                       font-weight: <span class="js_css_weight">400</span>;
                       line-height: 1.2;
                     }
@@ -202,7 +225,7 @@
 
                     h5 {font-size: <span class="js_css_header_size"></span>em;}
 
-                    small, .font_small {font-size: <span class="js_css_small_size"></span>em;}
+                    small, .text_small {font-size: <span class="js_css_small_size"></span>em;}
 
     .content.container
       .table_layout.stage_footer
@@ -210,11 +233,11 @@
           .sidebar.text_right.media_xs_hide
             %ul.inline_list
               %li
+                %a.remove_border_bottom{href: 'https://j.eremy.net/'}
+                  %span.fa.fa-laptop.fa-lg
+              %li
                 %a.remove_border_bottom{href: 'https://twitter.com/jeremybchurch'}
                   %span.fa.fa-twitter.fa-lg
-              %li
-                %a.remove_border_bottom{href: 'https://j.eremy.net/'}
-                  %span.fa.fa-globe.fa-lg
               %li
                 %a.remove_border_bottom{href: 'https://github.com/jeremychurch/type-scale'}
                   %span.fa.fa-github-alt.fa-lg
@@ -259,16 +282,16 @@
             .break_small
               %ul.inline_list
                 %li
+                  %a.remove_border_bottom{href: 'https://j.eremy.net/'}
+                    %span.fa.fa-laptop.fa-2x
+                %li
                   %a.remove_border_bottom{href: 'https://twitter.com/jeremybchurch'}
                     %span.fa.fa-twitter.fa-2x
-                %li
-                  %a.remove_border_bottom{href: 'https://j.eremy.net/'}
-                    %span.fa.fa-globe.fa-2x
                 %li
                   %a.remove_border_bottom{href: 'https://github.com/jeremychurch/type-scale'}
                     %span.fa.fa-github-alt.fa-2x
 
-            %p.font_small
+            %p.text_small
               Created by <a href="https://j.eremy.net/">Jeremy Church</a>
               %br
               Project available on <a href="https://github.com/jeremychurch/type-scale">GitHub</a>. Code licensed under <a href="https://opensource.org/licenses/mit-license.html">MIT License</a>.
@@ -276,30 +299,29 @@
     .article_preview
       .article_preview_button.fa.fa-chevron-left.fa-lg.fa-fw{onClick: "ga('send', 'event', 'toggle', 'click', 'article-preview');"}
       .article_preview_inner
-        %form
-          .cols.cols_fields
-            .col_two_thirds
-              .field
-                %label Body Font
-                %select.js_body_font
+        .break_small
+          %form
+            .cols.cols_fields
+              .col_two_thirds
+                .field
+                  %label Body Font
+                  %select.js_body_font
 
-            .col_one_third
-              .field
-                %label Body Weight
-                %input.i_body_weight{type: 'text', value: '400'}
+              .col_one_third
+                .field
+                  %label Body Weight
+                  %input.i_body_weight{type: 'text', value: '400'}
 
-          .cols.cols_fields
-            .col_half
-              .field
-                %label Background Color
-                %input.background_color{type: 'text', value: 'white'}
+            .cols.cols_fields
+              .col_half
+                .field
+                  %label Background Color
+                  %input.background_color{type: 'text', value: 'white'}
 
-            .col_half
-              .field
-                %label Font Color
-                %input.font_color{type: 'text', value: '#333'}
-
-        %hr
+              .col_half
+                .field
+                  %label Font Color
+                  %input.font_color{type: 'text', value: '#333'}
 
         .article_container
           .article_content
@@ -307,34 +329,23 @@
 
             %p From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
 
-            %p His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
-
             %h2.article_header One Morning, When Gregor Samsa Woke
 
             %p From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
-
-            %p His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
 
             %h3.article_header One Morning, When Gregor Samsa Woke
 
             %p From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
 
-            %p His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
-
             %h4.article_header One Morning, When Gregor Samsa Woke
 
             %p From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
-
-            %p His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
 
             %h5.article_header One Morning, When Gregor Samsa Woke
 
             %p From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
 
-            %p His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. &ldquo;What&rsquo;s happened to me?&rdquo; he thought. It wasn&rsquo;t a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls.
-
-            %p.font_small.text_muted
-              %em &mdash; Excerpt from The Metamorphosis, by Franz Kafka.
+            %p.text_small &mdash; Excerpt from The Metamorphosis, by Franz Kafka.
 
     %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
 
