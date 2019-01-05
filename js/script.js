@@ -1,8 +1,12 @@
 
 $(document).ready(function() {
 
-  //viewportHeight = $(window).innerHeight();
-  $('.stage').css('min-height', $(window).innerHeight());
+  function paramArticlePreview() {
+    if (getQueryVariable('preview') === 'true') {
+      $('.article_preview').addClass('article_preview_open');
+    };
+  };
+  paramArticlePreview();
 
   $('.article_preview_button').click(function() {
     $(this).toggleClass('fa-times').toggleClass('fa-chevron-left');
@@ -17,8 +21,19 @@ $(document).ready(function() {
     };
   });
 
-  $('.js_param_url').hover(function() {
-    $(this).attr('href', $(this).text())
+  $('.js_link_reset').click(function(e) {
+    e.preventDefault();
+    location.reload(true);
+  });
+
+  $('.js_permalink').click(function(e) {
+    e.preventDefault();
+    $('.js_permalink_field').val($('.js_param_url').text()).show().select();
+    // $(this).attr('href', $('.js_param_url').text())
+  });
+
+  $('.js_permalink_field').click(function() {
+    $(this).val($('.js_param_url').text()).select();
   });
 
   $('[data-toggle]').click(function(e){
@@ -26,9 +41,19 @@ $(document).ready(function() {
     $($(this).data('toggle')).toggle();
   });
 
-  // $('.input_select_all').click(function () {
-  //   $(this).select();
-  // });
+  $('.js_scale_add_high').click(function(e) {
+    e.preventDefault();
+    $('.js_scale_add_high_section').after($('.js_scale_section_high').first().prop('outerHTML'));
+    $('.js_scale_section_high').first().hide().show().css('color', '#bbb');
+    scaleCalc();
+  });
+
+  $('.js_scale_add_low').click(function(e) {
+    e.preventDefault();
+    $('.js_scale_add_low_section').before($('.js_scale_section_low').last().prop('outerHTML'));
+    $('.js_scale_section_low').last().hide().show().css('color', '#bbb');
+    scaleCalc();
+  });
 
   function getQueryVariable(variable) {
     var vars = window.location.search.substring(1).split("&");
@@ -164,7 +189,7 @@ $(document).ready(function() {
           fallback = item.category;
         };
         setWebFontListFamily = "'" + item.family + "', " + fallback;
-        listElements+='<option value="' + item.family + '" data-font-family="' + setWebFontListFamily + '">' + item.family + '</option>';
+        listElements+='<option value="' + item.family + '" data-font-family="' + setWebFontListFamily + ';">' + item.family + '</option>';
       });
       $('.js_web_font, .js_body_font').append(listElements).val('Poppins');
       paramFont();
@@ -238,7 +263,7 @@ $(document).ready(function() {
     bodyFont = $('.js_body_font').val();
     setWebFontUrl();
     bodyWebFontFamily = $('.js_body_font option:selected').data('font-family');
-    $('.js_style_body_font').html('.article_content p {font-family:' + bodyWebFontFamily + ';}');
+    $('.js_style_body_font').html('.article_content p {font-family:' + bodyWebFontFamily + '}');
     $('.js_param_body_font').text(encodeURIComponent(bodyFont));
     $('.js_css_body_font_family').text(bodyWebFontFamily);
     setPreviewHeight();
