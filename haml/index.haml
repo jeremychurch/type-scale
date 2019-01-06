@@ -9,7 +9,7 @@
 
     %link{href: "style.css", rel: "stylesheet", media: "all"}
 
-    %link{href: 'https://fonts.googleapis.com/css?family=Poppins:400,400italic,700,700italic', rel: 'stylesheet', type:'text/css'}
+    %link{href: 'https://fonts.googleapis.com/css?family=Poppins:400,500,600', rel: 'stylesheet', type:'text/css'}
 
     %link.webfont_url{rel: 'stylesheet', type:'text/css'}
 
@@ -101,7 +101,7 @@
           .main_content
             .scale.table_padded
               .js_scale_add_high_section.table_row
-                .table_cell.text_light.text_right
+                .table_cell.text_light.text_right.media_xs_text_center
                   %a.js_scale_add_high.remove_border_bottom{href: '#'}
                     %span.fa.fa-lg.fa-plus-circle
                 .table_cell
@@ -162,12 +162,13 @@
                   %span.scale_low.scale_preview_text A Visual Type Scale
 
               .js_scale_add_low_section.table_row
-                .table_cell.text_light.text_right
+                .table_cell.text_light.text_right.media_xs_text_center
                   %a.js_scale_add_low.remove_border_bottom{href: '#'}
                     %span.fa.fa-lg.fa-plus-circle
                 .table_cell
 
-            %hr
+            %hr.media_xs_hide
+            .break_medium.media_xs_show
 
             <script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CKYIV2JW&placement=typescalecom" id="_carbonads_js"></script>
 
@@ -177,15 +178,11 @@
                 %span.fa.fa-fw.fa-chevron-down
                 Grab the CSS
 
-              &nbsp;
-
-              %input.codepen_json{type: 'hidden', name: 'data'}
-
               %button.codepen_btn.break_small{type: 'submit', onClick: "ga('send', 'event', 'external-link', 'click', 'codepen-edit');"}
                 %span.fa.fa-fw.fa-codepen
                 Edit on CodePen
 
-              &nbsp;
+              %input.codepen_json{type: 'hidden', name: 'data'}
 
             .js_generated_css.hide
               %pre.codepen_able{data: {'type' => 'css'}, contenteditable: 'true', onClick: "document.execCommand('selectAll',false,null); ga('send', 'event', 'select', 'click', 'css-code');"}
@@ -227,7 +224,7 @@
 
                     small, .text_small {font-size: <span class="js_css_small_size"></span>em;}
 
-    .content.container
+    .content.container.text_white
       .table_layout.stage_footer
         .table_row
           .sidebar.text_right.media_xs_hide

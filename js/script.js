@@ -28,7 +28,7 @@ $(document).ready(function() {
 
   $('.js_permalink').click(function(e) {
     e.preventDefault();
-    $('.js_permalink_field').val($('.js_param_url').text()).show().select();
+    $('.js_permalink_field').val($('.js_param_url').text()).toggle().select();
     // $(this).attr('href', $('.js_param_url').text())
   });
 
@@ -44,14 +44,14 @@ $(document).ready(function() {
   $('.js_scale_add_high').click(function(e) {
     e.preventDefault();
     $('.js_scale_add_high_section').after($('.js_scale_section_high').first().prop('outerHTML'));
-    $('.js_scale_section_high').first().hide().show().css('color', '#bbb');
+    $('.js_scale_section_high').first().hide().show().css('color', '#ff8787');
     scaleCalc();
   });
 
   $('.js_scale_add_low').click(function(e) {
     e.preventDefault();
     $('.js_scale_add_low_section').before($('.js_scale_section_low').last().prop('outerHTML'));
-    $('.js_scale_section_low').last().hide().show().css('color', '#bbb');
+    $('.js_scale_section_low').last().hide().show().css('color', '#ff8787');
     scaleCalc();
   });
 
