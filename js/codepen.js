@@ -5,11 +5,11 @@ $(document).ready(function() {
     $(".codepen_able").each(function() {
 
       el = $(this),
-          type = el.data("type"),
-          codeInside = el.find("code"),
-          isCodeInside = codeInside.length,
-          HTML = "",
-          CSS = "";
+        type = el.data("type"),
+        codeInside = el.find("code"),
+        isCodeInside = codeInside.length,
+        HTML = "",
+        CSS = "";
 
       if (type == "html") {
         if (codeInside) {
@@ -25,10 +25,12 @@ $(document).ready(function() {
         }
       }
 
+      previewText = $('.preview_text').val();
+
       data = {
         title              : "A Type Scale",
         description        : "Custom type scale and CSS from https://type-scale.com",
-        html               : HTML + '<h1>One Morning, When Gregor Samsa Woke</h1>\n\n<p>From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>\n\n<h2>One Morning, When Gregor Samsa Woke</h2>\n\n<p>From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>\n\n<h3>One Morning, When Gregor Samsa Woke</h3>\n\n<p>From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>\n\n<h4>One Morning, When Gregor Samsa Woke</h4>\n\n<p>From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>\n\n<h5>One Morning, When Gregor Samsa Woke</h5>\n\n<p>From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>\n\n<p class="text_small">— Excerpt from The Metamorphosis, by Franz Kafka.</p>',
+        html               : HTML + '<h1>' + previewText + '</h1>\n\n<p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.</p>\n\n<h2>' + previewText + '</h2>\n\n<p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.</p>\n\n<h3>' + previewText + '</h3>\n\n<p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.</p>\n\n<h4>' + previewText + '</h4>\n\n<p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.</p>\n\n<h5>' + previewText + '</h5>\n\n<p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.</p>\n\n<p class="text_small">— Excerpt from A Voyage to Arcturus, by David Lindsay.</p>',
         css                : CSS
       };
 

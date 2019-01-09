@@ -68,9 +68,10 @@ body
   border-left: 0.5rem solid $app-green
   background-color: $app-gray-medium
   color: #999
-  box-shadow: -1px 0 rgba(255,255,255,0.5)
+  line-height: 1.45
   @media screen and (min-width: #{$app-media-xs})
     transform: translate(calc(100vw - 8rem), 0)
+    box-shadow: -1px 0 rgba(255,255,255,0.25)
 
 .article_preview_inner
   overflow: hidden
@@ -114,6 +115,7 @@ body
 
 .article_content
   max-width: 38em
+  cursor: text
   font-family: "Poppins", sans-serif
   p
     font-family: "Poppins", sans-serif

@@ -25,11 +25,12 @@
     ga('send', 'pageview');
     </script>
 
-    %style.js_style_weight{type: "text/css"}
-    %style.js_style_body_font{type: "text/css"}
-    %style.js_style_body_weight{type: "text/css"}
-    %style.js_style_background_color{type: "text/css"}
-    %style.js_style_font_color{type: "text/css"}
+    %style.js_style_weight{type: 'text/css'}
+    %style.js_style_body_font{type: 'text/css'}
+    %style.js_style_body_weight{type: 'text/css'}
+    %style.js_style_line_height{type: 'text/css'}
+    %style.js_style_background_color{type: 'text/css'}
+    %style.js_style_font_color{type: 'text/css'}
 
   %body
     .container.stage
@@ -87,16 +88,20 @@
               .field
                 %ul.inline_list.text_small.text_light
                   %li
-                    %a.js_link_reset{href: '#'}
+                    %a.js_link_reset.remove_border_bottom{href: '#'}
+                      %span.fa.fa-times-circle
                       Reset All
+
                   %li
-                    %a.js_permalink{href: '#'}
+                    %a.js_permalink.remove_border_bottom{href: '#'}
+                      %span.fa.fa-scissors
                       Save for Later
+
 
               .field
                 %input.js_permalink_field.hide.text_small{type: 'text'}
 
-              .js_param_url.hide https://type-scale.com/?size=<span class="js_param_size">16</span>&amp;scale=<span class="js_param_scale">1.250</span>&amp;text=<span class="js_param_text">A Visual Type Scale</span>&amp;font=<span class="js_param_font">Poppins</span>&amp;fontweight=<span class="js_param_weight">400</span>&amp;bodyfont=<span class="js_param_body_font">Poppins</span>&amp;bodyfontweight=<span class="js_param_weight_headers">400</span>&amp;backgroundcolor=<span class="js_param_background_color">white</span>&amp;fontcolor=<span class="js_param_font_color">%23333</span>&amp;preview=false
+              .js_param_url.hide https://type-scale.com/?size=<span class='js_param_size'>16</span>&amp;scale=<span class='js_param_scale'>1.250</span>&amp;text=<span class='js_param_text'>A Visual Type Scale</span>&amp;font=<span class='js_param_font'>Poppins</span>&amp;fontweight=<span class='js_param_weight'>400</span>&amp;bodyfont=<span class='js_param_body_font'>Poppins</span>&amp;bodyfontweight=<span class='js_param_weight_headers'>400</span>&amp;lineheight=<span class='js_param_line_height'>1.45</span>&amp;backgroundcolor=<span class='js_param_background_color'>white</span>&amp;fontcolor=<span class='js_param_font_color'>%23333</span>&amp;preview=false
 
           .main_content
             .scale.table_padded
@@ -196,17 +201,17 @@
                       background-color: <span class="js_css_background_color">white</span>;
                       font-family: <span class="js_css_body_font_family">'Poppins', sans-serif;</span>
                       font-weight: <span class="js_css_body_weight">400</span>;
-                      line-height: 1.5;
+                      line-height: <span class='js_css_line_height'>1.45</span>;
                       color: <span class="js_css_color">#333</span>;
                     }
 
-                    p {margin-bottom: 1.250em;}
+                    p {margin-bottom: 1.25em;}
 
                     h1, h2, h3, h4, h5 {
-                      margin: 1.250em 0 0.64em;<span class="js_css_font_headers"></span>
+                      margin: 2.75rem 0 1rem;<span class="js_css_font_headers"></span>
                       font-family: <span class="js_css_font_family">'Poppins', sans-serif;</span>
                       font-weight: <span class="js_css_weight">400</span>;
-                      line-height: 1.2;
+                      line-height: 1.15;
                     }
 
                     h1 {
@@ -224,7 +229,7 @@
 
                     small, .text_small {font-size: <span class="js_css_small_size"></span>em;}
 
-    .content.container.text_white
+    .content.container.text_green
       .table_layout.stage_footer
         .table_row
           .sidebar.text_right.media_xs_hide
@@ -310,39 +315,44 @@
                   %input.i_body_weight{type: 'text', value: '400'}
 
             .cols.cols_fields
-              .col_half
+              .col_one_third
                 .field
-                  %label Background Color
+                  %label Line Height
+                  %input.js_line_height{type: 'text', value: '1.45'}
+
+              .col_one_third
+                .field
+                  %label Background
                   %input.background_color{type: 'text', value: 'white'}
 
-              .col_half
+              .col_one_third
                 .field
                   %label Font Color
                   %input.font_color{type: 'text', value: '#333'}
 
         .article_container
-          .article_content
-            %h1.article_header One Morning, When Gregor Samsa Woke
+          .article_content{contenteditable: 'true'}
+            %h1.article_header A Crash Course in Web&nbsp;Design
 
-            %p From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
+            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
 
-            %h2.article_header One Morning, When Gregor Samsa Woke
+            %h2.article_header A Crash Course in Web&nbsp;Design
 
-            %p From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
+            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
 
-            %h3.article_header One Morning, When Gregor Samsa Woke
+            %h3.article_header A Crash Course in Web&nbsp;Design
 
-            %p From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
+            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
 
-            %h4.article_header One Morning, When Gregor Samsa Woke
+            %h4.article_header A Crash Course in Web&nbsp;Design
 
-            %p From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
+            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
 
-            %h5.article_header One Morning, When Gregor Samsa Woke
+            %h5.article_header A Crash Course in Web&nbsp;Design
 
-            %p From troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.
+            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
 
-            %p.text_small &mdash; Excerpt from The Metamorphosis, by Franz Kafka.
+            %p.text_small &mdash; Excerpt from A Voyage to Arcturus, by David Lindsay.
 
     %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
 
