@@ -179,7 +179,7 @@
 
             %form{action: 'https://codepen.io/pen/define', method: 'POST', target: '_blank'}
 
-              %a.btn.break_small.expand_down{href: '#', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
+              %a.btn.break_small.js_css_button{href: '#', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
                 %span.fa.fa-fw.fa-chevron-down
                 Grab the CSS
 
@@ -190,7 +190,7 @@
               %input.codepen_json{type: 'hidden', name: 'data'}
 
             .js_generated_css.hide
-              %pre.codepen_able{data: {'type' => 'css'}, contenteditable: 'true', onClick: "document.execCommand('selectAll',false,null); ga('send', 'event', 'select', 'click', 'css-code');"}
+              %pre.codepen_able{data: {'type' => 'css'}, contenteditable: 'true', onClick: "ga('send', 'event', 'select', 'click', 'css-code');"}
                 %code
                   :preserve
                     @import url('<span class="js_css_webfont_url">https://fonts.googleapis.com/css?family=Poppins:400</span>');
