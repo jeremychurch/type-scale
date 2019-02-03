@@ -16,12 +16,9 @@ $(document).ready(function() {
     $('.article_preview_open .article_content').focus();
   });
 
-  $('.expand_down').click(function(e) {
+  $('.js_css_button').click(function(e) {
     e.preventDefault();
     $(this).children('.fa').toggleClass('fa-times').toggleClass('fa-chevron-down');
-    if ($(this).hasClass('more_options_button')) {
-      setPreviewHeight();
-    };
   });
 
   $('.js_link_reset').click(function(e) {
