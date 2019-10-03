@@ -196,6 +196,8 @@ $(document).ready(function() {
       paramFontWeight();
       paramBodyFont();
       paramBodyFontWeight();
+      $('.js_web_font').val('Griffy');
+      setFont();
     });
   };
   createWebFontList();
