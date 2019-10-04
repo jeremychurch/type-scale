@@ -191,13 +191,12 @@ $(document).ready(function() {
         setWebFontListFamily = "'" + item.family + "', " + fallback;
         listElements+='<option value="' + item.family + '" data-font-family="' + setWebFontListFamily + ';">' + item.family + '</option>';
       });
-      $('.js_web_font, .js_body_font').append(listElements).val('Poppins');
+      $('.js_web_font, .js_body_font').append(listElements).val('Griffy');
+      setFont();
       paramFont();
       paramFontWeight();
       paramBodyFont();
       paramBodyFontWeight();
-      $('.js_web_font').val('Griffy');
-      setFont();
     });
   };
   createWebFontList();
