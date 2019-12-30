@@ -101,7 +101,7 @@
               .field
                 %input.js_permalink_field.hide.text_small{type: 'text'}
 
-              .js_param_url.hide https://type-scale.com/?size=<span class='js_param_size'>16</span>&amp;scale=<span class='js_param_scale'>1.250</span>&amp;text=<span class='js_param_text'>A Visual Type Scale</span>&amp;font=<span class='js_param_font'>Poppins</span>&amp;fontweight=<span class='js_param_weight'>400</span>&amp;bodyfont=<span class='js_param_body_font'>Poppins</span>&amp;bodyfontweight=<span class='js_param_weight_headers'>400</span>&amp;lineheight=<span class='js_param_line_height'>1.45</span>&amp;backgroundcolor=<span class='js_param_background_color'>white</span>&amp;fontcolor=<span class='js_param_font_color'>%23333</span>&amp;preview=false
+              .js_param_url.hide https://type-scale.com/?size=<span class='js_param_size'>16</span>&amp;scale=<span class='js_param_scale'>1.250</span>&amp;text=<span class='js_param_text'>A Visual Type Scale</span>&amp;font=<span class='js_param_font'>Poppins</span>&amp;fontweight=<span class='js_param_weight'>400</span>&amp;bodyfont=<span class='js_param_body_font'>Poppins</span>&amp;bodyfontweight=<span class='js_param_weight_headers'>400</span>&amp;lineheight=<span class='js_param_line_height'>1.65</span>&amp;backgroundcolor=<span class='js_param_background_color'>white</span>&amp;fontcolor=<span class='js_param_font_color'>%23333</span>&amp;preview=false
 
           .main_content
             .scale.table_padded
@@ -195,20 +195,20 @@
                   :preserve
                     @import url('<span class="js_css_webfont_url">https://fonts.googleapis.com/css?family=Poppins:400</span>');
 
-                    html {font-size: <span class="js_css_font_size"></span>px;}
+                    html {font-size: <span class="js_css_font_size"></span>%;} /*<span class="js_css_font_size_px"></span>px*/
 
                     body {
                       background-color: <span class="js_css_background_color">white</span>;
                       font-family: <span class="js_css_body_font_family">'Poppins', sans-serif;</span>
                       font-weight: <span class="js_css_body_weight">400</span>;
-                      line-height: <span class='js_css_line_height'>1.45</span>;
+                      line-height: <span class='js_css_line_height'>1.65</span>;
                       color: <span class="js_css_color">#333</span>;
                     }
 
-                    p {margin-bottom: 1.25em;}
+                    p {margin-bottom: 1.15rem;}
 
                     h1, h2, h3, h4, h5 {
-                      margin: 2.75rem 0 1rem;<span class="js_css_font_headers"></span>
+                      margin: 2.75rem 0 1.05rem;<span class="js_css_font_headers"></span>
                       font-family: <span class="js_css_font_family">'Poppins', sans-serif;</span>
                       font-weight: <span class="js_css_weight">400</span>;
                       line-height: 1.15;
@@ -318,7 +318,7 @@
               .col_one_third
                 .field
                   %label Line Height
-                  %input.js_line_height{type: 'text', value: '1.45'}
+                  %input.js_line_height{type: 'text', value: '1.65'}
 
               .col_one_third
                 .field
@@ -334,23 +334,33 @@
           .article_content{contenteditable: 'true'}
             %h1.article_header A Crash Course in Web&nbsp;Design
 
-            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
+            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction.
+
+            %p When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
 
             %h2.article_header A Crash Course in Web&nbsp;Design
 
-            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
+            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction.
+
+            %p When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
 
             %h3.article_header A Crash Course in Web&nbsp;Design
 
-            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
+            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction.
+
+            %p When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
 
             %h4.article_header A Crash Course in Web&nbsp;Design
 
-            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
+            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction.
+
+            %p When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
 
             %h5.article_header A Crash Course in Web&nbsp;Design
 
-            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
+            %p What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction.
+
+            %p When it came near enough he perceived that it was not grass; there were no blades, but only purple roots. The roots were revolving, for each small plant in the whole patch, like the spokes of a rimless wheel.
 
             %p.text_small &mdash; Excerpt from A Voyage to Arcturus, by David Lindsay.
 

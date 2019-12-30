@@ -95,7 +95,8 @@ $(document).ready(function() {
     scaleSelect();
     $('.js_param_size').text(fontSize);
     $('.article_container').css('font-size', Math.round(baseSize*1000)/1000 + 'em');
-    $('.js_css_font_size').text(fontSize);
+    $('.js_css_font_size').text(Math.round(baseSize*1000)/10);
+    $('.js_css_font_size_px').text(fontSize);
   };
 
 
