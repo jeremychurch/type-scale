@@ -401,6 +401,7 @@ $(document).ready(function() {
       $($('.article_header').get().reverse()).each(function(index) {
         result = a*b;
         a = result;
+        // This needs to remain "em", so the headers look right in the preview.
         $(this).css('font-size', Math.round(result*1000)/1000 + 'em');
       });
     };
