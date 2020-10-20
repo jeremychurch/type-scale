@@ -5,7 +5,7 @@
 <meta content='width=device-width' name='viewport'>
 <title>Type Scale - A Visual Calculator</title>
 <meta content='Preview and choose the right type scale for your project. Experiment with font size, scale and different webfonts.' name='description'>
-<meta content='font, size, typography, typographic, typeface, em, ems, px, scale, calculate, calculator, webfont, edit, update, modular scale, preview' name='keywords'>
+<meta content='font, text, type, size, typography, typographic, typeface, rem, rems, em, ems, px, scale, calculate, calculator, webfont, edit, update, modular scale, preview' name='keywords'>
 <link href='style.css' media='all' rel='stylesheet'>
 <link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600' rel='stylesheet' type='text/css'>
 <link class='webfont_url' rel='stylesheet' type='text/css'>
@@ -33,9 +33,9 @@ ga('send', 'pageview');
 <form>
 <div class='field'>
 <label>Base Size</label>
-<input class='base_size' style='max-width:4em;' type='text'>
+<input class='base_size' style='max-width:4rem;' type='text'>
 <span class='text_muted'>
-px (<span class="base_em"></span>em)
+px (<span class="base_em"></span>rem)
 </span>
 </div>
 <div class='cols cols_fields'>
@@ -218,7 +218,7 @@ Edit on CodePen
 <input class='codepen_json' name='data' type='hidden'>
 </form>
 <div class='js_generated_css hide'>
-<pre class='codepen_able' contenteditable='true' data-type='css' onClick='ga(&#39;send&#39;, &#39;event&#39;, &#39;select&#39;, &#39;click&#39;, &#39;css-code&#39;);'><code>@import url('<span class="js_css_webfont_url">https://fonts.googleapis.com/css?family=Poppins:400</span>');&#x000A;&#x000A;html {font-size: <span class="js_css_font_size"></span>%;} /*<span class="js_css_font_size_px"></span>px*/&#x000A;&#x000A;body {&#x000A;  background-color: <span class="js_css_background_color">white</span>;&#x000A;  font-family: <span class="js_css_body_font_family">'Poppins', sans-serif;</span>&#x000A;  font-weight: <span class="js_css_body_weight">400</span>;&#x000A;  line-height: <span class='js_css_line_height'>1.65</span>;&#x000A;  color: <span class="js_css_color">#333</span>;&#x000A;}&#x000A;&#x000A;p {margin-bottom: 1.15rem;}&#x000A;&#x000A;h1, h2, h3, h4, h5 {&#x000A;  margin: 2.75rem 0 1.05rem;<span class="js_css_font_headers"></span>&#x000A;  font-family: <span class="js_css_font_family">'Poppins', sans-serif;</span>&#x000A;  font-weight: <span class="js_css_weight">400</span>;&#x000A;  line-height: 1.15;&#x000A;}&#x000A;&#x000A;h1 {&#x000A;  margin-top: 0;&#x000A;  font-size: <span class="js_css_header_size"></span>em;&#x000A;}&#x000A;&#x000A;h2 {font-size: <span class="js_css_header_size"></span>em;}&#x000A;&#x000A;h3 {font-size: <span class="js_css_header_size"></span>em;}&#x000A;&#x000A;h4 {font-size: <span class="js_css_header_size"></span>em;}&#x000A;&#x000A;h5 {font-size: <span class="js_css_header_size"></span>em;}&#x000A;&#x000A;small, .text_small {font-size: <span class="js_css_small_size"></span>em;}&#x000A;</code></pre>
+<pre class='codepen_able' contenteditable='true' data-type='css' onClick='ga(&#39;send&#39;, &#39;event&#39;, &#39;select&#39;, &#39;click&#39;, &#39;css-code&#39;);'><code>@import url('<span class="js_css_webfont_url">https://fonts.googleapis.com/css?family=Poppins:400</span>');&#x000A;&#x000A;html {font-size: <span class="js_css_font_size"></span>%;} /*<span class="js_css_font_size_px"></span>px*/&#x000A;&#x000A;body {&#x000A;  background-color: <span class="js_css_background_color">white</span>;&#x000A;  font-family: <span class="js_css_body_font_family">'Poppins', sans-serif;</span>&#x000A;  font-weight: <span class="js_css_body_weight">400</span>;&#x000A;  line-height: <span class='js_css_line_height'>1.65</span>;&#x000A;  color: <span class="js_css_color">#333</span>;&#x000A;}&#x000A;&#x000A;p {margin-bottom: 1.15rem;}&#x000A;&#x000A;h1, h2, h3, h4, h5 {&#x000A;  margin: 2.75rem 0 1.05rem;<span class="js_css_font_headers"></span>&#x000A;  font-family: <span class="js_css_font_family">'Poppins', sans-serif;</span>&#x000A;  font-weight: <span class="js_css_weight">400</span>;&#x000A;  line-height: 1.15;&#x000A;}&#x000A;&#x000A;h1 {&#x000A;  margin-top: 0;&#x000A;  font-size: <span class="js_css_header_size"></span>rem;&#x000A;}&#x000A;&#x000A;h2 {font-size: <span class="js_css_header_size"></span>rem;}&#x000A;&#x000A;h3 {font-size: <span class="js_css_header_size"></span>rem;}&#x000A;&#x000A;h4 {font-size: <span class="js_css_header_size"></span>rem;}&#x000A;&#x000A;h5 {font-size: <span class="js_css_header_size"></span>rem;}&#x000A;&#x000A;small, .text_small {font-size: <span class="js_css_small_size"></span>rem;}&#x000A;</code></pre>
 </div>
 </div>
 </div>
@@ -264,9 +264,8 @@ A type tool by
 <h2>How to Use</h2>
 <p>I like to enter the base font-size for paragraph text. Then I select from the surrounding values for headers and small text.</p>
 <p>There are no rules. Just experiment and have fun. Try using the values for line-height, margins or whatever, and see what works.</p>
-<h2>EM vs. REM Values</h2>
-<p>The rem value is the same as the em value displayed above. Both units are scalable; the only difference between the two is that em is proportionate to its nearest parent that has a font-size, whereas rem is always relative to the &lt;html&gt; font-size. You can read more about these units from an article I wrote on the subject, <a href='https://j.eremy.net/confused-about-rem-and-em/'>Confused About REM and EM?</a></p>
-<p>Also, <a href='https://github.com/jeremychurch/type-scale/issues/9#issuecomment-279762522'>here&rsquo;s a response</a> I wrote to a GitHub request. There are a few examples there as well.</p>
+<h2>REM vs. EM Values</h2>
+<p>The em value is the same as the rem value displayed above. Both units are scalable. The only difference between the two is that em is proportionate to its nearest parent that has a font-size, whereas rem is always relative to the &lt;html&gt; font-size. You can read more about these units from an article I wrote on the subject, <a href='https://j.eremy.net/confused-about-rem-and-em/'>Confused About REM and EM?</a></p>
 <h2>Additional Resources</h2>
 <ul>
 <li><a href='http://pxtoem.com/'>pxtoem.com - PX to EM conversion made simple</a></li>

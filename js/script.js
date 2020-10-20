@@ -94,7 +94,7 @@ $(document).ready(function() {
     $('.base_em').text(Math.round(baseSize*1000)/1000);
     scaleSelect();
     $('.js_param_size').text(fontSize);
-    $('.article_container').css('font-size', Math.round(baseSize*1000)/1000 + 'em');
+    $('.article_container').css('font-size', Math.round(baseSize*1000)/1000 + 'rem');
     $('.js_css_font_size').text(Math.round(baseSize*1000)/10);
     $('.js_css_font_size_px').text(fontSize);
   };
@@ -375,7 +375,7 @@ $(document).ready(function() {
       result = baseSize;
 
       $($('.scale_high').get().reverse()).each(function(index) {
-        $(this).css('font-size', Math.round(result*1000)/1000 + 'em');
+        $(this).css('font-size', Math.round(result*1000)/1000 + 'rem');
         result = a*b;
         a = result;
       });
@@ -387,7 +387,7 @@ $(document).ready(function() {
       result = 1;
 
       $($('.scale_high_label').get().reverse()).each(function(index) {
-        $(this).text(Math.round(result*1000)/1000 + 'em (' + ((baseSize*16)*result).toFixed(2) + 'px)');
+        $(this).text(Math.round(result*1000)/1000 + 'rem (' + ((baseSize*16)*result).toFixed(2) + 'px)');
         result = a*b;
         a = result;
       });
@@ -425,7 +425,7 @@ $(document).ready(function() {
       $('.scale_low').each(function(index) {
         result = a/b;
         a = result;
-        $(this).css('font-size', Math.round(result*1000)/1000 + 'em');
+        $(this).css('font-size', Math.round(result*1000)/1000 + 'rem');
       });
     };
 
@@ -437,7 +437,7 @@ $(document).ready(function() {
       $('.scale_low_label').each(function(index) {
         result = a/b;
         a = result;
-        $(this).text(Math.round(result*1000)/1000 + 'em (' + ((baseSize*16)*result).toFixed(2) + 'px)');
+        $(this).text(Math.round(result*1000)/1000 + 'rem (' + ((baseSize*16)*result).toFixed(2) + 'px)');
       });
     };
 

@@ -5,7 +5,7 @@
     %meta{content: 'width=device-width', name: 'viewport'}
     %title Type Scale - A Visual Calculator
     %meta{name: "description", content: "Preview and choose the right type scale for your project. Experiment with font size, scale and different webfonts."}
-    %meta{name: "keywords", content: "font, size, typography, typographic, typeface, em, ems, px, scale, calculate, calculator, webfont, edit, update, modular scale, preview"}
+    %meta{name: "keywords", content: "font, text, type, size, typography, typographic, typeface, rem, rems, em, ems, px, scale, calculate, calculator, webfont, edit, update, modular scale, preview"}
 
     %link{href: "style.css", rel: "stylesheet", media: "all"}
 
@@ -40,9 +40,9 @@
             %form
               .field
                 %label Base Size
-                %input.base_size{type: 'text', style: 'max-width:4em;'}
+                %input.base_size{type: 'text', style: 'max-width:4rem;'}
                 %span.text_muted
-                  px (<span class="base_em"></span>em)
+                  px (<span class="base_em"></span>rem)
 
               .cols.cols_fields
                 .js_scale_div
@@ -216,18 +216,18 @@
 
                     h1 {
                       margin-top: 0;
-                      font-size: <span class="js_css_header_size"></span>em;
+                      font-size: <span class="js_css_header_size"></span>rem;
                     }
 
-                    h2 {font-size: <span class="js_css_header_size"></span>em;}
+                    h2 {font-size: <span class="js_css_header_size"></span>rem;}
 
-                    h3 {font-size: <span class="js_css_header_size"></span>em;}
+                    h3 {font-size: <span class="js_css_header_size"></span>rem;}
 
-                    h4 {font-size: <span class="js_css_header_size"></span>em;}
+                    h4 {font-size: <span class="js_css_header_size"></span>rem;}
 
-                    h5 {font-size: <span class="js_css_header_size"></span>em;}
+                    h5 {font-size: <span class="js_css_header_size"></span>rem;}
 
-                    small, .text_small {font-size: <span class="js_css_small_size"></span>em;}
+                    small, .text_small {font-size: <span class="js_css_small_size"></span>rem;}
 
     .content.container.text_green
       .table_layout.stage_footer
@@ -262,11 +262,9 @@
 
               %p There are no rules. Just experiment and have fun. Try using the values for line-height, margins or whatever, and see what works.
 
-              %h2 EM vs. REM Values
+              %h2 REM vs. EM Values
 
-              %p The rem value is the same as the em value displayed above. Both units are scalable; the only difference between the two is that em is proportionate to its nearest parent that has a font-size, whereas rem is always relative to the &lt;html&gt; font-size. You can read more about these units from an article I wrote on the subject, <a href='https://j.eremy.net/confused-about-rem-and-em/'>Confused About REM and EM?</a>
-
-              %p Also, <a href='https://github.com/jeremychurch/type-scale/issues/9#issuecomment-279762522'>here&rsquo;s a response</a> I wrote to a GitHub request. There are a few examples there as well.
+              %p The em value is the same as the rem value displayed above. Both units are scalable. The only difference between the two is that em is proportionate to its nearest parent that has a font-size, whereas rem is always relative to the &lt;html&gt; font-size. You can read more about these units from an article I wrote on the subject, <a href='https://j.eremy.net/confused-about-rem-and-em/'>Confused About REM and EM?</a>
 
               %h2 Additional Resources
 
