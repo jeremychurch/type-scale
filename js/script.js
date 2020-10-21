@@ -94,7 +94,7 @@ $(document).ready(function() {
     $('.base_em').text(Math.round(baseSize*1000)/1000);
     scaleSelect();
     $('.js_param_size').text(fontSize);
-    $('.article_container').css('font-size', Math.round(baseSize*1000)/1000 + 'rem');
+    $('.article_container').css('font-size', Math.round(baseSize*1000)/1000 + 'em');
     $('.js_css_font_size').text(Math.round(baseSize*1000)/10);
     $('.js_css_font_size_px').text(fontSize);
   };
@@ -375,7 +375,7 @@ $(document).ready(function() {
       result = baseSize;
 
       $($('.scale_high').get().reverse()).each(function(index) {
-        $(this).css('font-size', Math.round(result*1000)/1000 + 'rem');
+        $(this).css('font-size', Math.round(result*1000)/1000 + 'em');
         result = a*b;
         a = result;
       });
@@ -401,7 +401,6 @@ $(document).ready(function() {
       $($('.article_header').get().reverse()).each(function(index) {
         result = a*b;
         a = result;
-        // This needs to remain "em", so the headers look right in the preview.
         $(this).css('font-size', Math.round(result*1000)/1000 + 'em');
       });
     };
@@ -426,7 +425,7 @@ $(document).ready(function() {
       $('.scale_low').each(function(index) {
         result = a/b;
         a = result;
-        $(this).css('font-size', Math.round(result*1000)/1000 + 'rem');
+        $(this).css('font-size', Math.round(result*1000)/1000 + 'em');
       });
     };
 
