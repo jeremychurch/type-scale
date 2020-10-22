@@ -74,7 +74,7 @@
 
                     %label
                       Google Font
-                    %select.js_web_font
+                    %select.js_font
 
                 .col_one_third
                   .field
@@ -315,15 +315,17 @@
                 .field
                   %label Body Font
                   %select.js_body_font
+                    %option{value: "body_font_default", selected: "true"} &mdash;
 
               .col_one_third
                 .field
                   %label Body Weight
                   %select.js_body_weight
+                    %option{value: "body_weight_default", selected: "true"} &mdash;
                     %option 100
                     %option 200
                     %option 300
-                    %option{selected: "true"} 400
+                    %option 400
                     %option 500
                     %option 600
                     %option 700
