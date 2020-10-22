@@ -60,12 +60,12 @@ li
       padding-right: 0
 
 pre
-  font-family: "Courier New", Courier, monospace
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace
   line-height: 1.2
   white-space: pre-wrap
   cursor: text
-  background: $app-gray-light
-  border: 1px solid $app-gray-medium
+  background: $gray_100
+  border: 1px solid $gray_200
   border-radius: 4px
   padding: 0.7em 0.8em
   margin-bottom: $app-margin-small
@@ -75,7 +75,7 @@ pre
   position: relative
   margin-bottom: $app-margin-medium
   padding: $app-padding-small
-  border: 1px solid $app-gray-medium
+  border: 1px solid $gray_200
   > *:first-child
     margin-top: 0
   > *:last-child
@@ -86,7 +86,7 @@ pre
   position: relative
   margin-bottom: $app-margin-medium
   padding: $app-padding-small
-  background-color: $app-gray-light
+  background-color: $gray_100
   > *:first-child
     margin-top: 0
   > *:last-child
@@ -95,7 +95,7 @@ pre
 hr
   clear: both
   border: none
-  border-bottom: 1px solid $app-gray-medium
+  border-bottom: 1px solid $gray_200
   height: 0
   margin: $app-margin-medium 0
   padding: 0
@@ -105,12 +105,12 @@ button
 
 .btn, input[type="submit"], button
   display: block
-  border: 1px solid lighten($app-brown,25%)
+  border: 1px solid lighten($gray_500,25%)
   padding: 0.6em $app-padding-small
   background-color: transparent
   border-radius: 5px
   cursor: pointer
-  color: $app-brown
+  color: $gray_500
   line-height: 1.5
   text-align: center
   transition: all 0.3s ease 0s
@@ -126,7 +126,7 @@ button
 
 @media screen and (min-width: #{$app-media-xs})
   .border_right
-    border-right: 1px solid $app-gray-medium
+    border-right: 1px solid $gray_200
 
 // keep these at the bottom
 

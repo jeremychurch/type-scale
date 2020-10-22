@@ -387,7 +387,7 @@ $(document).ready(function() {
       result = 1;
 
       $($('.scale_high_label').get().reverse()).each(function(index) {
-        $(this).text(Math.round(result*1000)/1000 + 'rem (' + ((baseSize*16)*result).toFixed(2) + 'px)');
+        $(this).text(Math.round(result*1000)/1000 + 'rem/' + ((baseSize*16)*result).toFixed(2) + 'px');
         result = a*b;
         a = result;
       });
@@ -437,7 +437,7 @@ $(document).ready(function() {
       $('.scale_low_label').each(function(index) {
         result = a/b;
         a = result;
-        $(this).text(Math.round(result*1000)/1000 + 'rem (' + ((baseSize*16)*result).toFixed(2) + 'px)');
+        $(this).text(Math.round(result*1000)/1000 + 'rem/' + ((baseSize*16)*result).toFixed(2) + 'px');
       });
     };
 

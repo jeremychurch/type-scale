@@ -15,14 +15,16 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
   box-sizing: border-box
   width: 100%
   max-width: 30em //18.5em
-  border: 1px solid #bbb
-  box-shadow: inset 0 3px 6px rgba(0,0,0,0.20)
+  border: 1px solid $gray_200
+  border-radius: 4px
   outline: none
   padding: 0.5em 0.6em 0.6em 0.6em
-  background-color: transparent
+  background: $gray_50
+  color: $app-font-color
   &:focus
-    border-color: $app-yellow
-    box-shadow: 0 0 6px 0 $app-yellow
+    border-color: $app-green
+    box-shadow: 0 0 0 0.25em lighten($app-green-light,30)
+    background: #fff
 
 textarea
   max-width: none
@@ -31,8 +33,6 @@ textarea
 
 select
   -webkit-appearance: menulist
-  option
-    color: $app-font-color
 
 input[type="checkbox"] + label,
 input[type="radio"] + label
