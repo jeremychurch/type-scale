@@ -42,7 +42,7 @@
                 %label Base Size
                 %input.base_size{type: 'text', style: 'max-width:4rem;'}
                 %span.text_muted
-                  px (<span class="base_em"></span>rem)
+                  px / <span class="base_em"></span>em
 
               .cols.cols_fields
                 .js_scale_div
@@ -79,7 +79,16 @@
                 .col_one_third
                   .field
                     %label Weight
-                    %input.i_weight{type: 'text', value: '400'}
+                    %select.js_weight
+                      %option 100
+                      %option 200
+                      %option 300
+                      %option{selected: "true"} 400
+                      %option 500
+                      %option 600
+                      %option 700
+                      %option 800
+                      %option 900
 
               .field
                 %label Preview Text
@@ -310,7 +319,16 @@
               .col_one_third
                 .field
                   %label Body Weight
-                  %input.i_body_weight{type: 'text', value: '400'}
+                  %select.js_body_weight
+                    %option 100
+                    %option 200
+                    %option 300
+                    %option{selected: "true"} 400
+                    %option 500
+                    %option 600
+                    %option 700
+                    %option 800
+                    %option 900
 
             .cols.cols_fields
               .col_one_third

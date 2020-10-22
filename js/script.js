@@ -229,18 +229,18 @@ $(document).ready(function() {
 
   function paramFontWeight() {
     if (getQueryVariable('fontweight') !== false) {
-      $('.i_weight').val(getQueryVariable('fontweight'));
+      $('.js_weight').val(getQueryVariable('fontweight'));
       setFontWeight();
     };
   };
   // These run within createWebFontList(), otherwise the vals are not ready in time
 
-  $('.i_weight').bind("change paste keyup", function() {
+  $('.js_weight').bind("change paste keyup", function() {
     setFontWeight();
   });
 
   function setFontWeight() {
-    fontWeight = $('.i_weight').val();
+    fontWeight = $('.js_weight').val();
     setWebFontUrl();
     $('.js_style_weight').html('.scale_webfont, .article_header {font-weight:' + fontWeight + ';}');
     $('.js_param_weight').text(fontWeight);
@@ -275,18 +275,18 @@ $(document).ready(function() {
 
   function paramBodyFontWeight() {
     if (getQueryVariable('bodyfontweight') !== false) {
-      $('.i_body_weight').val(getQueryVariable('bodyfontweight'));
+      $('.js_body_weight').val(getQueryVariable('bodyfontweight'));
       setBodyFontWeight();
     };
   };
   // These run within createWebFontList(), otherwise the vals are not ready in time
 
-  $('.i_body_weight').bind("change paste keyup", function() {
+  $('.js_body_weight').bind("change paste keyup", function() {
     setBodyFontWeight();
   });
 
   function setBodyFontWeight() {
-    bodyFontWeight = $('.i_body_weight').val();
+    bodyFontWeight = $('.js_body_weight').val();
     setWebFontUrl();
     $('.js_style_body_weight').html('.article_content p {font-weight:' + bodyFontWeight + ';}');
     $('.js_param_weight_headers').text(bodyFontWeight);
@@ -296,8 +296,8 @@ $(document).ready(function() {
 
 
   function setWebFontUrl() {
-    googleFont = $('.js_web_font').val().replace(/\s/g, '+') + ':' + $('.i_weight').val();
-    bodyGoogleFont = $('.js_body_font').val().replace(/\s/g, '+') + ':' + $('.i_body_weight').val();
+    googleFont = $('.js_web_font').val().replace(/\s/g, '+') + ':' + $('.js_weight').val();
+    bodyGoogleFont = $('.js_body_font').val().replace(/\s/g, '+') + ':' + $('.js_body_weight').val();
     webFontUrl = 'https://fonts.googleapis.com/css?family=' + googleFont + '|' + bodyGoogleFont;
     $('.webfont_url').attr('href', webFontUrl);
     $('.js_css_webfont_url').text(webFontUrl);
