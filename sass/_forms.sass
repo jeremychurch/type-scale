@@ -11,7 +11,7 @@ label
   white-space: nowrap
   margin-bottom: 0.308em
 
-input[type="text"], input[type="email"], input[type="password"], textarea, select
+input[type="text"], input[type="email"], input[type="password"], input[type="color"], textarea, select
   box-sizing: border-box
   width: 100%
   max-width: 30em //18.5em
@@ -25,6 +25,18 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
     border-color: $app-green
     box-shadow: 0 0 0 0.25em lighten($app-green-light,30)
     background: #fff
+
+input[type="color"]
+  width: -webkit-fill-available
+  box-sizing: initial
+  padding-top: calc(0.5em + 1px)
+  padding-bottom: calc(0.6em + 1px)
+  -webkit-appearance: none
+  &::-webkit-color-swatch-wrapper
+    padding: 0
+  &::-webkit-color-swatch
+    border: none
+
 
 textarea
   max-width: none
