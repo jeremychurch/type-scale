@@ -6,10 +6,11 @@
     %title Type Scale - A Visual Calculator
     %meta{name: "description", content: "Preview and choose the right type scale for your project. Experiment with font size, scale and different webfonts."}
     %meta{name: "keywords", content: "font, text, type, size, typography, typographic, typeface, rem, rems, em, ems, px, scale, calculate, calculator, webfont, edit, update, modular scale, preview"}
+    %meta{name: "theme-color", content: "#86ab99"}
 
     %link{href: "style.css", rel: "stylesheet", media: "all"}
 
-    %link{href: 'https://fonts.googleapis.com/css?family=Poppins:400,500,600', rel: 'stylesheet', type:'text/css'}
+    %link{href: 'https://fonts.googleapis.com/css?family=Poppins:400,500', rel: 'stylesheet', type:'text/css'}
 
     %link.webfont_url{rel: 'stylesheet', type:'text/css'}
 
@@ -110,7 +111,7 @@
               .field
                 %input.js_permalink_field.hide.text_small{type: 'text'}
 
-              .js_param_url.hide https://type-scale.com/?size=<span class='js_param_size'>16</span>&amp;scale=<span class='js_param_scale'>1.250</span>&amp;text=<span class='js_param_text'>A Visual Type Scale</span>&amp;font=<span class='js_param_font'>Poppins</span>&amp;fontweight=<span class='js_param_weight'>400</span>&amp;bodyfont=<span class='js_param_body_font'>Poppins</span>&amp;bodyfontweight=<span class='js_param_body_weight'>400</span>&amp;lineheight=<span class='js_param_line_height'>1.65</span>&amp;backgroundcolor=<span class='js_param_background_color'>white</span>&amp;fontcolor=<span class='js_param_font_color'>%23333</span>&amp;preview=false
+              .js_param_url.hide https://type-scale.com/?size=<span class='js_param_size'>16</span>&amp;scale=<span class='js_param_scale'>1.250</span>&amp;text=<span class='js_param_text'>A Visual Type Scale</span>&amp;font=<span class='js_param_font'>Poppins</span>&amp;fontweight=<span class='js_param_weight'>400</span>&amp;bodyfont=<span class='js_param_body_font'>Poppins</span>&amp;bodyfontweight=<span class='js_param_body_weight'>400</span>&amp;lineheight=<span class='js_param_line_height'>1.65</span>&amp;backgroundcolor=<span class='js_param_background_color'>white</span>&amp;fontcolor=<span class='js_param_font_color'>%23000000</span>&amp;preview=false
 
           .main_content
             .scale.table_padded
@@ -189,11 +190,11 @@
             %form{action: 'https://codepen.io/pen/define', method: 'POST', target: '_blank'}
 
               %a.btn.break_small.js_css_button{href: '#', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
-                %span.fa.fa-fw.fa-chevron-down
+                %span.fa.fa-fw.fa-chevron-down.text_light
                 Grab the CSS
 
               %button.codepen_btn.break_small{type: 'submit', onClick: "ga('send', 'event', 'external-link', 'click', 'codepen-edit');"}
-                %span.fa.fa-fw.fa-codepen
+                %span.fa.fa-fw.fa-codepen.text_light
                 Edit on CodePen
 
               %input.codepen_json{type: 'hidden', name: 'data'}
@@ -211,7 +212,7 @@
                       font-family: <span class="js_css_body_font_family">'Poppins', sans-serif;</span>
                       font-weight: <span class="js_css_body_weight">400</span>;
                       line-height: <span class='js_css_line_height'>1.65</span>;
-                      color: <span class="js_css_color">#333</span>;
+                      color: <span class="js_css_color">#000000</span>;
                     }
 
                     p {margin-bottom: 1.15rem;}
@@ -238,7 +239,7 @@
 
                     small, .text_small {font-size: <span class="js_css_small_size"></span>rem;}
 
-    .content.container.text_green
+    .content.container.link_white
       .table_layout.stage_footer
         .table_row
           .sidebar.text_right.media_xs_hide
@@ -341,12 +342,16 @@
               .col_one_third
                 .field
                   %label Background
-                  %input.background_color{type: 'color', value: '#ffffff'}
+                  .field_color
+                    %input.js_bg_color{type: 'text', value: 'white'}
+                    %input.js_bg_color_picker{type: 'color', value: '#ffffff', tabindex: "-1"}
 
               .col_one_third
                 .field
                   %label Font Color
-                  %input.font_color{type: 'color', value: '#333333'}
+                  .field_color
+                    %input.js_font_color{type: 'text', value: '#000000'}
+                    %input.js_font_color_picker{type: 'color', value: '#000000', tabindex: "-1"}
 
         .article_container
           .article_content{contenteditable: 'true'}
