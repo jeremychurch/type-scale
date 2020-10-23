@@ -300,7 +300,7 @@ $(document).ready(function() {
     }
     setWebFontUrl();
     $('.js_style_body_weight').html('.article_content p {font-weight:' + bodyFontWeight + ';}');
-    $('.js_param_weight_headers').text(bodyFontWeight);
+    $('.js_param_body_weight').text($('.js_body_weight').val());
     $('.js_css_body_weight').text(bodyFontWeight);
   };
 
