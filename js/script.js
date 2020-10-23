@@ -357,7 +357,7 @@ $(document).ready(function() {
   function setBackgroundColorInput() {
     backgroundColor = $('.js_bg_color').val();
     setBackgroundColor();
-    bgColorHex = rgb2hex($(".article_preview_open").css("background-color"));
+    bgColorHex = rgb2hex($(".article_preview").css("background-color"));
     $(".js_bg_color_picker").val(bgColorHex);
   };
 
@@ -369,9 +369,9 @@ $(document).ready(function() {
 
   function setBackgroundColor() {
     backgroundColor = $('.js_bg_color').val();
-    $('.js_style_background_color').html('.article_preview_open {background-color:' + backgroundColor + ';}');
+    $('.js_style_background_color').html('.article_preview {background-color:' + backgroundColor + ';}');
     $('.js_css_background_color').text(backgroundColor);
-    bgColorHex = rgb2hex($(".article_preview_open").css("background-color"));
+    bgColorHex = rgb2hex($(".article_preview").css("background-color"));
     $('.js_param_background_color').text(encodeURIComponent(bgColorHex));
   };
 
@@ -397,11 +397,11 @@ $(document).ready(function() {
   function setFontColorInput() {
     fontColor = $('.js_font_color').val();
     setFontColor();
-    fontColorHex = rgb2hex($(".article_preview_open").css("color"));
+    fontColorHex = rgb2hex($(".article_preview").css("color"));
     $(".js_font_color_picker").val(fontColorHex);
   };
 
-    function setFontColorPicker() {
+  function setFontColorPicker() {
     fontColor = $('.js_font_color_picker').val();
     $('.js_font_color').val(fontColor);
     setFontColor();
@@ -409,9 +409,9 @@ $(document).ready(function() {
 
   function setFontColor() {
     fontColor = $('.js_font_color').val();
-    $('.js_style_font_color').html('.article_preview_open {color:' + fontColor + ';}');
+    $('.js_style_font_color').html('.article_preview {color:' + fontColor + ';}');
     $('.js_css_color').text(fontColor);
-    fontColorHex = rgb2hex($(".article_preview_open").css("color"));
+    fontColorHex = rgb2hex($(".article_preview").css("color"));
     $('.js_param_font_color').text(encodeURIComponent(fontColorHex));
   };
 

@@ -5,7 +5,7 @@ html
 body
   font-family: $app-font
   font-weight: $app-font-weight
-  line-height: 1.65
+  line-height: $line_height
   color: $app-font-color
 
 a
@@ -22,11 +22,11 @@ strong, b, .font_bold
   font-weight: $app-font-bold
 
 p, blockquote, ul, ol
-  margin-bottom: $app-margin-small
+  margin-bottom: 1rem
 
 .article_header
-  margin:  2.75rem 0 1.05rem
-  line-height: 1.15
+  margin: 3rem 0 1.38rem
+  line-height: 1.3
   transition: font-size 0.3s ease 0s
 
 h1
@@ -40,21 +40,23 @@ h2:not(.article_header)
   font-weight: $app-font-bold
   line-height: 1.3
   letter-spacing: -0.025em
-  margin: 2.75rem 0 1.05rem 0
+  margin: 3rem 0 1.38rem
   @media screen and (min-width: #{$app-media-xs})
     font-size: 2.074em
 
 h3:not(.article_header)
   font-size: 1.25em
   font-weight: $app-font-bold
-  margin: 2.75rem 0 1.05rem 0
+  line-height: 1.3
+  margin: 3rem 0 1.38rem
   @media screen and (min-width: #{$app-media-xs})
     font-size: 1.728em
 
 h4:not(.article_header)
   font-size: 1.25em
   font-weight: $app-font-bold
-  margin: 2.75rem 0 1.05rem 0
+  line-height: 1.3
+  margin: 3rem 0 1.38rem
   @media screen and (min-width: #{$app-media-xs})
     font-size: 1.44em
 
