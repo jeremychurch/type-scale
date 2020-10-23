@@ -329,45 +329,90 @@ $(document).ready(function() {
   };
 
 
+  function rgb2hex(orig){
+   var rgb = orig.replace(/\s/g,'').match(/^rgba?\((\d+),(\d+),(\d+)/i);
+   return (rgb && rgb.length === 4) ? "#" +
+    ("0" + parseInt(rgb[1],10).toString(16)).slice(-2) +
+    ("0" + parseInt(rgb[2],10).toString(16)).slice(-2) +
+    ("0" + parseInt(rgb[3],10).toString(16)).slice(-2) : orig;
+  }
 
   function paramBackgroundColor() {
     if (getQueryVariable('backgroundcolor') !== false) {
-      $('.background_color').val(getQueryVariable('backgroundcolor'));
+      $('.js_bg_color').val(getQueryVariable('backgroundcolor'));
+      $('.js_bg_color_picker').val(getQueryVariable('backgroundcolor'));
       setBackgroundColor();
     };
   };
   paramBackgroundColor();
 
-  $('.background_color').bind("change paste keyup", function() {
-    setBackgroundColor();
+  $('.js_bg_color').bind("change paste keyup", function() {
+    setBackgroundColorInput();
   });
 
+  $('.js_bg_color_picker').on("change", function() {
+    setBackgroundColorPicker();
+  });
+
+  function setBackgroundColorInput() {
+    backgroundColor = $('.js_bg_color').val();
+    setBackgroundColor();
+    bgColorHex = rgb2hex($(".article_preview").css("background-color"));
+    $(".js_bg_color_picker").val(bgColorHex);
+  };
+
+  function setBackgroundColorPicker() {
+    backgroundColor = $('.js_bg_color_picker').val();
+    $(".js_bg_color").val(backgroundColor);
+    setBackgroundColor();
+  };
+
   function setBackgroundColor() {
-    backgroundColor = $('.background_color').val();
-    $('.js_style_background_color').html('.article_preview_open {background-color:' + backgroundColor + ';}');
-    $('.js_param_background_color').text(encodeURIComponent(backgroundColor));
+    backgroundColor = $('.js_bg_color').val();
+    $('.js_style_background_color').html('.article_preview {background-color:' + backgroundColor + ';}');
     $('.js_css_background_color').text(backgroundColor);
+    bgColorHex = rgb2hex($(".article_preview").css("background-color"));
+    $('.js_param_background_color').text(encodeURIComponent(bgColorHex));
   };
 
 
 
   function paramFontColor() {
     if (getQueryVariable('fontcolor') !== false) {
-      $('.font_color').val(getQueryVariable('fontcolor'));
+      $('.js_font_color').val(getQueryVariable('fontcolor'));
+      $('.js_font_color_picker').val(getQueryVariable('fontcolor'));
       setFontColor();
     };
   };
   paramFontColor();
 
-  $('.font_color').bind("change paste keyup", function() {
-    setFontColor();
+  $('.js_font_color').bind("change paste keyup", function() {
+    setFontColorInput();
   });
 
+  $('.js_font_color_picker').on("change", function() {
+    setFontColorPicker();
+  });
+
+  function setFontColorInput() {
+    fontColor = $('.js_font_color').val();
+    setFontColor();
+    fontColorHex = rgb2hex($(".article_preview").css("color"));
+    $(".js_font_color_picker").val(fontColorHex);
+  };
+
+  function setFontColorPicker() {
+    fontColor = $('.js_font_color_picker').val();
+    $('.js_font_color').val(fontColor);
+    setFontColor();
+  };
+
   function setFontColor() {
-    fontColor = $('.font_color').val();
-    $('.js_style_font_color').html('.article_preview_open {color:' + fontColor + ';}');
-    $('.js_param_font_color').text(encodeURIComponent(fontColor));
+    fontColor = $('.js_font_color').val();
+    $('.js_style_font_color').html('.article_preview {color:' + fontColor + ';}');
     $('.js_css_color').text(fontColor);
+    fontColorHex = rgb2hex($(".article_preview").css("color"));
+    $('.js_param_font_color').text(encodeURIComponent(fontColorHex));
   };
 
 

@@ -105,17 +105,19 @@ button
 
 .btn, input[type="submit"], button
   display: block
-  border: 1px solid lighten($gray_500,25%)
+  border: 1px solid $gray_300
   padding: 0.6em $app-padding-small
-  background-color: transparent
+  background: $gray_100
   border-radius: 5px
   cursor: pointer
-  color: $gray_500
+  color: $gray_900
   line-height: 1.5
+  font-weight: $app-font-bold
   text-align: center
   transition: all 0.3s ease 0s
   &:hover
-    border-color: $app-font-color
+    border-color: $gray_300
+    background: $gray_200
     color: $app-font-color
   @media screen and (min-width: #{$app-media-xs})
     display: inline-block
