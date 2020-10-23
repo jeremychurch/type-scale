@@ -192,7 +192,8 @@ $(document).ready(function() {
         setWebFontListFamily = "'" + item.family + "', " + fallback;
         listElements+='<option value="' + item.family + '" data-font-family="' + setWebFontListFamily + ';">' + item.family + '</option>';
       });
-      $('.js_web_font, .js_body_font').append(listElements).val('Poppins');
+      $('.js_font, .js_body_font').append(listElements);
+      $('.js_font').val('Poppins');
       setFont();
       paramFont();
       paramFontWeight();
@@ -206,23 +207,25 @@ $(document).ready(function() {
 
   function paramFont() {
     if (getQueryVariable('font') !== false) {
-      $('.js_web_font').val(getQueryVariable('font'));
+      $('.js_font').val(getQueryVariable('font'));
       setFont();
     };
   };
   // These run within createWebFontList(), otherwise the vals are not ready in time
 
-  $('.js_web_font').bind("change paste keyup", function() {
+  $('.js_font').bind("change paste keyup", function() {
     setFont();
   });
 
   function setFont() {
-    webFont = $('.js_web_font').val();
+    webFont = $('.js_font').val();
     setWebFontUrl();
-    webFontFamily = $('.js_web_font option:selected').data('font-family');
+    webFontFamily = $('.js_font option:selected').data('font-family');
     $('.scale_webfont, .article_content').attr('style', "font-family:" + webFontFamily);
     $('.js_param_font').text(encodeURIComponent(webFont));
     $('.js_css_font_family').text(webFontFamily);
+    setBodyFont();
+    setBodyFontWeight();
   };
 
 
@@ -245,6 +248,7 @@ $(document).ready(function() {
     $('.js_style_weight').html('.scale_webfont, .article_header {font-weight:' + fontWeight + ';}');
     $('.js_param_weight').text(fontWeight);
     $('.js_css_weight').text(fontWeight);
+    setBodyFontWeight();
   };
 
 
@@ -263,8 +267,12 @@ $(document).ready(function() {
 
   function setBodyFont() {
     bodyFont = $('.js_body_font').val();
-    setWebFontUrl();
     bodyWebFontFamily = $('.js_body_font option:selected').data('font-family');
+    if (bodyFont === "body_font_default") {
+      bodyFont = $(".js_font").val();
+      bodyWebFontFamily = $('.js_font option:selected').data('font-family');
+    }
+    setWebFontUrl();
     $('.js_style_body_font').html('.article_content p {font-family:' + bodyWebFontFamily + '}');
     $('.js_param_body_font').text(encodeURIComponent(bodyFont));
     $('.js_css_body_font_family').text(bodyWebFontFamily);
@@ -287,18 +295,35 @@ $(document).ready(function() {
 
   function setBodyFontWeight() {
     bodyFontWeight = $('.js_body_weight').val();
+    if (bodyFontWeight === "body_weight_default") {
+      bodyFontWeight = $(".js_weight").val();
+    }
     setWebFontUrl();
     $('.js_style_body_weight').html('.article_content p {font-weight:' + bodyFontWeight + ';}');
-    $('.js_param_weight_headers').text(bodyFontWeight);
+    $('.js_param_body_weight').text($('.js_body_weight').val());
     $('.js_css_body_weight').text(bodyFontWeight);
   };
 
 
 
   function setWebFontUrl() {
-    googleFont = $('.js_web_font').val().replace(/\s/g, '+') + ':' + $('.js_weight').val();
-    bodyGoogleFont = $('.js_body_font').val().replace(/\s/g, '+') + ':' + $('.js_body_weight').val();
-    webFontUrl = 'https://fonts.googleapis.com/css?family=' + googleFont + '|' + bodyGoogleFont;
+    headerFont = $('.js_font').val().replace(/\s/g, '+');
+    bodyFont = $('.js_body_font').val().replace(/\s/g, '+');
+    headerWeight = $('.js_weight').val();
+    bodyWeight = $('.js_body_weight').val();
+    if (bodyWeight === "body_weight_default") {
+      bodyWeight = headerWeight;
+    }
+    if (bodyFont === headerFont || bodyFont === "body_font_default") {
+      if (bodyWeight === headerWeight) {
+        bodyWeight = "";
+      } else {
+        bodyWeight = bodyWeight + ",";
+      }
+      webFontUrl = 'https://fonts.googleapis.com/css?family=' + headerFont + ":" + bodyWeight + headerWeight;
+    } else {
+      webFontUrl = 'https://fonts.googleapis.com/css?family=' + bodyFont + ":" + bodyWeight + "|" + headerFont + ":" + headerWeight;
+    }
     $('.webfont_url').attr('href', webFontUrl);
     $('.js_css_webfont_url').text(webFontUrl);
   };
