@@ -539,6 +539,8 @@ $(document).ready(function() {
     });
   };
 
+  $(".js_current_year").text(new Date().getFullYear());
+
 });
 
 //@prepros-append codepen.js
