@@ -14,7 +14,7 @@
 
     %link.webfont_url{rel: 'stylesheet', type:'text/css'}
 
-    %link{href: "https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css", rel: "stylesheet"}
+    %script{src: "https://kit.fontawesome.com/b149446982.js", crossorigin: "anonymous"}
 
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -69,12 +69,11 @@
               .cols.cols_fields
                 .col_two_thirds
                   .field
-                    .text_light{style: 'float:right;'}
-                      %a.remove_border_bottom{href: 'https://fonts.google.com/', target: '_blank', tabindex: '-1'}
-                        %span.fa.fa-fw.fa-external-link
-
                     %label
-                      Google Font
+                      %a.remove_border_bottom{href: 'https://fonts.google.com/', target: '_blank', tabindex: '-1'}
+                        Google Font
+                        %span.fal.fa-fw.fa-external-link
+
                     %select.js_font
 
                 .col_one_third
@@ -99,14 +98,13 @@
                 %ul.inline_list.text_small.text_light
                   %li
                     %a.remove_border_bottom{href: '/'}
-                      %span.fa.fa-times-circle
+                      %span.fal.fa-fw.fa-times-circle
                       Reset All
 
                   %li
                     %a.js_permalink.remove_border_bottom{href: '#'}
-                      %span.fa.fa-scissors
+                      %span.fal.fa-fw.fa-bookmark
                       Save for Later
-
 
               .field
                 %input.js_permalink_field.field_permalink.hide{type: 'text'}
@@ -118,7 +116,7 @@
               .js_scale_add_high_section.table_row
                 .table_cell.text_light.text_right.media_xs_text_center
                   %a.js_scale_add_high.remove_border_bottom{href: '#'}
-                    %span.fa.fa-lg.fa-plus-circle
+                    %span.fal.fa-lg.fa-plus-circle
                 .table_cell
 
               .js_scale_section_high.table_row
@@ -179,7 +177,7 @@
               .js_scale_add_low_section.table_row
                 .table_cell.text_light.text_right.media_xs_text_center
                   %a.js_scale_add_low.remove_border_bottom{href: '#'}
-                    %span.fa.fa-lg.fa-plus-circle
+                    %span.fal.fa-lg.fa-plus-circle
                 .table_cell
 
             %hr.media_xs_hide
@@ -190,11 +188,11 @@
             %form{action: 'https://codepen.io/pen/define', method: 'POST', target: '_blank'}
 
               %a.btn.break_small.js_css_button{href: '#', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
-                %span.fa.fa-fw.fa-chevron-down.text_light
+                %span.fal.fa-fw.fa-chevron-down.text_light.js_css_button_icon
                 Grab the CSS
 
               %button.codepen_btn.break_small{type: 'submit', onClick: "ga('send', 'event', 'external-link', 'click', 'codepen-edit');"}
-                %span.fa.fa-fw.fa-codepen.text_light
+                %span.fab.fa-fw.fa-codepen.text_light
                 Edit on CodePen
 
               %input.codepen_json{type: 'hidden', name: 'data'}
@@ -246,13 +244,13 @@
             %ul.inline_list
               %li
                 %a.remove_border_bottom{href: 'https://j.eremy.net/'}
-                  %span.fa.fa-laptop.fa-lg
+                  %span.fal.fa-globe.fa-lg
               %li
                 %a.remove_border_bottom{href: 'https://twitter.com/jeremybchurch'}
-                  %span.fa.fa-twitter.fa-lg
+                  %span.fab.fa-twitter.fa-lg
               %li
                 %a.remove_border_bottom{href: 'https://github.com/jeremychurch/type-scale'}
-                  %span.fa.fa-github-alt.fa-lg
+                  %span.fab.fa-github.fa-lg
 
           .main_content
             A type tool by
@@ -295,19 +293,21 @@
               %ul.inline_list
                 %li
                   %a.remove_border_bottom{href: 'https://j.eremy.net/'}
-                    %span.fa.fa-laptop.fa-2x
+                    %span.fal.fa-globe.fa-2x
                 %li
                   %a.remove_border_bottom{href: 'https://twitter.com/jeremybchurch'}
-                    %span.fa.fa-twitter.fa-2x
+                    %span.fab.fa-twitter.fa-2x
                 %li
                   %a.remove_border_bottom{href: 'https://github.com/jeremychurch/type-scale'}
-                    %span.fa.fa-github-alt.fa-2x
+                    %span.fab.fa-github.fa-2x
 
             %p.text_small
               &copy; Copyright 2013&ndash;<span class="js_current_year"></span> <a href="https://j.eremy.net/">Jeremy Church</a>. <br class="media_xs_show">Project available on <a href="https://github.com/jeremychurch/type-scale">GitHub</a>.
 
     .article_preview
-      .article_preview_button.fa.fa-chevron-left.fa-lg.fa-fw{onClick: "ga('send', 'event', 'toggle', 'click', 'article-preview');"}
+      .article_preview_button.js_article_preview_button{onClick: "ga('send', 'event', 'toggle', 'click', 'article-preview');"}
+        %span.fal.fa-chevron-left.fa-lg.fa-fw.js_article_preview_button_icon
+
       .article_preview_inner
         .break_small
           %form
@@ -387,6 +387,6 @@
 
             %p.text_small &mdash; Excerpt from A Voyage to Arcturus, by David Lindsay.
 
-    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"}
+    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"}
 
     %script{src: "script.min.js"}
