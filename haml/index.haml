@@ -98,7 +98,7 @@
               .field
                 %ul.inline_list.text_small.text_light
                   %li
-                    %a.js_link_reset.remove_border_bottom{href: '#'}
+                    %a.remove_border_bottom{href: '/'}
                       %span.fa.fa-times-circle
                       Reset All
 
@@ -268,9 +268,11 @@
             .content_width.font_medium.break_large
               %h2 How to Use
 
-              %p I like to enter the base font-size for paragraph text. Then I select from the surrounding values for headers and small text.
+              %p <strong>Small scales</strong> (less than 1.2) are subtle and good for both mobile and desktop apps, or the mobile version of a responsive site.
 
-              %p There are no rules. Just experiment and have fun. Try using the values for line-height, margins or whatever, and see what works.
+              %p <strong>Medium scales</strong> (1.15&ndash;1.333) have a clear hierarchy, and help to organize sections with subheadings. A medium scale is versatile and works well for a wide variety of desktop sites, including blogs and marketing sites.
+
+              %p <strong>Large scales</strong> (1.333 or greater) may be challenging to implement effectively, but could work well for portfolios, agencies, some marketing sites, or avant-garde works.
 
               %h2 REM vs. EM Values
 
@@ -302,9 +304,7 @@
                     %span.fa.fa-github-alt.fa-2x
 
             %p.text_small
-              Created by <a href="https://j.eremy.net/">Jeremy Church</a>
-              %br
-              Project available on <a href="https://github.com/jeremychurch/type-scale">GitHub</a>. Code licensed under <a href="https://opensource.org/licenses/mit-license.html">MIT License</a>.
+              &copy; Copyright 2013 <a href="https://j.eremy.net/">Jeremy Church</a>. Project available on <a href="https://github.com/jeremychurch/type-scale">GitHub</a>.
 
     .article_preview
       .article_preview_button.fa.fa-chevron-left.fa-lg.fa-fw{onClick: "ga('send', 'event', 'toggle', 'click', 'article-preview');"}
@@ -316,13 +316,13 @@
                 .field
                   %label Body Font
                   %select.js_body_font
-                    %option{value: "body_font_default", selected: "true"} &mdash;
+                    %option{value: "body_font_default", selected: "true"} &ndash; Same as Headings &ndash;
 
               .col_one_third
                 .field
                   %label Body Weight
                   %select.js_body_weight
-                    %option{value: "body_weight_default"} &mdash;
+                    %option{value: "body_weight_default"} &ndash; Same as Headings &ndash; &nbsp;
                     %option 100
                     %option 200
                     %option 300
