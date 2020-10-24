@@ -50,21 +50,20 @@
                   .field
                     %label Scale
                     %select.font_scale
-                      %option{value: '1.067'} 1.067 &mdash; Minor Second
-                      %option{value: '1.125'} 1.125 &mdash; Major Second
-                      %option{value: '1.200'} 1.200 &mdash; Minor Third
-                      %option{value: '1.250', selected: 'true'} 1.250 &mdash; Major Third
-                      %option{value: '1.333'} 1.333 &mdash; Perfect Fourth
-                      %option{value: '1.414'} 1.414 &mdash; Augmented Fourth
-                      %option{value: '1.500'} 1.500 &mdash; Perfect Fifth
-                      %option{value: '1.618'} 1.618 &mdash; Golden Ratio
-                      %option{disabled: 'true'} &mdash;&mdash;
-                      %option{value: 'custom'} Custom &nbsp; &nbsp; &gt;&gt;
+                      %option{value: '1.067'} 1.067 &ndash; Minor Second
+                      %option{value: '1.125'} 1.125 &ndash; Major Second
+                      %option{value: '1.200'} 1.200 &ndash; Minor Third
+                      %option{value: '1.250', selected: 'true'} 1.250 &ndash; Major Third
+                      %option{value: '1.333'} 1.333 &ndash; Perfect Fourth
+                      %option{value: '1.414'} 1.414 &ndash; Augmented Fourth
+                      %option{value: '1.500'} 1.500 &ndash; Perfect Fifth
+                      %option{value: '1.618'} 1.618 &ndash; Golden Ratio
+                      %option{value: 'custom'} Custom &gt;&gt;
 
                 .js_custom_scale_div.hide
-                  .field.font_scale_custom
+                  .field
                     %label Value
-                    %input{type: 'text'}
+                    %input.js_font_scale_custom{type: 'text'}
 
               .cols.cols_fields
                 .col_two_thirds

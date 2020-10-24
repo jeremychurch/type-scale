@@ -28,7 +28,6 @@ $(document).ready(function() {
   $('.js_permalink').click(function(e) {
     e.preventDefault();
     $('.js_permalink_field').val($('.js_param_url').text()).toggle().select();
-    // $(this).attr('href', $('.js_param_url').text())
   });
 
   $('.js_permalink_field').click(function() {
@@ -69,8 +68,7 @@ $(document).ready(function() {
     if (getQueryVariable('size') === false) {
       baseSize = 1;
       $('.base_size').val(16);
-    }
-    else {
+    } else {
       baseSize = getQueryVariable('size') / 16;
       $('.base_size').val(getQueryVariable('size'));
     };
@@ -86,8 +84,7 @@ $(document).ready(function() {
     fontSize = $('.base_size').val();
     if($.isNumeric(fontSize)){
       baseSize = fontSize / 16;
-    }
-    else {
+    } else {
       baseSize = 0;
     };
     $('.base_em').text(Math.round(baseSize*1000)/1000);
@@ -103,8 +100,7 @@ $(document).ready(function() {
   function setScale() {
     if (getQueryVariable('scale') === false) {
       scaleRatio = 1.250;
-    }
-    else {
+    } else {
       scaleRatio = getQueryVariable('scale');
       $('.font_scale').val(scaleRatio);
 
@@ -112,9 +108,8 @@ $(document).ready(function() {
         $('.js_scale_div').addClass('col_two_thirds');
         $('.js_custom_scale_div').removeClass('hide').addClass('col_one_third');
         $('.font_scale').val('custom');
-        $('.font_scale_custom input').val(scaleRatio);
-      }
-      else {
+        $('.js_font_scale_custom').val(scaleRatio);
+      } else {
         $('.font_scale').val(scaleRatio);
       };
 
@@ -128,12 +123,11 @@ $(document).ready(function() {
     if ($(this).val() === 'custom') {
       $('.js_scale_div').addClass('col_two_thirds');
       $('.js_custom_scale_div').removeClass('hide').addClass('col_one_third');
-      $('.font_scale_custom input')
+      $('.js_font_scale_custom')
         .val(scaleRatio)
         .focus()
         .select();
-    }
-    else {
+    } else {
       scaleSelect();
       $('.js_scale_div').removeClass('col_two_thirds');
       $('.js_custom_scale_div').addClass('hide');
@@ -141,7 +135,7 @@ $(document).ready(function() {
     };
   });
 
-  $('.font_scale_custom input').on("change paste keyup", function() {
+  $('.js_font_scale_custom').on("change paste keyup", function() {
     scaleRatio = $(this).val();
     scaleCalc();
     $('.js_param_scale').text($(this).val());
@@ -149,6 +143,9 @@ $(document).ready(function() {
 
   function scaleSelect() {
     scaleRatio = $('.font_scale').val();
+    if (scaleRatio === 'custom') {
+      scaleRatio = $(".js_font_scale_custom").val();
+    }
     scaleCalc();
   };
 
