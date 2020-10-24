@@ -78,7 +78,7 @@ $(document).ready(function() {
   };
   paramSize();
 
-  $('.base_size').bind("change paste keyup", function() {
+  $('.base_size').on("change paste keyup", function() {
     setBaseSize();
   });
 
@@ -124,7 +124,7 @@ $(document).ready(function() {
   };
   setScale();
 
-  $('.font_scale').bind("change paste keyup", function() {
+  $('.font_scale').on("change paste keyup", function() {
     if ($(this).val() === 'custom') {
       $('.js_scale_div').addClass('col_two_thirds');
       $('.js_custom_scale_div').removeClass('hide').addClass('col_one_third');
@@ -141,7 +141,7 @@ $(document).ready(function() {
     };
   });
 
-  $('.font_scale_custom input').bind("change paste keyup", function() {
+  $('.font_scale_custom input').on("change paste keyup", function() {
     scaleRatio = $(this).val();
     scaleCalc();
     $('.js_param_scale').text($(this).val());
@@ -162,7 +162,7 @@ $(document).ready(function() {
   };
   paramPreviewText();
 
-  $('.preview_text').bind("change paste keyup", function() {
+  $('.preview_text').on("change paste keyup", function() {
     setPreviewText();
   });
 
@@ -212,7 +212,7 @@ $(document).ready(function() {
   };
   // These run within createWebFontList(), otherwise the vals are not ready in time
 
-  $('.js_font').bind("change paste keyup", function() {
+  $('.js_font').on("change paste keyup", function() {
     setFont();
   });
 
@@ -237,7 +237,7 @@ $(document).ready(function() {
   };
   // These run within createWebFontList(), otherwise the vals are not ready in time
 
-  $('.js_weight').bind("change paste keyup", function() {
+  $('.js_weight').on("change paste keyup", function() {
     setFontWeight();
   });
 
@@ -260,7 +260,7 @@ $(document).ready(function() {
   };
   // These run within createWebFontList(), otherwise the vals are not ready in time
 
-  $('.js_body_font').bind("change paste keyup", function() {
+  $('.js_body_font').on("change paste keyup", function() {
     setBodyFont();
   });
 
@@ -288,7 +288,7 @@ $(document).ready(function() {
   };
   // These run within createWebFontList(), otherwise the vals are not ready in time
 
-  $('.js_body_weight').bind("change paste keyup", function() {
+  $('.js_body_weight').on("change paste keyup", function() {
     setBodyFontWeight();
   });
 
@@ -345,11 +345,11 @@ $(document).ready(function() {
   };
   paramBackgroundColor();
 
-  $('.js_bg_color').bind("change paste keyup", function() {
+  $('.js_bg_color').on("change paste keyup", function() {
     setBackgroundColorInput();
   });
 
-  $('.js_bg_color_picker').on("change", function() {
+  $('.js_bg_color_picker').on("change paste keyup", function() {
     setBackgroundColorPicker();
   });
 
@@ -385,11 +385,11 @@ $(document).ready(function() {
   };
   paramFontColor();
 
-  $('.js_font_color').bind("change paste keyup", function() {
+  $('.js_font_color').on("change paste keyup", function() {
     setFontColorInput();
   });
 
-  $('.js_font_color_picker').on("change", function() {
+  $('.js_font_color_picker').on("change paste keyup", function() {
     setFontColorPicker();
   });
 
@@ -424,7 +424,7 @@ $(document).ready(function() {
   };
   paramLineHeight();
 
-  $('.js_line_height').bind("change paste keyup", function() {
+  $('.js_line_height').on("change paste keyup", function() {
     setLineHeight();
   });
 
