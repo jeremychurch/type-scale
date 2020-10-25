@@ -1,11 +1,13 @@
 
 $(document).ready(function() {
 
+  windowWidth = $(window).innerWidth();
+
   function paramArticlePreview() {
     if (getQueryVariable('preview') === 'true') {
       $('.js_article_preview_button_icon').removeClass('fa-chevron-left').addClass('fa-chevron-right');
       $('.article_preview').addClass('article_preview_open');
-      if ($(window).innerWidth() >= 767) {
+      if (windowWidth >= 767) {
         $('.article_content').focus();
       }
     };
@@ -15,7 +17,7 @@ $(document).ready(function() {
   $('.js_article_preview_button').click(function() {
     $(".js_article_preview_button_icon").toggleClass('fa-chevron-right').toggleClass('fa-chevron-left');
     $('.article_preview').toggleClass('article_preview_open');
-    if ($(window).innerWidth() >= 767) {
+    if (windowWidth >= 767) {
       $('.article_preview_open .article_content').focus();
     }
   });
@@ -99,18 +101,23 @@ $(document).ready(function() {
 
   function setScale() {
     if (getQueryVariable('scale') === false) {
-      scaleRatio = 1.250;
+      if (windowWidth < 767) {
+        scaleRatio = "1.125";
+      } else {
+        scaleRatio = "1.250";
+      }
+      $('.js_font_scale').val(scaleRatio);
     } else {
       scaleRatio = getQueryVariable('scale');
-      $('.font_scale').val(scaleRatio);
+      $('.js_font_scale').val(scaleRatio);
 
-      if (!$('.font_scale').val()) {
+      if (!$('.js_font_scale').val()) {
         $('.js_scale_div').addClass('col_two_thirds');
         $('.js_custom_scale_div').removeClass('hide').addClass('col_one_third');
-        $('.font_scale').val('custom');
+        $('.js_font_scale').val('custom');
         $('.js_font_scale_custom').val(scaleRatio);
       } else {
-        $('.font_scale').val(scaleRatio);
+        $('.js_font_scale').val(scaleRatio);
       };
 
       $('.js_param_scale').text(scaleRatio);
@@ -119,7 +126,7 @@ $(document).ready(function() {
   };
   setScale();
 
-  $('.font_scale').on("change paste keyup", function() {
+  $('.js_font_scale').on("change paste keyup", function() {
     if ($(this).val() === 'custom') {
       $('.js_scale_div').addClass('col_two_thirds');
       $('.js_custom_scale_div').removeClass('hide').addClass('col_one_third');
@@ -142,7 +149,7 @@ $(document).ready(function() {
   });
 
   function scaleSelect() {
-    scaleRatio = $('.font_scale').val();
+    scaleRatio = $('.js_font_scale').val();
     if (scaleRatio === 'custom') {
       scaleRatio = $(".js_font_scale_custom").val();
     }
