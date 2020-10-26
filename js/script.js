@@ -193,7 +193,8 @@ $(document).ready(function() {
           fallback = item.category;
         };
         setWebFontListFamily = "'" + item.family + "', " + fallback;
-        listElements+='<option value="' + item.family + '" data-font-family="' + setWebFontListFamily + ';">' + item.family + '</option>';
+        webFontWeights = " data-weights='" + item.variants + "'";
+        listElements+='<option value="' + item.family + '" data-family="' + setWebFontListFamily + ';"' + webFontWeights + '>' + item.family + '</option>';
       });
       $('.js_font, .js_body_font').append(listElements);
       $('.js_font').val('Poppins');
@@ -205,6 +206,38 @@ $(document).ready(function() {
     });
   };
   createWebFontList();
+
+  function createWeightList() {
+    fontWeights = $(".js_font option:selected").data("weights");
+    fontWeights = fontWeights.split(",");
+    listOptions = "";
+    fontWeights.forEach(function(item) {
+      if (item === "regular") {
+        item = "400";
+      } else if (item.includes("italic")) {
+        item = null;
+      }
+      if (item !== null) {
+        listOptions += "<option>" + item + "</option>";
+      }
+    });
+  };
+
+  function createBodyWeightList() {
+    fontWeights = $(".js_body_font option:selected").data("weights");
+    fontWeights = fontWeights.split(",");
+    listOptions = "";
+    fontWeights.forEach(function(item) {
+      if (item === "regular") {
+        item = "400";
+      } else if (item.includes("italic")) {
+        item = null;
+      }
+      if (item !== null) {
+        listOptions += "<option>" + item + "</option>";
+      }
+    });
+  };
 
 
 
@@ -222,13 +255,19 @@ $(document).ready(function() {
 
   function setFont() {
     webFont = $('.js_font').val();
+    createWeightList();
+    $(".js_weight").html(listOptions).val("400");
+    setFontWeight();
+    if ($(".js_body_font").val() === "body_font_default") {
+      setBodyFont();
+      $(".js_body_weight").html(listOptions).val("400");
+      setBodyFontWeight();
+    }
     setWebFontUrl();
-    webFontFamily = $('.js_font option:selected').data('font-family');
+    webFontFamily = $('.js_font option:selected').data('family');
     $('.scale_webfont, .article_content').attr('style', "font-family:" + webFontFamily);
     $('.js_param_font').text(encodeURIComponent(webFont));
     $('.js_css_font_family').text(webFontFamily);
-    setBodyFont();
-    setBodyFontWeight();
   };
 
 
@@ -270,10 +309,17 @@ $(document).ready(function() {
 
   function setBodyFont() {
     bodyFont = $('.js_body_font').val();
-    bodyWebFontFamily = $('.js_body_font option:selected').data('font-family');
     if (bodyFont === "body_font_default") {
       bodyFont = $(".js_font").val();
-      bodyWebFontFamily = $('.js_font option:selected').data('font-family');
+      bodyWebFontFamily = $('.js_font option:selected').data('family');
+      createWeightList();
+      $(".js_body_weight").html(listOptions).val("400");
+      setBodyFontWeight();
+    } else {
+      bodyWebFontFamily = $('.js_body_font option:selected').data('family');
+      createBodyWeightList();
+      $(".js_body_weight").html(listOptions).val("400");
+      setBodyFontWeight();
     }
     setWebFontUrl();
     $('.js_style_body_font').html('.article_content p {font-family:' + bodyWebFontFamily + '}');
@@ -298,9 +344,6 @@ $(document).ready(function() {
 
   function setBodyFontWeight() {
     bodyFontWeight = $('.js_body_weight').val();
-    if (bodyFontWeight === "body_weight_default") {
-      bodyFontWeight = $(".js_weight").val();
-    }
     setWebFontUrl();
     $('.js_style_body_weight').html('.article_content p {font-weight:' + bodyFontWeight + ';}');
     $('.js_param_body_weight').text($('.js_body_weight').val());
@@ -314,9 +357,6 @@ $(document).ready(function() {
     bodyFont = $('.js_body_font').val().replace(/\s/g, '+');
     headerWeight = $('.js_weight').val();
     bodyWeight = $('.js_body_weight').val();
-    if (bodyWeight === "body_weight_default") {
-      bodyWeight = headerWeight;
-    }
     if (bodyFont === headerFont || bodyFont === "body_font_default") {
       if (bodyWeight === headerWeight) {
         bodyWeight = "";
