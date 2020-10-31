@@ -1,4 +1,15 @@
 
+.flex
+  display: flex
+  flex-wrap: wrap
+
+@media screen and (min-width: #{$app-media-xs})
+  .ml_order_1
+    order: 0
+
+  .ml_order_2
+    order: 1
+
 .col_single, .main_col
   max-width: 40em
   > *:first-child

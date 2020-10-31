@@ -6,7 +6,7 @@
     %title Type Scale - A Visual Calculator
     %meta{name: "description", content: "Preview and choose the right type scale for your project. Experiment with font size, scale and different webfonts."}
     %meta{name: "keywords", content: "font, text, type, size, typography, typographic, typeface, rem, rems, em, ems, px, scale, calculate, calculator, webfont, edit, update, modular scale, preview"}
-    %meta{name: "theme-color", content: "#86ab99"}
+    %meta{name: "theme-color", content: "#c9e2d6"}
 
     %link{href: "style.css", rel: "stylesheet", media: "all"}
 
@@ -176,16 +176,16 @@
             <script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?serve=CKYIV2JW&placement=typescalecom" id="_carbonads_js"></script>
 
             %form{action: 'https://codepen.io/pen/define', method: 'POST', target: '_blank'}
+              .flex
+                %button.codepen_btn.break_small.ml_order_2{type: 'submit', onClick: "ga('send', 'event', 'external-link', 'click', 'codepen-edit');"}
+                  %span.fab.fa-fw.fa-codepen.text_light
+                  Edit on CodePen
 
-              %a.btn.break_small.js_css_button{href: '#', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
-                %span.fal.fa-fw.fa-chevron-down.text_light.js_css_button_icon
-                Grab the CSS
+                %a.js_css_button.btn.break_small{href: '#', data: {'toggle' => '.js_generated_css'}, onClick: "ga('send', 'event', 'toggle', 'click', 'css-button');"}
+                  %span.fal.fa-fw.fa-chevron-down.text_light.js_css_button_icon
+                  Grab the CSS
 
-              %button.codepen_btn.break_small{type: 'submit', onClick: "ga('send', 'event', 'external-link', 'click', 'codepen-edit');"}
-                %span.fab.fa-fw.fa-codepen.text_light
-                Edit on CodePen
-
-              %input.codepen_json{type: 'hidden', name: 'data'}
+                %input.codepen_json{type: 'hidden', name: 'data'}
 
             .js_generated_css.hide
               %pre.codepen_able{data: {'type' => 'css'}, contenteditable: 'true', onClick: "ga('send', 'event', 'select', 'click', 'css-code');"}
@@ -227,7 +227,7 @@
 
                     small, .text_small {font-size: <span class="js_css_small_size"></span>rem;}
 
-    .content.container.link_white
+    .content.container
       .table_layout.stage_footer
         .table_row
           .sidebar.text_right.media_xs_hide

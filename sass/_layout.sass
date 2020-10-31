@@ -6,7 +6,7 @@ html
 body
   position: relative
   overflow: hidden
-  background: $app-green
+  background: $green_500
 
 .container
   box-sizing: border-box
@@ -26,7 +26,7 @@ body
   left: 0
   right: 0
   padding: 2em
-  background: $app-green-light
+  background: $green_400
   @media screen and (max-width: #{$app-media-xs})
     padding: 1.2em
 
@@ -95,9 +95,9 @@ body
 .article_preview_button
   // position: fixed // this doesn't work?!
   position: absolute
+  top: 1.2rem
   right: calc(100% + 0.5rem)
-  top: 0
-  padding: 1.7em 0
+  padding: 1.7em 0 1.7em 0.2em
   width: 2rem !important
   background: #000
   cursor: pointer
@@ -105,6 +105,8 @@ body
   @media screen and (min-width: #{$app-media-xs})
     // position: absolute
     top: calc(50vh - 3.5rem)
+    border-top-left-radius: 4px
+    border-bottom-left-radius: 4px
 
 .article_container
   // font-size: 1.25em // Only necessary if the base_size is different from the html font-size

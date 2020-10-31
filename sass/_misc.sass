@@ -103,10 +103,8 @@ hr
   margin: $app-margin-medium 0
   padding: 0
 
-button
-  width: 100%
-
 .btn, input[type="submit"], button
+  width: 100%
   display: block
   border: 1px solid $gray_300
   padding: 0.6em $app-padding-small
@@ -125,9 +123,7 @@ button
   @media screen and (min-width: #{$app-media-xs})
     display: inline-block
     width: auto
-    +
-      .btn, input[type="submit"], button
-        margin-left: 0.5em
+    margin-right: 1rem
 
 @media screen and (min-width: #{$app-media-xs})
   .border_right
