@@ -89,7 +89,7 @@ $(document).ready(function() {
     } else {
       baseSize = 0;
     };
-    $('.base_em').text(Math.round(baseSize*1000)/1000);
+    $('.base_em').text(Math.round(baseSize*1000)/10 + "%/" + Math.round(baseSize*1000)/1000 + "em");
     scaleSelect();
     $('.js_param_size').text(fontSize);
     $('.article_container').css('font-size', Math.round(baseSize*1000)/1000 + 'em');
