@@ -264,6 +264,7 @@ $(document).ready(function() {
       setBodyFontWeight();
     }
     setWebFontUrl();
+    setFontExternalLink();
     webFontFamily = $('.js_font option:selected').data('family');
     $('.scale_webfont, .article_content').attr('style', "font-family:" + webFontFamily);
     $('.js_param_font').text(encodeURIComponent(webFont));
@@ -585,6 +586,13 @@ $(document).ready(function() {
 
   $(".js_current_year").text(new Date().getFullYear());
 
+  function setFontExternalLink() {
+    var googleFontsUrl = 'https://fonts.google.com';
+    var fontFamily = $('.js_font').val().replace(/\s/g, '+');
+    var url = googleFontsUrl + '?query=' + fontFamily;
+
+    $('.js_font_external_link').attr('href', url);
+  }
 });
 
 //@prepros-append codepen.js
